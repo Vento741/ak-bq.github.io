@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Портфолио работ Бутик Авторской Кухни - элитные кухни и мебель премиум-класса в Москве">
+    <meta name="keywords" content="портфолио, наши работы, авторская кухня, премиум мебель, элитные кухни Москва">
+    <title>Наши работы - Бутик Авторской Кухни</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <style>
+        /* Дополнительные стили для страницы работ */
+        
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        
+        .filter-button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-family: var(--font-secondary);
+            font-size: 14px;
+            color: var(--color-light-grey);
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-button:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background-color: var(--color-primary);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+        
+        .filter-button:hover,
+        .filter-button.active {
+            color: var(--color-primary);
+        }
+        
+        .filter-button:hover:after,
+        .filter-button.active:after {
+            transform: scaleX(1);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .project-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            transform: translateY(0);
+            transition: var(--transition);
+        }
+        
+        .project-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .project-item:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .project-item:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .project-title {
+            font-size: 22px;
+            color: var(--color-white);
+            margin-bottom: 5px;
+            transform: translateY(20px);
+            transition: var(--transition);
+            transition-delay: 0.1s;
+        }
+        
+        .project-item:hover .project-title {
+            transform: translateY(0);
+        }
+        
+        .project-category {
+            font-size: 14px;
+            color: var(--color-secondary);
+            transform: translateY(20px);
+            transition: var(--transition);
+            transition-delay: 0.2s;
+        }
+        
+        .project-item:hover .project-category {
+            transform: translateY(0);
+        }
+        
+        .project-modal .modal-content {
+            border-radius: 0;
+            border: none;
+        }
+        
+        .project-modal .modal-header {
+            border-bottom: none;
+            padding: 20px 30px;
+        }
+        
+        .project-modal .modal-title {
+            font-family: var(--font-primary);
+            font-size: 24px;
+            color: var(--color-dark);
+        }
+        
+        .project-modal .modal-body {
+            padding: 0 30px 30px;
+        }
+        
+        .project-modal .close {
+            font-size: 30px;
+            font-weight: 300;
+            color: var(--color-dark);
+            opacity: 1;
+            transition: var(--transition);
+        }
+        
+        .project-modal .close:hover {
+            color: var(--color-primary);
+        }
+        
+        .project-slider {
+            margin-bottom: 30px;
+        }
+        
+        .project-description {
+            margin-bottom: 30px;
+        }
+        
+        .project-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .detail-item {
+            margin-bottom: 20px;
+        }
+        
+        .detail-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-dark);
+            margin-bottom: 5px;
+        }
+        
+        .detail-value {
+            font-size: 14px;
+            color: var(--color-light-grey);
+        }
+        
+        @media (max-width: 991.98px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .projects-filter {
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .project-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Прелоадер -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div>
+    </div>
+
+    <!-- Курсор -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Навигация -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="../index.html" class="logo-link">
+                        <span class="logo-text">Бутик</span>
+                        <span class="logo-accent">Авторской Кухни</span>
+                    </a>
+                </div>
+
+                <div class="menu-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="../index.html" class="nav-link">Главная</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">О нас</a></li>
+                        <li class="nav-item"><a href="works.html" class="nav-link active">Наши работы</a></li>
+                        <li class="nav-item"><a href="custom-order.html" class="nav-link">Индивидуальный заказ</a></li>
+                        <li class="nav-item"><a href="contacts.html" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный экран -->
+    <section class="page-header">
+        <div class="page-header-image" style="background-image: url('../images/works-header.jpg');">
+            <div class="page-header-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Наши работы</h1>
+                <div class="breadcrumbs">
+                    <a href="../index.html" class="breadcrumb-item">Главная</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item active">Наши работы</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Портфолио проектов -->
+    <section class="projects reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Наши проекты</h2>
+                <p class="section-subtitle">Эксклюзивные решения для требовательных клиентов</p>
+            </div>
+
+            <div class="projects-filter">
+                <button class="filter-button active" data-filter="all">Все проекты</button>
+                <button class="filter-button" data-filter="kitchen">Кухни</button>
+                <button class="filter-button" data-filter="wardrobe">Гардеробные</button>
+                <button class="filter-button" data-filter="living">Гостиные</button>
+                <button class="filter-button" data-filter="other">Другое</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-item" data-category="kitchen">
+                    <div class="project-image">
+                        <img src="../images/project-1.jpg" alt="Современная классика">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="project-title">Современная классика</h3>
+                        <p class="project-category">Кухня</p>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="kitchen">
+                    <div class="project-image">
+                        <img src="../images/project-2.jpg" alt="Минимализм">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="project-title">Минимализм</h3>
+                        <p class="project-category">Кухня</p>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="kitchen">
+                    <div class="project-image">
+                        <img src="../images/project-3.jpg" alt="Неоклассика">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="project-title">Неоклассика</h3>
+                        <p class="project-category">Кухня</p>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="wardrobe">
+                    <div class="project-image">
+                        <img src="../images/project-4.jpg" alt="Элегантность">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="project-title">Элегантность</h3>
+                        <p class="project-category">Гардеробная</p>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="living">
+                    <div class="project-image">
+                        <img src="../images/project-5.jpg" alt="Гармония">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="project-title">Гармония</h3>
+                        <p class="project-category">Гостиная</p>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="kitchen">
+                    <div class="project-image">
+                        <img src="../images/project-6.jpg" alt="Лофт">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="project-title">Лофт</h3>
+                        <p class="project-category">Кухня</p>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="other">
+                    <div class="project-image">
+                        <img src="../images/project-7.jpg" alt="Элитный кабинет">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="project-title">Элитный кабинет</h3>
+                        <p class="project-category">Другое</p>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="living">
+                    <div class="project-image">
+                        <img src="../images/project-8.jpg" alt="Комфорт">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="project-title">Комфорт</h3>
+                        <p class="project-category">Гостиная</p>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="wardrobe">
+                    <div class="project-image">
+                        <img src="../images/project-9.jpg" alt="Функциональность">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="project-title">Функциональность</h3>
+                        <p class="project-category">Гардеробная</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества работы с нами -->
+    <section class="benefits reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Преимущества работы с нами</h2>
+                <p class="section-subtitle">Почему наши проекты выделяются среди остальных</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <span class="benefit-icon-design"></span>
+                        </div>
+                        <h3 class="benefit-title">Авторский дизайн</h3>
+                        <p class="benefit-text">Каждый проект разрабатывается нашими дизайнерами с учётом всех пожеланий заказчика и особенностей пространства.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <span class="benefit-icon-materials"></span>
+                        </div>
+                        <h3 class="benefit-title">Премиальные материалы</h3>
+                        <p class="benefit-text">Мы используем только высококачественные материалы от ведущих мировых производителей, что гарантирует долговечность и надёжность.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <span class="benefit-icon-production"></span>
+                        </div>
+                        <h3 class="benefit-title">Собственное производство</h3>
+                        <p class="benefit-text">Наличие собственного производства позволяет нам контролировать качество на каждом этапе создания мебели.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section class="contact-form reveal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-content">
+                        <h2 class="section-title">Обсудить проект</h2>
+                        <p class="form-text">Оставьте заявку, и наш дизайнер свяжется с вами для обсуждения деталей</p>
+
+                        <form id="contactForm" action="../includes/send-email.php" method="POST">
+                            <div class="form-floating mb-4">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Ваше имя" required>
+                                <label for="name">Ваше имя</label>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ваш телефон" required>
+                                <label for="phone">Ваш телефон</label>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <textarea class="form-control" id="message" name="message" placeholder="Ваше сообщение" style="height: 120px"></textarea>
+                                <label for="message">Опишите ваш проект</label>
+                            </div>
+
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="agreement" name="agreement" required>
+                                <label class="form-check-label" for="agreement">
+                                    Я согласен с <a href="privacy.html">политикой конфиденциальности</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="contact-image">
+                        <img src="../images/contact-image-2.jpg" alt="Обсудить проект" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-logo">
+                        <a href="../index.html" class="logo-link">
+                            <span class="logo-text">Бутик</span>
+                            <span class="logo-accent">Авторской Кухни</span>
+                        </a>
+                    </div>
+                    <p class="footer-description">Эксклюзивные кухни и мебель премиум-класса по индивидуальным заказам</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-nav">
+                        <li><a href="../index.html">Главная</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="works.html">Наши работы</a></li>
+                        <li><a href="custom-order.html">Индивидуальный заказ</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h3 class="footer-title">Контакты</h3>
+                    <ul class="footer-contacts">
+                        <li>
+                            <span class="contact-icon"></span>
+                            <span class="contact-text">г. Москва, 4-я Ватутинская ул., дом 7, стр. 21</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon"></span>
+                            <span class="contact-text">+7 926 668-15-79</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon"></span>
+                            <a href="mailto:info@author-kitchen_msk.ru" class="contact-link">info@author-kitchen_msk.ru</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Бутик Авторской Кухни. Все права защищены.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link">VK</a>
+                    <a href="#" class="social-link">WhatsApp</a>
+                    <a href="#" class="social-link">Telegram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальные окна для проектов -->
+    <!-- Здесь могут быть дополнительные модальные окна для отдельных проектов -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+
+    <!-- Дополнительный JavaScript для фильтрации проектов -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Фильтрация проектов
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Сброс активного класса
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    projectItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Модальные окна для проектов
+            projectItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Здесь может быть код для открытия модального окна с деталями проекта
+                    // Но поскольку мы не создавали модальные окна для каждого проекта,
+                    // этот код временно закомментирован
+                    // const projectId = this.getAttribute('data-id');
+                    // const modal = document.querySelector(`#project-modal-${projectId}`);
+                    // if (modal) {
+                    //     const modalInstance = new bootstrap.Modal(modal);
+                    //     modalInstance.show();
+                    // }
+                });
+            });
+        });
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(XXXXXXXX, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</body>
+
+</html>

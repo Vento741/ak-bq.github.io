@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Бутик Авторской Кухни - элитные кухни и мебель премиум-класса в Москве">
+    <meta name="keywords" content="авторская кухня, эксклюзивная мебель, премиум мебель на заказ, элитные кухни Москва">
+    <title>Бутик Авторской Кухни - Элитная мебель премиум-класса</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/320_375px.css" media="screen and (min-width: 320px) and (max-width: 375px)">
+    <link rel="stylesheet" href="css/375_425px.css" media="screen and (min-width: 375px) and (max-width: 425px)">
+    <link rel="stylesheet" href="css/425_768px.css" media="screen and (min-width: 425px) and (max-width: 768px)">
+    <link rel="stylesheet" href="css/workflow-animation.css">
+    <link rel="stylesheet" href="css/testimonials-experience.css">
+    <link rel="stylesheet" href="css/contact-form-experience.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <!-- Прелоадер -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div>
+    </div>
+
+    <!-- Навигация -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">Бутик</span>
+                        <span class="logo-accent">Авторской Кухни</span>
+                    </a>
+                </div>
+
+                <div class="menu-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link active">Главная</a></li>
+                        <li class="nav-item"><a href="pages/about.html" class="nav-link">О нас</a></li>
+                        <li class="nav-item"><a href="pages/works.html" class="nav-link">Наши работы</a></li>
+                        <li class="nav-item"><a href="pages/custom-order.html" class="nav-link">Индивидуальный заказ</a></li>
+                        <li class="nav-item"><a href="pages/contacts.html" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный экран -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-image"></div>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h1 class="hero-title">Искусство создания <br><span>элитной мебели</span></h1>
+                        <p class="hero-subtitle">Эксклюзивные авторские решения для тех, кто ценит индивидуальность</p>
+                        <div class="hero-buttons">
+                            <a href="pages/custom-order.html" class="btn btn-primary">Заказать проект</a>
+                            <a href="pages/works.html" class="btn btn-outline">Портфолио</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="advantages">
+        <div class="container">
+            <!-- <div class="section-header">
+                <h2 class="section-title">Преимущества бутика</h2>
+                <p class="section-subtitle">Почему наши клиенты возвращаются</p>
+            </div> -->
+
+            <div class="advantages-hexagon">
+                <div class="hex-row">
+                    <div class="hex-item">
+                        <div class="hex-content">
+                            <div class="hex-icon">
+                                <i class="hex-number">01</i>
+                            </div>
+                            <h3 class="hex-title">Индивидуальный<br>подход</h3>
+                            <div class="hex-detail">
+                                <p>Создаём проекты с учетом всех ваших пожеланий и особенностей помещения</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hex-item">
+                        <div class="hex-content">
+                            <div class="hex-icon">
+                                <i class="hex-number">02</i>
+                            </div>
+                            <h3 class="hex-title">Премиальные<br>материалы</h3>
+                            <div class="hex-detail">
+                                <p>Используем только лучшие материалы от ведущих мировых производителей</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hex-row hex-row-offset">
+                    <div class="hex-item">
+                        <div class="hex-content">
+                            <div class="hex-icon">
+                                <i class="hex-number">03</i>
+                            </div>
+                            <h3 class="hex-title">Авторский<br>дизайн</h3>
+                            <div class="hex-detail">
+                                <p>Разрабатываем уникальные решения, отражающие вашу индивидуальность</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hex-item hex-center">
+                        <div class="hex-content hex-logo">
+                            <span class="logo-text">Бутик</span>
+                            <span class="logo-accent">Авторской Кухни</span>
+                        </div>
+                    </div>
+
+                    <div class="hex-item">
+                        <div class="hex-content">
+                            <div class="hex-icon">
+                                <i class="hex-number">04</i>
+                            </div>
+                            <h3 class="hex-title">Высокоточное<br>производство</h3>
+                            <div class="hex-detail">
+                                <p>Собственное производство с современным оборудованием и технологиями</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hex-row">
+                    <div class="hex-item">
+                        <div class="hex-content">
+                            <div class="hex-icon">
+                                <i class="hex-number">05</i>
+                            </div>
+                            <h3 class="hex-title">Бережный<br>монтаж</h3>
+                            <div class="hex-detail">
+                                <p>Профессиональная установка без повреждений и с точной подгонкой</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hex-item">
+                        <div class="hex-content">
+                            <div class="hex-icon">
+                                <i class="hex-number">06</i>
+                            </div>
+                            <h3 class="hex-title">Пожизненная<br>гарантия</h3>
+                            <div class="hex-detail">
+                                <p>Сервисное обслуживание и поддержка на весь срок службы мебели</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас кратко -->
+    <section class="about-short">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-mosaic">
+                        <div class="mosaic-main">
+                            <img src="images/about-image.jpg" alt="Бутик Авторской Кухни" class="img-fluid mosaic-img">
+                            <div class="mosaic-overlay"></div>
+                        </div>
+                        <div class="mosaic-grid">
+                            <div class="mosaic-item" data-year="2005">
+                                <span class="year-badge">2005</span>
+                                <div class="year-label">Основание бутика</div>
+                            </div>
+                            <div class="mosaic-item" data-year="2010">
+                                <span class="year-badge">2010</span>
+                                <div class="year-label">Собственное производство</div>
+                            </div>
+                            <div class="mosaic-item" data-year="2015">
+                                <span class="year-badge">2015</span>
+                                <div class="year-label">500+ реализованных проектов</div>
+                            </div>
+                            <div class="mosaic-item" data-year="2023">
+                                <span class="year-badge">2023</span>
+                                <div class="year-label">Лидер премиум-сегмента</div>
+                            </div>
+                        </div>
+                        <div class="experience-badge">
+                            <div class="exp-number">18</div>
+                            <div class="exp-text">лет<br>опыта</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="about-tagline">Идеальный баланс эстетики и функциональности</div>
+                        <h2 class="section-title">Философия бутика</h2>
+                        <div class="about-separator"></div>
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 20.4V3.6C3 3.26863 3.26863 3 3.6 3H20.4C20.7314 3 21 3.26863 21 3.6V20.4C21 20.7314 20.7314 21 20.4 21H3.6C3.26863 21 3 20.7314 3 20.4Z" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M3 9H21" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M9 21V9" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">Индивидуальность</h3>
+                                <p class="feature-text">Мы создаем уникальные решения, которые отражают индивидуальность и стиль жизни владельца.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.5 10.5L4.5 4.5M10.5 10.5V4.5M10.5 10.5H4.5M13.5 13.5L19.5 19.5M13.5 13.5H19.5M13.5 13.5V19.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">Совершенство деталей</h3>
+                                <p class="feature-text">В нашей мастерской каждая деталь продумана до мелочей и исполнена с высочайшей точностью.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 15L15 9M15 15L9 9M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">Гармония пространства</h3>
+                                <p class="feature-text">Мы стремимся к созданию целостного пространства, где каждый элемент находится в идеальной гармонии.</p>
+                            </div>
+                        </div>
+                        <a href="pages/about.html" class="btn btn-about">Познакомиться ближе <span class="btn-arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-shape-1"></div>
+        <div class="about-shape-2"></div>
+    </section>
+
+    <!-- Наши работы -->
+    <section class="portfolio">
+        <div class="portfolio-bg-pattern"></div>
+        <div class="portfolio-bg-overlay"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="portfolio-accent">Мастерство в каждом проекте</span>
+                <h2 class="section-title">Наши работы</h2>
+                <div class="portfolio-separator"></div>
+            </div>
+
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Все проекты</button>
+                <button class="filter-btn" data-filter="kitchen">Кухни</button>
+                <button class="filter-btn" data-filter="living">Гостиные</button>
+                <button class="filter-btn" data-filter="bedroom">Спальни</button>
+            </div>
+
+            <div class="portfolio-showcase">
+                <div class="portfolio-item" data-category="kitchen">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio-1.jpg" alt="Современная классика" class="img-fluid">
+                            <div class="portfolio-hover">
+                                <div class="hover-content">
+                                    <div class="hover-icon">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <a href="pages/works.html" class="hover-link">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Кухня</span>
+                                <span class="portfolio-year">2023</span>
+                            </div>
+                            <h3 class="portfolio-title">Современная классика</h3>
+                            <p class="portfolio-desc">Элегантное сочетание классических форм и современных материалов</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="kitchen">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio-2.jpg" alt="Минимализм" class="img-fluid">
+                            <div class="portfolio-hover">
+                                <div class="hover-content">
+                                    <div class="hover-icon">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <a href="pages/works.html" class="hover-link">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Кухня</span>
+                                <span class="portfolio-year">2023</span>
+                            </div>
+                            <h3 class="portfolio-title">Минимализм</h3>
+                            <p class="portfolio-desc">Чистые линии и функциональность в каждой детали</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="living">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio-3.jpg" alt="Неоклассика" class="img-fluid">
+                            <div class="portfolio-hover">
+                                <div class="hover-content">
+                                    <div class="hover-icon">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <a href="pages/works.html" class="hover-link">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Гостиная</span>
+                                <span class="portfolio-year">2022</span>
+                            </div>
+                            <h3 class="portfolio-title">Неоклассика</h3>
+                            <p class="portfolio-desc">Роскошь в современном прочтении классического стиля</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="bedroom">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio-4.jpg" alt="Лофт" class="img-fluid">
+                            <div class="portfolio-hover">
+                                <div class="hover-content">
+                                    <div class="hover-icon">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <a href="pages/works.html" class="hover-link">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Спальня</span>
+                                <span class="portfolio-year">2022</span>
+                            </div>
+                            <h3 class="portfolio-title">Лофт</h3>
+                            <p class="portfolio-desc">Индустриальный шик с теплым домашним уютом</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-navigation">
+                <div class="nav-counter">
+                    <span class="current-slide">01</span>
+                    <span class="slide-separator">/</span>
+                    <span class="total-slides">04</span>
+                </div>
+                <div class="nav-arrows">
+                    <button class="nav-arrow prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="nav-arrow next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <a href="pages/works.html" class="btn btn-portfolio">
+                    <span class="btn-text">Все проекты</span>
+                    <span class="btn-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Процесс работы -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Как мы работаем</h2>
+                <p class="section-subtitle">Этапы создания вашей идеальной кухни</p>
+            </div>
+
+            <div class="process-cards">
+                <div class="process-card">
+                    <div class="process-card-inner">
+                        <div class="process-card-front">
+                            <div class="process-number">01</div>
+                            <div class="process-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="process-content-wrap">
+                                <h3 class="process-title">Консультация</h3>
+                                <p class="process-text">Встреча с дизайнером, обсуждение пожеланий и требований</p>
+                            </div>
+                        </div>
+                        <div class="process-card-back">
+                            <div class="process-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="process-content-wrap">
+                                <h3 class="process-title">Персональный подход</h3>
+                                <p class="process-detail">Наш дизайнер внимательно изучит ваши предпочтения, образ жизни и особенности помещения.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-card-inner">
+                        <div class="process-card-front">
+                            <div class="process-number">02</div>
+                            <div class="process-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                                </svg>
+                            </div>
+                            <div class="process-content-wrap">
+                                <h3 class="process-title">Проектирование</h3>
+                                <p class="process-text">Разработка дизайн-проекта и составление сметы</p>
+                            </div>
+                        </div>
+                        <div class="process-card-back">
+                            <div class="process-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                                </svg>
+                            </div>
+                            <div class="process-content-wrap">
+                                <h3 class="process-title">Точность в деталях</h3>
+                                <p class="process-detail">Создаем 3D-визуализацию с точностью до миллиметра для вашего утверждения.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-card-inner">
+                        <div class="process-card-front">
+                            <div class="process-number">03</div>
+                            <div class="process-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 22V8"></path>
+                                    <path d="M5 12H2a10 10 0 0 0 20 0h-3"></path>
+                                    <path d="M8 5.2c0 1.8-.5 3.5-1.5 5.1"></path>
+                                    <path d="M16 5.2c0 1.8.5 3.5 1.5 5.1"></path>
+                                </svg>
+                            </div>
+                            <div class="process-content-wrap">
+                                <h3 class="process-title">Производство</h3>
+                                <p class="process-text">Изготовление мебели в нашем производственном цехе</p>
+                            </div>
+                        </div>
+                        <div class="process-card-back">
+                            <div class="process-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 22V8"></path>
+                                    <path d="M5 12H2a10 10 0 0 0 20 0h-3"></path>
+                                    <path d="M8 5.2c0 1.8-.5 3.5-1.5 5.1"></path>
+                                    <path d="M16 5.2c0 1.8.5 3.5 1.5 5.1"></path>
+                                </svg>
+                            </div>
+                            <div class="process-content-wrap">
+                                <h3 class="process-title">Мастерство исполнения</h3>
+                                <p class="process-detail">Используем только премиальные материалы и современное оборудование.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-card-inner">
+                        <div class="process-card-front">
+                            <div class="process-number">04</div>
+                            <div class="process-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M3 3h18v18H3z"></path>
+                                    <path d="M21 12H3"></path>
+                                    <path d="M12 3v18"></path>
+                                </svg>
+                            </div>
+                            <div class="process-content-wrap">
+                                <h3 class="process-title">Монтаж</h3>
+                                <p class="process-text">Профессиональная установка и настройка всех элементов</p>
+                            </div>
+                        </div>
+                        <div class="process-card-back">
+                            <div class="process-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M3 3h18v18H3z"></path>
+                                    <path d="M21 12H3"></path>
+                                    <path d="M12 3v18"></path>
+                                </svg>
+                            </div>
+                            <div class="process-content-wrap">
+                                <h3 class="process-title">Идеальная реализация</h3>
+                                <p class="process-detail">Команда специалистов тщательно устанавливает каждый элемент проекта.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-progress">
+                <div class="process-progress-bar"></div>
+            </div>
+
+            <div class="process-mobile-hint">
+                <span>Нажмите на карточку, чтобы увидеть подробности</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="testimonials">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Отзывы клиентов</h2>
+                <p class="section-subtitle">Что говорят о нас наши клиенты</p>
+            </div>
+
+            <div class="testimonials-gallery">
+                <div class="testimonial-wall">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">Безупречное качество и индивидуальный подход превзошли все мои ожидания. Кухня стала настоящим украшением нашего дома!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://i.pravatar.cc/100?img=1" alt="Аватар клиента">
+                            </div>
+                            <div class="author-details">
+                                <h4 class="author-name">Елена Викторовна</h4>
+                                <p class="author-position">Москва</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">Профессиональная команда, внимание к деталям и премиальное качество. Очень доволен результатом и рекомендую всем!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://i.pravatar.cc/100?img=11" alt="Аватар клиента">
+                            </div>
+                            <div class="author-details">
+                                <h4 class="author-name">Алексей Михайлович</h4>
+                                <p class="author-position">Московская область</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">Сотрудничество с Бутиком Авторской Кухни было потрясающим опытом. От первой встречи до финальной установки — всё превзошло ожидания.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://i.pravatar.cc/100?img=5" alt="Аватар клиента">
+                            </div>
+                            <div class="author-details">
+                                <h4 class="author-name">Марина Сергеевна</h4>
+                                <p class="author-position">Москва</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">Дизайнеры компании создали для нас уникальное пространство, где каждая деталь продумана. Идеальное сочетание эстетики и функциональности.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://i.pravatar.cc/100?img=12" alt="Аватар клиента">
+                            </div>
+                            <div class="author-details">
+                                <h4 class="author-name">Дмитрий и Екатерина</h4>
+                                <p class="author-position">Москва</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">Особенно впечатлила точность исполнения проекта и качество материалов. Уже третий год пользуемся кухней и она выглядит как новая!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://i.pravatar.cc/100?img=9" alt="Аватар клиента">
+                            </div>
+                            <div class="author-details">
+                                <h4 class="author-name">Николай Александрович</h4>
+                                <p class="author-position">Подмосковье</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">Благодарю команду за творческий подход и высочайший профессионализм. Мебель, созданная вами, вызывает восхищение у всех гостей!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://i.pravatar.cc/100?img=3" alt="Аватар клиента">
+                            </div>
+                            <div class="author-details">
+                                <h4 class="author-name">Ирина Владимировна</h4>
+                                <p class="author-position">Московская область</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-experience">
+                <div class="experience-buttons">
+                    <button class="experience-button active" data-mode="perspective">
+                        <span class="button-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 19 21 12 17 5 21 12 2"></polygon>
+                            </svg>
+                        </span>
+                        3D Вид
+                    </button>
+                    <button class="experience-button" data-mode="grid">
+                        <span class="button-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                        </span>
+                        Сетка
+                    </button>
+                </div>
+                <p class="experience-text">Нажмите на отзыв, чтобы выделить его, или передвигайте мышью для интерактивного эффекта</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section class="contact-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-content">
+                        <h2 class="section-title">Свяжитесь с нами</h2>
+                        <p class="form-text">Оставьте заявку, и наш специалист свяжется с вами в ближайшее время</p>
+
+                        <form id="contactForm" action="includes/send-email.php" method="POST">
+                            <div class="form-floating mb-4">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Ваше имя" required>
+                                <label for="name">Ваше имя</label>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ваш телефон" required>
+                                <label for="phone">Ваш телефон</label>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <textarea class="form-control" id="message" name="message" placeholder="Ваше сообщение" style="height: 120px"></textarea>
+                                <label for="message">Ваше сообщение</label>
+                            </div>
+
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="agreement" name="agreement" required>
+                                <label class="form-check-label" for="agreement">
+                                    Я согласен с <a href="pages/privacy.html">политикой конфиденциальности</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="contact-image">
+                        <img src="images/contact-image.jpg" alt="Связаться с нами" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-logo">
+                        <a href="index.html" class="logo-link">
+                            <span class="logo-text">Бутик</span>
+                            <span class="logo-accent">Авторской Кухни</span>
+                        </a>
+                    </div>
+                    <p class="footer-description">Эксклюзивные кухни и мебель премиум-класса по индивидуальным заказам</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="pages/about.html">О нас</a></li>
+                        <li><a href="pages/works.html">Наши работы</a></li>
+                        <li><a href="pages/custom-order.html">Индивидуальный заказ</a></li>
+                        <li><a href="pages/contacts.html">Контакты</a></li>
+                        <li><a href="pages/privacy.html">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h3 class="footer-title">Контакты</h3>
+                    <ul class="footer-contacts">
+                        <li>
+                            <span class="contact-icon"></span>
+                            <span class="contact-text">г. Москва, 4-я Ватутинская ул., дом 7, стр. 21</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon"></span>
+                            <span class="contact-text">+7 926 668-15-79</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon"></span>
+                            <a href="mailto:info@author-kitchen_msk.ru" class="contact-link">info@author-kitchen_msk.ru</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Бутик Авторской Кухни. Все права защищены.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link">VK</a>
+                    <a href="#" class="social-link">WhatsApp</a>
+                    <a href="#" class="social-link">Telegram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/workflow-animation.js"></script>
+    <script src="js/testimonials-experience.js"></script>
+    <script src="js/contact-form-experience.js"></script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(XXXXXXXX, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</body>
+
+</html>

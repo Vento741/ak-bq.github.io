@@ -1,0 +1,706 @@
+/* Стили для инновационного раздела отзывов */
+
+.testimonials {
+    padding: 80px 0;
+    position: relative;
+    background-color: #0D0D0D;
+    color: white;
+    overflow: hidden;
+}
+
+
+/* Фоновые элементы */
+
+.testimonials::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -30%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(ellipse at center, rgba(227, 135, 79, 0.1) 0%, rgba(227, 135, 79, 0) 70%);
+    transform: rotate(-45deg);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.testimonials .section-header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.testimonials .section-title {
+    color: white;
+    position: relative;
+    display: inline-block;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.testimonials .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--color-primary);
+}
+
+.testimonials .section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+}
+
+
+/* Панель с цитатами */
+
+.testimonials-gallery {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    perspective: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 500px;
+}
+
+.testimonial-wall {
+    position: relative;
+    transform-style: preserve-3d;
+    width: 100%;
+    transition: transform 1s ease;
+}
+
+
+/* Отдельные карточки отзывов */
+
+.testimonial-card {
+    position: absolute;
+    width: 280px;
+    min-height: 280px;
+    background: linear-gradient(145deg, #161616, #1d1d1d);
+    border-radius: 10px;
+    padding: 25px;
+    transform-origin: center center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    backface-visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    transform: scale(0.8) translateZ(0);
+    opacity: 0.6;
+}
+
+.testimonial-card.active {
+    transform: scale(1) translateZ(50px);
+    opacity: 1;
+    z-index: 10;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 25px 50px rgba(227, 135, 79, 0.2);
+}
+
+
+/* Позиционирование карточек */
+
+.testimonial-card:nth-child(1) {
+    top: 0;
+    left: 10%;
+}
+
+.testimonial-card:nth-child(2) {
+    top: 15%;
+    left: 35%;
+}
+
+.testimonial-card:nth-child(3) {
+    top: 10%;
+    left: 60%;
+}
+
+.testimonial-card:nth-child(4) {
+    top: 35%;
+    left: 20%;
+}
+
+.testimonial-card:nth-child(5) {
+    top: 30%;
+    left: 70%;
+}
+
+.testimonial-card:nth-child(6) {
+    top: 60%;
+    left: 40%;
+}
+
+.testimonial-quote {
+    font-size: 40px;
+    color: var(--color-primary);
+    opacity: 0.3;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: Georgia, serif;
+}
+
+.testimonial-text {
+    margin-top: 25px;
+    font-size: 15px;
+    line-height: 1.6;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+}
+
+.testimonial-author {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 12px;
+    border: 2px solid var(--color-primary);
+}
+
+.author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-details {
+    flex: 1;
+}
+
+.author-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    margin: 0;
+}
+
+.author-position {
+    font-size: 12px;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.testimonial-rating {
+    display: flex;
+    margin-top: 10px;
+}
+
+.rating-star {
+    color: var(--color-primary);
+    font-size: 12px;
+    margin-right: 2px;
+}
+
+
+/* Эффект глубины и интерактивности */
+
+.testimonial-experience {
+    position: relative;
+    margin-top: 50px;
+    text-align: center;
+    z-index: 2;
+}
+
+.experience-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.experience-button {
+    background: transparent;
+    border: 1px solid rgba(227, 135, 79, 0.5);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.experience-button:hover {
+    background-color: rgba(227, 135, 79, 0.1);
+    border-color: var(--color-primary);
+}
+
+.experience-button.active {
+    background-color: rgba(227, 135, 79, 0.2);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 10px rgba(227, 135, 79, 0.3);
+}
+
+.button-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.experience-text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.4;
+    z-index: 0;
+    background: var(--color-primary);
+    animation: orbFloat 8s infinite ease-in-out;
+}
+
+.orb-1 {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -150px;
+    left: -150px;
+    background: rgba(227, 195, 79, 0.3);
+    animation-delay: 2s;
+}
+
+@keyframes orbFloat {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(30px, -30px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+/* Стили для режима сетки (grid) */
+
+.testimonial-wall.grid-mode {
+    transform: rotateX(5deg) rotateY(0) !important;
+}
+
+.testimonial-card.grid-item {
+    position: relative !important;
+    margin-bottom: 20px;
+    transform: none !important;
+    left: auto !important;
+    top: auto !important;
+    opacity: 1 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.testimonial-card.grid-item:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 30px rgba(227, 135, 79, 0.3) !important;
+}
+
+
+/* Адаптивность */
+
+@media (max-width: 991.98px) {
+    .testimonial-card {
+        width: 240px;
+    }
+    .testimonial-card:nth-child(1) {
+        top: 0;
+        left: 5%;
+    }
+    .testimonial-card:nth-child(2) {
+        top: 15%;
+        left: 30%;
+    }
+    .testimonial-card:nth-child(3) {
+        top: 10%;
+        left: 55%;
+    }
+    .testimonial-card:nth-child(4) {
+        top: 45%;
+        left: 15%;
+    }
+    .testimonial-card:nth-child(5) {
+        top: 40%;
+        left: 65%;
+    }
+    .testimonial-card:nth-child(6) {
+        top: 70%;
+        left: 35%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .testimonials-gallery {
+        min-height: 700px;
+    }
+    .testimonial-card {
+        width: 220px;
+    }
+    .testimonial-card:nth-child(1) {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) scale(0.8);
+    }
+    .testimonial-card:nth-child(2) {
+        top: 120px;
+        left: 50%;
+        transform: translateX(-50%) scale(0.8);
+    }
+    .testimonial-card:nth-child(3) {
+        top: 240px;
+        left: 50%;
+        transform: translateX(-50%) scale(0.8);
+    }
+    .testimonial-card:nth-child(4) {
+        top: 360px;
+        left: 50%;
+        transform: translateX(-50%) scale(0.8);
+    }
+    .testimonial-card:nth-child(5) {
+        top: 480px;
+        left: 50%;
+        transform: translateX(-50%) scale(0.8);
+    }
+    .testimonial-card:nth-child(6) {
+        top: 600px;
+        left: 50%;
+        transform: translateX(-50%) scale(0.8);
+    }
+    .testimonial-card.active {
+        transform: translateX(-50%) scale(1);
+    }
+    /* Уменьшаем угол наклона для режима сетки на мобильных */
+    .testimonial-wall.grid-mode {
+        transform: rotateX(0) rotateY(0) !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .testimonials {
+        padding: 60px 0;
+    }
+    .testimonials .section-title {
+        font-size: 32px;
+    }
+    .testimonials .section-subtitle {
+        font-size: 14px;
+    }
+    .testimonials-gallery {
+        min-height: 800px;
+    }
+    .experience-buttons {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .experience-text {
+        font-size: 12px;
+        max-width: 290px;
+    }
+    .testimonial-card {
+        width: 90%;
+        min-height: 240px;
+        padding: 20px;
+    }
+    .testimonial-text {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .testimonial-card:nth-child(1) {
+        top: 0;
+    }
+    .testimonial-card:nth-child(2) {
+        top: 130px;
+    }
+    .testimonial-card:nth-child(3) {
+        top: 260px;
+    }
+    .testimonial-card:nth-child(4) {
+        top: 390px;
+    }
+    .testimonial-card:nth-child(5) {
+        top: 520px;
+    }
+    .testimonial-card:nth-child(6) {
+        top: 650px;
+    }
+    /* Стили для режима сетки на малых экранах */
+    .testimonial-card.grid-item {
+        width: 85% !important;
+        margin: 0 auto 25px;
+    }
+    /* Убираем прокрутку при сетке на малых устройствах */
+    .testimonials-gallery.grid-mode-active {
+        overflow-y: visible;
+        overflow-x: hidden;
+        padding-bottom: 30px;
+    }
+}
+
+
+/* Адаптация для экранов 320-425px */
+
+@media (max-width: 425px) {
+    .testimonials {
+        padding: 50px 0;
+    }
+    .testimonials .section-header {
+        margin-bottom: 50px;
+    }
+    .testimonials .section-title {
+        font-size: 28px;
+    }
+    .testimonials-gallery {
+        min-height: 900px;
+    }
+    .testimonial-card {
+        width: 95%;
+        min-height: 220px;
+        padding: 18px;
+    }
+    .testimonial-quote {
+        font-size: 32px;
+    }
+    .testimonial-text {
+        margin-top: 20px;
+        font-size: 13px;
+    }
+    .author-avatar {
+        width: 36px;
+        height: 36px;
+    }
+    .author-name {
+        font-size: 14px;
+    }
+    .author-position {
+        font-size: 11px;
+    }
+    .experience-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    .button-icon {
+        width: 16px;
+        height: 16px;
+    }
+    .orb-1 {
+        width: 150px;
+        height: 150px;
+    }
+    .orb-2 {
+        width: 200px;
+        height: 200px;
+    }
+    .testimonial-card:nth-child(2) {
+        top: 120px;
+    }
+    .testimonial-card:nth-child(3) {
+        top: 240px;
+    }
+    .testimonial-card:nth-child(4) {
+        top: 360px;
+    }
+    .testimonial-card:nth-child(5) {
+        top: 480px;
+    }
+    .testimonial-card:nth-child(6) {
+        top: 600px;
+    }
+    /* Стили для режима сетки */
+    .testimonial-card.grid-item {
+        width: 90% !important;
+        min-height: 200px;
+        margin: 0 auto 20px;
+    }
+}
+
+
+/* Специфичные стили для экранов 320px */
+
+@media (max-width: 375px) {
+    .testimonials {
+        padding: 40px 0 50px;
+    }
+    .testimonials .section-title {
+        font-size: 26px;
+    }
+    .testimonials .section-subtitle {
+        font-size: 13px;
+    }
+    .testimonials-gallery {
+        min-height: 950px;
+    }
+    .testimonial-card {
+        min-height: 210px;
+        padding: 15px;
+    }
+    .testimonial-text {
+        margin-top: 18px;
+        font-size: 12px;
+    }
+    .testimonial-author {
+        margin-top: 15px;
+    }
+    .author-avatar {
+        width: 32px;
+        height: 32px;
+    }
+    .testimonial-quote {
+        font-size: 28px;
+    }
+    .experience-button {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    .experience-buttons {
+        justify-content: space-around;
+        width: 100%;
+    }
+    .experience-text {
+        font-size: 11px;
+        max-width: 260px;
+    }
+    /* Увеличиваем расстояние между карточками для лучшей читаемости */
+    .testimonial-card:nth-child(1) {
+        top: 0;
+    }
+    .testimonial-card:nth-child(2) {
+        top: 130px;
+    }
+    .testimonial-card:nth-child(3) {
+        top: 260px;
+    }
+    .testimonial-card:nth-child(4) {
+        top: 390px;
+    }
+    .testimonial-card:nth-child(5) {
+        top: 520px;
+    }
+    .testimonial-card:nth-child(6) {
+        top: 650px;
+    }
+    /* Стили для режима сетки */
+    .testimonial-card.grid-item {
+        width: 95% !important;
+        min-height: 190px;
+        margin: 0 auto 15px;
+        padding: 14px;
+    }
+    .testimonial-card.grid-item .testimonial-text {
+        font-size: 11px;
+        margin-top: 16px;
+    }
+}
+
+
+/* Ультра-маленькие экраны (320px) */
+
+@media (max-width: 320px) {
+    .testimonials .section-title {
+        font-size: 24px;
+    }
+    .testimonials-gallery {
+        min-height: 1000px;
+    }
+    .testimonial-card {
+        width: 100%;
+        min-height: 200px;
+        padding: 12px;
+    }
+    .testimonial-quote {
+        font-size: 24px;
+        top: 8px;
+        left: 8px;
+    }
+    .testimonial-text {
+        font-size: 11px;
+        margin-top: 16px;
+    }
+    .author-name {
+        font-size: 12px;
+    }
+    .author-position {
+        font-size: 10px;
+    }
+    .rating-star {
+        font-size: 10px;
+    }
+    .experience-buttons {
+        gap: 5px;
+    }
+    .experience-button {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+    .button-icon {
+        width: 14px;
+        height: 14px;
+        margin-right: 5px;
+    }
+    .experience-text {
+        font-size: 10px;
+        max-width: 240px;
+    }
+    /* Увеличиваем высоту секции для отображения всех карточек */
+    .testimonial-card:nth-child(1) {
+        top: 0;
+    }
+    .testimonial-card:nth-child(2) {
+        top: 135px;
+    }
+    .testimonial-card:nth-child(3) {
+        top: 270px;
+    }
+    .testimonial-card:nth-child(4) {
+        top: 405px;
+    }
+    .testimonial-card:nth-child(5) {
+        top: 540px;
+    }
+    .testimonial-card:nth-child(6) {
+        top: 675px;
+    }
+    /* Стили для режима сетки */
+    .testimonial-card.grid-item {
+        width: 100% !important;
+        min-height: 180px;
+        margin: 0 auto 15px;
+        padding: 12px;
+    }
+    .testimonial-card.grid-item .testimonial-text {
+        font-size: 10px;
+        margin-top: 15px;
+        line-height: 1.4;
+    }
+    .testimonial-card.grid-item .author-avatar {
+        width: 28px;
+        height: 28px;
+    }
+}

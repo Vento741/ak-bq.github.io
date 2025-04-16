@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Индивидуальный заказ мебели в Бутик Авторской Кухни - элитные кухни и мебель премиум-класса в Москве">
+    <meta name="keywords" content="индивидуальный заказ, авторская кухня, премиум мебель, элитные кухни Москва">
+    <title>Индивидуальный заказ - Бутик Авторской Кухни</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/320_375px.css" media="screen and (min-width: 320px) and (max-width: 375px)">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <style>
+        /* Дополнительные стили для страницы индивидуального заказа */
+        
+        .process-steps {
+            position: relative;
+            padding: 50px 0;
+        }
+        
+        .step-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            background-color: rgba(136, 106, 74, 0.2);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+        
+        .process-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .step-number {
+            flex: 0 0 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font-primary);
+            font-size: 36px;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-content {
+            flex: 1;
+            padding: 0 30px;
+        }
+        
+        .process-step:nth-child(odd) .step-content {
+            text-align: left;
+            padding-left: 50px;
+        }
+        
+        .process-step:nth-child(even) .step-content {
+            text-align: right;
+            padding-right: 50px;
+        }
+        
+        .step-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--color-dark);
+        }
+        
+        .step-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--color-light-grey);
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .option-item {
+            background-color: var(--color-white);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .option-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--color-primary);
+            transition: var(--transition);
+        }
+        
+        .option-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .option-icon {
+            margin-bottom: 20px;
+        }
+        
+        .option-icon span {
+            display: inline-block;
+            font-size: 40px;
+            color: var(--color-primary);
+        }
+        
+        .option-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .option-text {
+            font-size: 14px;
+            color: var(--color-light-grey);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .option-price {
+            font-family: var(--font-primary);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+        
+        .materials-section {
+            padding: 120px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .material-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .material-image {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .material-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .material-item:hover .material-image img {
+            transform: scale(1.1);
+        }
+        
+        .material-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .material-description {
+            font-size: 14px;
+            color: var(--color-light-grey);
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 991.98px) {
+            .process-step {
+                flex-direction: column !important;
+                align-items: center;
+                text-align: center !important;
+            }
+            .step-content {
+                padding: 30px 0 0 0 !important;
+            }
+            .options-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .materials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .options-grid,
+            .materials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Прелоадер -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div>
+    </div>
+
+    <!-- Навигация -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="../index.html" class="logo-link">
+                        <span class="logo-text">Бутик</span>
+                        <span class="logo-accent">Авторской Кухни</span>
+                    </a>
+                </div>
+
+                <div class="menu-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="../index.html" class="nav-link">Главная</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">О нас</a></li>
+                        <li class="nav-item"><a href="works.html" class="nav-link">Наши работы</a></li>
+                        <li class="nav-item"><a href="custom-order.html" class="nav-link active">Индивидуальный заказ</a></li>
+                        <li class="nav-item"><a href="contacts.html" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный экран -->
+    <section class="page-header">
+        <div class="page-header-image" style="background-image: url('../images/custom-order-header.jpg');">
+            <div class="page-header-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Индивидуальный заказ</h1>
+                <div class="breadcrumbs">
+                    <a href="../index.html" class="breadcrumb-item">Главная</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item active">Индивидуальный заказ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Процесс создания мебели -->
+    <section class="process-detailed reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Процесс создания</h2>
+                <p class="section-subtitle">Этапы работы над индивидуальным проектом</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="step-line"></div>
+
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Консультация</h3>
+                        <p class="step-description">Первая встреча с дизайнером в нашем шоуруме или на объекте заказчика. На этом этапе мы обсуждаем ваши пожелания, требования и особенности помещения. Дизайнер предложит различные варианты решений и материалов, которые подойдут для
+                            вашего проекта.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Замеры и проектирование</h3>
+                        <p class="step-description">Наш специалист проводит точные замеры помещения. На основе полученных данных дизайнер создаёт 3D-визуализацию будущей мебели, учитывая все технические особенности и ваши предпочтения по стилю и материалам. После согласования проекта
+                            составляется детальная смета.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Производство</h3>
+                        <p class="step-description">После утверждения проекта и внесения предоплаты начинается производственный процесс. Мы закупаем необходимые материалы и фурнитуру, изготавливаем все элементы мебели на нашем производстве с использованием современного оборудования.
+                            Весь процесс находится под строгим контролем качества.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Доставка и монтаж</h3>
+                        <p class="step-description">Готовая мебель доставляется на объект и устанавливается нашими опытными монтажниками. Все работы проводятся бережно и аккуратно, с соблюдением всех технических требований. После завершения монтажа проводится финальная настройка
+                            и проверка функциональности всех элементов.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Приёмка и гарантийное обслуживание</h3>
+                        <p class="step-description">После завершения всех работ вы принимаете готовый проект. Мы предоставляем пожизненную гарантию на наши изделия и обеспечиваем послепродажное обслуживание. Наши специалисты всегда готовы прийти на помощь, если возникнут какие-либо
+                            вопросы или потребуются консультации по эксплуатации.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Варианты комплектации -->
+    <section class="options reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Варианты комплектации</h2>
+                <p class="section-subtitle">Выберите оптимальное решение для ваших потребностей</p>
+            </div>
+
+            <div class="options-grid">
+                <div class="option-item">
+                    <div class="option-icon">
+                        <span>★</span>
+                    </div>
+                    <h3 class="option-title">Стандарт</h3>
+                    <p class="option-text">Базовая комплектация с использованием качественных материалов и фурнитуры. Оптимальное сочетание цены и качества для тех, кто ценит надёжность и функциональность.</p>
+                    <div class="option-price">от 200 000 ₽</div>
+                    <a href="#contact-form" class="btn btn-outline">Подробнее</a>
+                </div>
+
+                <div class="option-item">
+                    <div class="option-icon">
+                        <span>★★</span>
+                    </div>
+                    <h3 class="option-title">Премиум</h3>
+                    <p class="option-text">Расширенная комплектация с использованием премиальных материалов и брендовой фурнитуры. Идеальное решение для тех, кто хочет получить эксклюзивное изделие с повышенным комфортом.</p>
+                    <div class="option-price">от 350 000 ₽</div>
+                    <a href="#contact-form" class="btn btn-outline">Подробнее</a>
+                </div>
+
+                <div class="option-item">
+                    <div class="option-icon">
+                        <span>★★★</span>
+                    </div>
+                    <h3 class="option-title">Люкс</h3>
+                    <p class="option-text">Эксклюзивная комплектация с использованием материалов и фурнитуры класса люкс. Для тех, кто ценит безупречное качество, роскошь и абсолютный комфорт без компромиссов.</p>
+                    <div class="option-price">от 500 000 ₽</div>
+                    <a href="#contact-form" class="btn btn-outline">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Материалы -->
+    <section class="materials-section reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Материалы</h2>
+                <p class="section-subtitle">Использование только лучших материалов</p>
+            </div>
+
+            <div class="materials-grid">
+                <div class="material-item">
+                    <div class="material-image">
+                        <img src="../images/material-1.jpg" alt="Массив дерева">
+                    </div>
+                    <h3 class="material-title">Массив дерева</h3>
+                    <p class="material-description">Натуральная красота и экологичность. Мы работаем с различными породами дерева: дуб, ясень, орех, клён и другие.</p>
+                </div>
+
+                <div class="material-item">
+                    <div class="material-image">
+                        <img src="../images/material-2.jpg" alt="Природный камень">
+                    </div>
+                    <h3 class="material-title">Природный камень</h3>
+                    <p class="material-description">Элегантность и долговечность. Мрамор, гранит, кварц и другие виды природного и искусственного камня.</p>
+                </div>
+
+                <div class="material-item">
+                    <div class="material-image">
+                        <img src="../images/material-3.jpg" alt="Премиальная фурнитура">
+                    </div>
+                    <h3 class="material-title">Премиальная фурнитура</h3>
+                    <p class="material-description">Надёжность и комфорт. Используем фурнитуру от ведущих мировых производителей: Blum, Hafele, Hettich.</p>
+                </div>
+
+                <div class="material-item">
+                    <div class="material-image">
+                        <img src="../images/material-4.jpg" alt="Эксклюзивные отделки">
+                    </div>
+                    <h3 class="material-title">Эксклюзивные отделки</h3>
+                    <p class="material-description">Уникальность и роскошь. Натуральный шпон, кожа, стекло, металл и другие материалы для изысканной отделки.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section id="contact-form" class="contact-form reveal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-content">
+                        <h2 class="section-title">Заказать консультацию</h2>
+                        <p class="form-text">Оставьте заявку, и наш дизайнер свяжется с вами для обсуждения деталей</p>
+
+                        <form id="contactForm" action="../includes/send-email.php" method="POST">
+                            <div class="form-floating mb-4">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Ваше имя" required>
+                                <label for="name">Ваше имя</label>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ваш телефон" required>
+                                <label for="phone">Ваш телефон</label>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <textarea class="form-control" id="message" name="message" placeholder="Ваше сообщение" style="height: 120px"></textarea>
+                                <label for="message">Опишите ваш проект</label>
+                            </div>
+
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="agreement" name="agreement" required>
+                                <label class="form-check-label" for="agreement">
+                                    Я согласен с <a href="privacy.html">политикой конфиденциальности</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="contact-image">
+                        <img src="../images/contact-image-3.jpg" alt="Заказать консультацию" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-logo">
+                        <a href="../index.html" class="logo-link">
+                            <span class="logo-text">Бутик</span>
+                            <span class="logo-accent">Авторской Кухни</span>
+                        </a>
+                    </div>
+                    <p class="footer-description">Эксклюзивные кухни и мебель премиум-класса по индивидуальным заказам</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-nav">
+                        <li><a href="../index.html">Главная</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="works.html">Наши работы</a></li>
+                        <li><a href="custom-order.html">Индивидуальный заказ</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h3 class="footer-title">Контакты</h3>
+                    <ul class="footer-contacts">
+                        <li>
+                            <span class="contact-icon"></span>
+                            <span class="contact-text">г. Москва, 4-я Ватутинская ул., дом 7, стр. 21</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon"></span>
+                            <span class="contact-text">+7 926 668-15-79</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon"></span>
+                            <a href="mailto:info@author-kitchen_msk.ru" class="contact-link">info@author-kitchen_msk.ru</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Бутик Авторской Кухни. Все права защищены.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link">VK</a>
+                    <a href="#" class="social-link">WhatsApp</a>
+                    <a href="#" class="social-link">Telegram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(XXXXXXXX, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</body>
+
+</html>

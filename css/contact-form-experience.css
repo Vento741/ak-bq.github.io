@@ -1,0 +1,539 @@
+/* Стили для инновационной формы обратной связи */
+
+:root {
+    --color-primary: #e3874f;
+    --color-primary-light: rgba(227, 135, 79, 0.2);
+    --color-primary-dark: #c26a38;
+    --color-success: #43a047;
+    --color-error: #e53935;
+    --transition-base: all 0.3s ease;
+}
+
+.contact-form {
+    position: relative;
+    padding: 100px 0;
+    background-color: #f8f8f8;
+    overflow: hidden;
+}
+
+
+/* Фоновые элементы */
+
+.contact-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(227, 135, 79, 0.07) 0%, rgba(227, 135, 79, 0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.contact-form::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+/* Основные стили формы */
+
+.form-content {
+    position: relative;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    z-index: 1;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.form-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .section-title {
+    font-size: 38px;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.contact-form .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.form-content:hover .section-title::after {
+    width: 100px;
+}
+
+.form-text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+
+/* Стилизация полей ввода */
+
+.form-control {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 15px;
+    background-color: #f8f8f8;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(227, 135, 79, 0.2);
+    transform: translateY(-2px);
+}
+
+.form-floating {
+    position: relative;
+    transition: var(--transition-base);
+}
+
+.form-floating.focused label {
+    color: var(--color-primary);
+    transform: scale(0.8) translateY(-0.5rem) translateX(0.15rem);
+}
+
+.form-floating label {
+    color: #777;
+    padding: 12px 15px;
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    color: var(--color-primary);
+    transform: scale(0.8) translateY(-0.5rem) translateX(0.15rem);
+}
+
+.form-check-input {
+    border-color: #ddd;
+}
+
+.form-check-input:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.form-check-label {
+    font-size: 14px;
+    color: #777;
+}
+
+.form-check-label a {
+    color: var(--color-primary);
+    text-decoration: none;
+    position: relative;
+}
+
+.form-check-label a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.form-check-label a:hover::after {
+    width: 100%;
+}
+
+
+/* Стили для валидации */
+
+.form-control.is-valid {
+    border-color: var(--color-success);
+    background-color: rgba(67, 160, 71, 0.05);
+}
+
+.form-control.is-invalid {
+    border-color: var(--color-error);
+    background-color: rgba(229, 57, 53, 0.05);
+}
+
+
+/* Кнопка отправки */
+
+.contact-form .btn-primary {
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.contact-form .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+    z-index: -1;
+}
+
+.contact-form .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(227, 135, 79, 0.3);
+}
+
+.contact-form .btn-primary:hover::before {
+    left: 100%;
+}
+
+
+/* Эффект материальной волны для кнопок */
+
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+
+/* Изображение контакта */
+
+.contact-image {
+    position: relative;
+    z-index: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    min-height: 400px;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+}
+
+.contact-image:hover {
+    transform: translateY(-5px);
+}
+
+.contact-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s ease;
+}
+
+.contact-image:hover img {
+    transform: scale(1.05);
+}
+
+.contact-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 2;
+}
+
+
+/* Анимации появления элементов */
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-content,
+.contact-image {
+    animation: slideUp 0.8s ease forwards;
+}
+
+.contact-image {
+    animation-delay: 0.2s;
+}
+
+
+/* Анимация при скролле */
+
+.form-content:not(.animate),
+.contact-image:not(.animate) {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.form-content.animate,
+.contact-image.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
+/* Индикатор ошибки и успеха */
+
+.form-validation-message {
+    display: none;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.form-validation-message.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #43a047;
+    border-left: 3px solid #43a047;
+    display: block;
+}
+
+.form-validation-message.error {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #e53935;
+    border-left: 3px solid #e53935;
+    display: block;
+}
+
+
+/* Анимация дрожания для сообщений об ошибке */
+
+.shake-animation {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+
+/* Анимация успешной отправки */
+
+.success-animation {
+    animation: successPulse 1s ease;
+}
+
+@keyframes successPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(67, 160, 71, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(67, 160, 71, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(67, 160, 71, 0);
+    }
+}
+
+
+/* Индикатор загрузки */
+
+.form-loading {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.form-loading.active {
+    display: flex;
+}
+
+.form-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(227, 135, 79, 0.2);
+    border-top: 3px solid var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Адаптивность */
+
+@media (max-width: 1199.98px) {
+    .contact-form {
+        padding: 80px 0;
+    }
+    .form-content,
+    .contact-image {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .contact-form .section-title {
+        font-size: 32px;
+    }
+    .contact-image {
+        min-height: 350px;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .contact-form {
+        padding: 60px 0;
+    }
+    .form-content {
+        padding: 30px;
+    }
+    .contact-form .section-title {
+        font-size: 28px;
+    }
+    .contact-image {
+        display: none;
+    }
+    .form-content {
+        margin-bottom: 0;
+    }
+    .contact-form .col-lg-6 {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .contact-form {
+        padding: 50px 0;
+    }
+    .form-content {
+        padding: 25px;
+    }
+    .contact-form .section-title {
+        font-size: 26px;
+    }
+    .form-text {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .contact-image {
+        min-height: 300px;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 425px) {
+    .contact-form {
+        padding: 40px 0;
+    }
+    .form-content {
+        padding: 20px;
+    }
+    .contact-form .section-title {
+        font-size: 24px;
+    }
+    .form-floating {
+        margin-bottom: 15px !important;
+    }
+    .contact-form .btn-primary {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .form-content {
+        padding: 15px;
+    }
+    .contact-form .section-title {
+        font-size: 22px;
+    }
+    .form-text {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    .form-check-label {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .contact-form .section-title {
+        font-size: 20px;
+    }
+    .form-text {
+        font-size: 12px;
+    }
+    .contact-image {
+        min-height: 250px;
+    }
+}
