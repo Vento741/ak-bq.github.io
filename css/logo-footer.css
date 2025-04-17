@@ -1,0 +1,84 @@
+/* Стилизация логотипа в футере */
+
+.footer-logo .logo-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 0;
+    /* Отличие от основного логотипа - меньший отступ */
+}
+
+.footer-logo .logo-text {
+    font-size: 24px;
+    /* Немного меньше, чем в шапке */
+    margin-right: 12px;
+    background: linear-gradient(135deg, #c29d59 0%, #e6b980 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-logo .logo-text::after {
+    content: '‖';
+    position: absolute;
+    top: 50%;
+    right: -12px;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    color: #c29d59;
+    -webkit-text-fill-color: #c29d59;
+    font-weight: 300;
+    font-size: 120%;
+}
+
+.footer-logo .logo-accent {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #c29d59;
+    /* В футере сразу золотой цвет для контраста с темным фоном */
+}
+
+.footer-logo .logo-link:hover .logo-text {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #e94057 0%, #c29d59 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-logo .logo-link:hover .logo-text::after {
+    opacity: 0.7;
+    color: #e94057;
+    -webkit-text-fill-color: #e94057;
+    transform: translateY(-50%) rotate(15deg);
+}
+
+.footer-logo .logo-link:hover .logo-accent {
+    letter-spacing: 3px;
+    color: #e94057;
+}
+
+
+/* Медиа-запросы для адаптивности */
+
+@media (max-width: 767.98px) {
+    .footer-logo .logo-text {
+        font-size: 22px;
+    }
+    .footer-logo .logo-accent {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+}
+
+@media (max-width: 375px) {
+    .footer-logo .logo-text {
+        font-size: 20px;
+    }
+    .footer-logo .logo-accent {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+}

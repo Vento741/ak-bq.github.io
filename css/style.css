@@ -260,17 +260,6 @@ img {
 }
 
 
-/* === Кастомный курсор === */
-
-.cursor {
-    display: none;
-}
-
-.cursor-follower {
-    display: none;
-}
-
-
 /* === Хедер === */
 
 .header {
@@ -477,7 +466,7 @@ img {
 }
 
 .hero-title {
-    font-size: 64px;
+    font-size: 84px;
     font-weight: 700;
     margin-bottom: 20px;
     color: var(--color-white);

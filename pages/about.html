@@ -18,6 +18,10 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/logo-custom.css">
+    <link rel="stylesheet" href="../css/logo-footer.css">
+    <link rel="stylesheet" href="../css/about-new.css">
+    <link rel="stylesheet" href="../css/about-icons.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
@@ -90,7 +94,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="about-image">
+                    <div class="about-image float-animation">
                         <img src="../images/about-company.jpg" alt="Бутик Авторской Кухни" class="img-fluid">
                     </div>
                 </div>
@@ -109,7 +113,7 @@
     </section>
 
     <!-- Ценности компании -->
-    <section class="values reveal">
+    <section class="values diagonal-section reveal">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Наши ценности</h2>
@@ -178,7 +182,7 @@
 
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <div class="team-member">
+                    <div class="team-member hover-rotate">
                         <div class="member-image">
                             <img src="../images/team-1.jpg" alt="Алексей Иванов" class="img-fluid">
                         </div>
@@ -191,7 +195,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <div class="team-member">
+                    <div class="team-member hover-rotate">
                         <div class="member-image">
                             <img src="../images/team-2.jpg" alt="Елена Петрова" class="img-fluid">
                         </div>
@@ -204,7 +208,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <div class="team-member">
+                    <div class="team-member hover-rotate">
                         <div class="member-image">
                             <img src="../images/team-3.jpg" alt="Сергей Николаев" class="img-fluid">
                         </div>
@@ -220,7 +224,7 @@
     </section>
 
     <!-- Гарантия и сервис -->
-    <section class="warranty reveal">
+    <section class="warranty diagonal-section-reverse reveal">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -238,7 +242,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="warranty-image">
+                    <div class="warranty-image pulse-animation">
                         <img src="../images/warranty.jpg" alt="Гарантия и сервис" class="img-fluid">
                     </div>
                 </div>
@@ -278,7 +282,7 @@
                                 </label>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Отправить</button>
+                            <button type="submit" class="btn btn-primary hover-skew">Отправить</button>
                         </form>
                     </div>
                 </div>
@@ -355,6 +359,34 @@
 
     <!-- Custom JS -->
     <script src="../js/main.js"></script>
+
+    <!-- Animation script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Функция обнаружения элемента в видимой области
+            function isElementInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.75 &&
+                    rect.bottom >= 0
+                );
+            }
+
+            // Функция для активации анимации при скролле
+            function activateOnScroll() {
+                const elements = document.querySelectorAll('.reveal');
+                elements.forEach(element => {
+                    if (isElementInViewport(element)) {
+                        element.classList.add('active');
+                    }
+                });
+            }
+
+            // Вызываем функцию при загрузке и скролле
+            window.addEventListener('scroll', activateOnScroll);
+            activateOnScroll(); // Проверяем видимые элементы при загрузке
+        });
+    </script>
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
