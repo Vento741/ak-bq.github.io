@@ -9,7 +9,7 @@
 }
 
 .footer-logo .logo-text {
-    font-size: 24px;
+    font-size: 44px;
     /* Немного меньше, чем в шапке */
     margin-right: 12px;
     background: linear-gradient(135deg, #c29d59 0%, #e6b980 100%);
@@ -58,27 +58,4 @@
 .footer-logo .logo-link:hover .logo-accent {
     letter-spacing: 3px;
     color: #e94057;
-}
-
-
-/* Медиа-запросы для адаптивности */
-
-@media (max-width: 767.98px) {
-    .footer-logo .logo-text {
-        font-size: 22px;
-    }
-    .footer-logo .logo-accent {
-        font-size: 12px;
-        letter-spacing: 1.5px;
-    }
-}
-
-@media (max-width: 375px) {
-    .footer-logo .logo-text {
-        font-size: 20px;
-    }
-    .footer-logo .logo-accent {
-        font-size: 10px;
-        letter-spacing: 1px;
-    }
 }

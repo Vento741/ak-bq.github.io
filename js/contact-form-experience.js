@@ -116,28 +116,51 @@ document.addEventListener('DOMContentLoaded', () => {
         // Показываем индикатор загрузки
         loading.classList.add('active');
 
-        // Эмулируем отправку данных (в реальном проекте замените на fetch или XMLHttpRequest)
-        setTimeout(() => {
-            // Скрываем индикатор загрузки
-            loading.classList.remove('active');
+        // Отправляем данные через AJAX
+        const formData = new FormData(form);
 
-            // Показываем сообщение об успешной отправке
-            validationMessage.textContent = 'Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.';
-            validationMessage.className = 'form-validation-message success';
+        fetch('includes/send-email.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Скрываем индикатор загрузки
+                loading.classList.remove('active');
 
-            // Сбрасываем форму
-            form.reset();
-            inputs.forEach(input => {
-                input.classList.remove('is-valid');
+                if (data.success) {
+                    // Показываем сообщение об успешной отправке
+                    validationMessage.textContent = data.message || 'Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.';
+                    validationMessage.className = 'form-validation-message success';
+
+                    // Сбрасываем форму
+                    form.reset();
+                    inputs.forEach(input => {
+                        input.classList.remove('is-valid');
+                    });
+
+                    // Добавляем эффект успешной отправки
+                    formContent.classList.add('success-animation');
+                    setTimeout(() => {
+                        formContent.classList.remove('success-animation');
+                    }, 1000);
+                } else {
+                    // Показываем сообщение об ошибке
+                    validationMessage.textContent = data.message || 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.';
+                    validationMessage.className = 'form-validation-message error';
+                    shakeElement(validationMessage);
+                }
+            })
+            .catch(error => {
+                // Скрываем индикатор загрузки
+                loading.classList.remove('active');
+
+                // Показываем сообщение об ошибке
+                console.error('Ошибка:', error);
+                validationMessage.textContent = 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.';
+                validationMessage.className = 'form-validation-message error';
+                shakeElement(validationMessage);
             });
-
-            // Добавляем эффект успешной отправки
-            formContent.classList.add('success-animation');
-            setTimeout(() => {
-                formContent.classList.remove('success-animation');
-            }, 1000);
-
-        }, 1500); // Задержка для эмуляции отправки
     }
 
     // Эффект "дрожания" для элемента при ошибке

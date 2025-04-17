@@ -231,3 +231,16 @@
 .btn-portfolio {
     margin-top: 15px;
 }
+
+
+/* === Футер === */
+
+@media (max-width: 767.98px) {
+    .footer-logo .logo-text {
+        font-size: 22px;
+    }
+    .footer-logo .logo-accent {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+}
