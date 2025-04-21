@@ -1,0 +1,51 @@
+/* Дополнительные стили для логотипа */
+
+.logo-link {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Анимации для логотипа */
+
+@keyframes logo-appear {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logo-text-appear {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes logo-accent-appear {
+    0% {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Улучшения для мобильной версии */
+
+@media (max-width: 991.98px) {
+    .logo-link {
+        padding: 3px 5px;
+    }
+}

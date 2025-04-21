@@ -18,226 +18,14 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/logo-custom.css">
+    <link rel="stylesheet" href="../css/custom-order.css">
     <link rel="stylesheet" href="../css/logo-footer.css">
     <link rel="stylesheet" href="../css/320_375px.css" media="screen and (min-width: 320px) and (max-width: 375px)">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-
-    <style>
-        /* Дополнительные стили для страницы индивидуального заказа */
-        
-        .process-steps {
-            position: relative;
-            padding: 50px 0;
-        }
-        
-        .step-line {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 1px;
-            height: 100%;
-            background-color: rgba(136, 106, 74, 0.2);
-            transform: translateX(-50%);
-            z-index: 1;
-        }
-        
-        .process-step {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 80px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .process-step:last-child {
-            margin-bottom: 0;
-        }
-        
-        .process-step:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        
-        .step-number {
-            flex: 0 0 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-color: var(--color-primary);
-            color: var(--color-white);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: var(--font-primary);
-            font-size: 36px;
-            font-weight: 700;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .step-content {
-            flex: 1;
-            padding: 0 30px;
-        }
-        
-        .process-step:nth-child(odd) .step-content {
-            text-align: left;
-            padding-left: 50px;
-        }
-        
-        .process-step:nth-child(even) .step-content {
-            text-align: right;
-            padding-right: 50px;
-        }
-        
-        .step-title {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: var(--color-dark);
-        }
-        
-        .step-description {
-            font-size: 16px;
-            line-height: 1.8;
-            color: var(--color-light-grey);
-        }
-        
-        .options-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .option-item {
-            background-color: var(--color-white);
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .option-item:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--color-primary);
-            transition: var(--transition);
-        }
-        
-        .option-item:hover {
-            transform: translateY(-10px);
-        }
-        
-        .option-icon {
-            margin-bottom: 20px;
-        }
-        
-        .option-icon span {
-            display: inline-block;
-            font-size: 40px;
-            color: var(--color-primary);
-        }
-        
-        .option-title {
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .option-text {
-            font-size: 14px;
-            color: var(--color-light-grey);
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-        
-        .option-price {
-            font-family: var(--font-primary);
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: 20px;
-        }
-        
-        .materials-section {
-            padding: 120px 0;
-            background-color: #f9f9f9;
-        }
-        
-        .materials-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-        
-        .material-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .material-image {
-            width: 100%;
-            height: 200px;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .material-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .material-item:hover .material-image img {
-            transform: scale(1.1);
-        }
-        
-        .material-title {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        
-        .material-description {
-            font-size: 14px;
-            color: var(--color-light-grey);
-            line-height: 1.6;
-        }
-        
-        @media (max-width: 991.98px) {
-            .process-step {
-                flex-direction: column !important;
-                align-items: center;
-                text-align: center !important;
-            }
-            .step-content {
-                padding: 30px 0 0 0 !important;
-            }
-            .options-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .materials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 575.98px) {
-            .options-grid,
-            .materials-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -306,54 +94,51 @@
                 <p class="section-subtitle">Этапы работы над индивидуальным проектом</p>
             </div>
 
-            <div class="process-steps">
-                <div class="step-line"></div>
-
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3 class="step-title">Консультация</h3>
-                        <p class="step-description">Первая встреча с дизайнером в нашем шоуруме или на объекте заказчика. На этом этапе мы обсуждаем ваши пожелания, требования и особенности помещения. Дизайнер предложит различные варианты решений и материалов, которые подойдут для
-                            вашего проекта.</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3 class="step-title">Замеры и проектирование</h3>
-                        <p class="step-description">Наш специалист проводит точные замеры помещения. На основе полученных данных дизайнер создаёт 3D-визуализацию будущей мебели, учитывая все технические особенности и ваши предпочтения по стилю и материалам. После согласования проекта
-                            составляется детальная смета.</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3 class="step-title">Производство</h3>
-                        <p class="step-description">После утверждения проекта и внесения предоплаты начинается производственный процесс. Мы закупаем необходимые материалы и фурнитуру, изготавливаем все элементы мебели на нашем производстве с использованием современного оборудования.
-                            Весь процесс находится под строгим контролем качества.</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3 class="step-title">Доставка и монтаж</h3>
-                        <p class="step-description">Готовая мебель доставляется на объект и устанавливается нашими опытными монтажниками. Все работы проводятся бережно и аккуратно, с соблюдением всех технических требований. После завершения монтажа проводится финальная настройка
-                            и проверка функциональности всех элементов.</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3 class="step-title">Приёмка и гарантийное обслуживание</h3>
-                        <p class="step-description">После завершения всех работ вы принимаете готовый проект. Мы предоставляем пожизненную гарантию на наши изделия и обеспечиваем послепродажное обслуживание. Наши специалисты всегда готовы прийти на помощь, если возникнут какие-либо
-                            вопросы или потребуются консультации по эксплуатации.</p>
-                    </div>
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3 class="step-title">Консультация</h3>
+                    <p class="step-description">Первая встреча с дизайнером в нашем шоуруме или на объекте заказчика. На этом этапе мы обсуждаем ваши пожелания, требования и особенности помещения. Дизайнер предложит различные варианты решений и материалов, которые подойдут для вашего
+                        проекта.</p>
                 </div>
             </div>
+
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3 class="step-title">Замеры и проектирование</h3>
+                    <p class="step-description">Наш специалист проводит точные замеры помещения. На основе полученных данных дизайнер создаёт 3D-визуализацию будущей мебели, учитывая все технические особенности и ваши предпочтения по стилю и материалам. После согласования проекта
+                        составляется детальная смета.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3 class="step-title">Производство</h3>
+                    <p class="step-description">После утверждения проекта и внесения предоплаты начинается производственный процесс. Мы закупаем необходимые материалы и фурнитуру, изготавливаем все элементы мебели на нашем производстве с использованием современного оборудования.
+                        Весь процесс находится под строгим контролем качества.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3 class="step-title">Доставка и монтаж</h3>
+                    <p class="step-description">Готовая мебель доставляется на объект и устанавливается нашими опытными монтажниками. Все работы проводятся бережно и аккуратно, с соблюдением всех технических требований. После завершения монтажа проводится финальная настройка и проверка
+                        функциональности всех элементов.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3 class="step-title">Приёмка и гарантийное обслуживание</h3>
+                    <p class="step-description">После завершения всех работ вы принимаете готовый проект. Мы предоставляем пожизненную гарантию на наши изделия и обеспечиваем послепродажное обслуживание. Наши специалисты всегда готовы прийти на помощь, если возникнут какие-либо
+                        вопросы или потребуются консультации по эксплуатации.</p>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
@@ -482,7 +267,7 @@
 
                 <div class="col-lg-6">
                     <div class="contact-image">
-                        <img src="../images/contact-image-3.jpg" alt="Заказать консультацию" class="img-fluid">
+                        <img src="../images/contact-image.jpg" alt="Заказать консультацию" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -553,6 +338,97 @@
 
     <!-- Custom JS -->
     <script src="../js/main.js"></script>
+
+    <!-- Анимации для индивидуальных заказов -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Анимация шагов процесса
+            const processSteps = document.querySelectorAll('.process-step');
+            const options = document.querySelectorAll('.option-item');
+            const materials = document.querySelectorAll('.material-item');
+            const formContent = document.querySelector('.form-content');
+            const contactImage = document.querySelector('.contact-image');
+
+            // Функция для анимации элементов при прокрутке
+            function revealElements() {
+                const windowHeight = window.innerHeight;
+
+                // Анимация процесса
+                processSteps.forEach(step => {
+                    const stepTop = step.getBoundingClientRect().top;
+                    if (stepTop < windowHeight - 100) {
+                        step.classList.add('reveal-step');
+                    }
+                });
+
+                // Анимация опций
+                options.forEach(option => {
+                    const optionTop = option.getBoundingClientRect().top;
+                    if (optionTop < windowHeight - 100) {
+                        option.classList.add('reveal-option');
+                    }
+                });
+
+                // Анимация материалов
+                materials.forEach(material => {
+                    const materialTop = material.getBoundingClientRect().top;
+                    if (materialTop < windowHeight - 100) {
+                        material.classList.add('reveal-material');
+                    }
+                });
+
+                // Анимация формы
+                if (formContent) {
+                    const formTop = formContent.getBoundingClientRect().top;
+                    if (formTop < windowHeight - 100) {
+                        formContent.classList.add('reveal-form');
+                    }
+                }
+
+                // Анимация изображения
+                if (contactImage) {
+                    const imageTop = contactImage.getBoundingClientRect().top;
+                    if (imageTop < windowHeight - 100) {
+                        contactImage.classList.add('reveal-image');
+                    }
+                }
+
+                // Анимация секций
+                const sections = document.querySelectorAll('.reveal');
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    if (sectionTop < windowHeight - 100) {
+                        section.classList.add('active');
+                    }
+                });
+            }
+
+            // Запуск анимации при прокрутке
+            window.addEventListener('scroll', revealElements);
+
+            // Запуск анимации при загрузке страницы
+            revealElements();
+
+            // Плавная прокрутка для якорных ссылок
+            const smoothScroll = (target) => {
+                const element = document.querySelector(target);
+                if (element) {
+                    window.scrollTo({
+                        top: element.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            };
+
+            const anchors = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+            anchors.forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    smoothScroll(this.getAttribute('href'));
+                });
+            });
+        });
+    </script>
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">

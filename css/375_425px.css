@@ -1,5 +1,19 @@
 /* === О нас кратко === */
 
+.logo-text {
+    font-size: 22px;
+    margin-right: 12px;
+}
+
+.logo-text::after {
+    right: -10px;
+}
+
+.logo-accent {
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
 .about-short {
     padding: 70px 0;
 }
@@ -189,12 +203,11 @@
 
 /* === Футер === */
 
-@media (max-width: 375px) {
-    .footer-logo .logo-text {
-        font-size: 20px;
-    }
-    .footer-logo .logo-accent {
-        font-size: 10px;
-        letter-spacing: 1px;
-    }
+.footer-logo .logo-text {
+    font-size: 20px;
+}
+
+.footer-logo .logo-accent {
+    font-size: 10px;
+    letter-spacing: 1px;
 }

@@ -384,9 +384,42 @@
                 });
             }
 
+            // Анимации для заголовка и хлебных крошек
+            function applyHeaderAnimations() {
+                // Получаем элементы заголовка
+                const pageTitle = document.querySelector('.page-title');
+                const breadcrumbItems = document.querySelectorAll('.breadcrumb-item');
+                const breadcrumbSeparator = document.querySelector('.breadcrumb-separator');
+
+                // Анимация для заголовка
+                setTimeout(() => {
+                    pageTitle.style.opacity = '1';
+                    pageTitle.style.transform = 'translateY(0)';
+                }, 300);
+
+                // Анимация для хлебных крошек
+                breadcrumbItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 1000 + (index * 200));
+                });
+
+                // Анимация для разделителя
+                if (breadcrumbSeparator) {
+                    setTimeout(() => {
+                        breadcrumbSeparator.style.opacity = '0.6';
+                        breadcrumbSeparator.style.transform = 'translateY(0)';
+                    }, 1200);
+                }
+            }
+
             // Вызываем функцию при загрузке и скролле
             window.addEventListener('scroll', activateOnScroll);
             activateOnScroll(); // Проверяем видимые элементы при загрузке
+
+            // Запускаем анимацию заголовка при загрузке страницы
+            applyHeaderAnimations();
         });
     </script>
 

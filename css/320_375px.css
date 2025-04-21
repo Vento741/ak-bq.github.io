@@ -482,10 +482,6 @@ body {
 
 /* Страница индивидуального заказа */
 
-.process-steps {
-    padding: 30px 0;
-}
-
 .process-step {
     flex-direction: column !important;
     align-items: center !important;

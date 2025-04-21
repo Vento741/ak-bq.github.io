@@ -1,3 +1,7 @@
+.logo-text {
+    font-size: 50px;
+}
+
 .advantages {
     padding: 20px 0;
 }
@@ -233,14 +237,353 @@
 }
 
 
-/* === Футер === */
+/* === Наши работы === */
 
-@media (max-width: 767.98px) {
-    .footer-logo .logo-text {
-        font-size: 22px;
+
+/* Заголовок и подзаголовок */
+
+.page-title {
+    font-size: 46px !important;
+    margin-bottom: 10px !important;
+}
+
+.section-subtitle {
+    font-size: 16px !important;
+    max-width: 500px !important;
+    margin: 0 auto 35px !important;
+}
+
+
+/* Фильтры проектов */
+
+.projects-filter {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    margin-bottom: 30px !important;
+    gap: 10px !important;
+}
+
+.filter-button {
+    font-size: 14px !important;
+    padding: 8px 15px !important;
+    margin: 0 !important;
+    border-radius: 20px !important;
+    border: 1px solid #c29d59 !important;
+    background-color: transparent !important;
+    color: #1f2233 !important;
+    transition: all 0.3s ease !important;
+}
+
+.filter-button.active,
+.filter-button:hover {
+    background-color: #c29d59 !important;
+    color: #fff !important;
+}
+
+
+/* Сетка проектов */
+
+.projects-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+}
+
+
+/* Карточка проекта */
+
+.project-item {
+    position: relative !important;
+    height: 200px !important;
+    overflow: hidden !important;
+    border-radius: 0 !important;
+    cursor: pointer !important;
+    transition: transform 0.4s ease-in-out !important;
+}
+
+.project-image {
+    height: 100% !important;
+    overflow: hidden !important;
+}
+
+.project-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.5s ease !important;
+}
+
+.project-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(31, 34, 51, 0.7) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    opacity: 1 !important;
+    /* Всегда показываем текст */
+    transition: opacity 0.3s ease !important;
+}
+
+.project-title {
+    color: #fff !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin-bottom: 5px !important;
+    text-align: center !important;
+}
+
+.project-category {
+    color: #c29d59 !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+
+/* Преимущества работы с нами */
+
+.benefits {
+    padding: 60px 0 !important;
+}
+
+.benefit-item {
+    margin-bottom: 40px !important;
+    text-align: center !important;
+}
+
+.benefit-icon {
+    width: 70px !important;
+    height: 70px !important;
+    margin: 0 auto 20px !important;
+}
+
+.benefit-title {
+    font-size: 20px !important;
+    margin-bottom: 10px !important;
+}
+
+.benefit-text {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+}
+
+
+/* Форма обратной связи */
+
+.contact-form {
+    padding: 60px 0 !important;
+}
+
+.form-content {
+    padding: 30px 20px !important;
+    margin-bottom: 30px !important;
+}
+
+.contact-image {
+    height: 300px !important;
+    overflow: hidden !important;
+}
+
+.contact-image img {
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+
+/* Модальное окно для проектов */
+
+.project-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-modal.active {
+    display: block;
+    opacity: 1 !important;
+}
+
+.modal-content {
+    position: relative;
+    width: 95%;
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.5s ease forwards;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.modal-close:before,
+.modal-close:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 2px;
+    background-color: #000;
+}
+
+.modal-close:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.modal-close:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 60vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+    transition: transform 0.5s ease;
+}
+
+.modal-image img.zoomed {
+    transform: scale(1.5);
+    cursor: zoom-out;
+}
+
+.image-zoom-container {
+    overflow: hidden;
+}
+
+.modal-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 22px !important;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.modal-category {
+    display: block;
+    font-size: 16px !important;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.modal-description {
+    font-size: 14px !important;
+    line-height: 1.5;
+    color: #555;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    .footer-logo .logo-accent {
-        font-size: 12px;
-        letter-spacing: 1.5px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
+
+@media screen and (max-width: 575px) {
+    .modal-content {
+        width: 98%;
+        margin: 10px auto;
+    }
+    .modal-title {
+        font-size: 18px !important;
+    }
+    .modal-category {
+        font-size: 14px !important;
+    }
+    .modal-description {
+        font-size: 13px !important;
+    }
+}
+
+
+/* Адаптивные стили для футера в Наших работах */
+
+.footer {
+    padding-top: 40px !important;
+}
+
+.footer-title {
+    font-size: 20px !important;
+    margin-bottom: 15px !important;
+}
+
+.footer-nav li {
+    margin-bottom: 8px !important;
+}
+
+.footer-contacts li {
+    margin-bottom: 12px !important;
+    font-size: 14px !important;
+}
+
+.social-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 15px !important;
+}
+
+.social-link {
+    padding: 8px 15px !important;
+    font-size: 14px !important;
+}
+
+
+/* Анимация для проектов */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite !important;
 }

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Портфолио работ Бутик Авторской Кухни - элитные кухни и мебель премиум-класса в Москве">
     <meta name="keywords" content="портфолио, наши работы, авторская кухня, премиум мебель, элитные кухни Москва">
     <title>Наши работы - Бутик Авторской Кухни</title>
@@ -22,213 +22,22 @@
     <link rel="stylesheet" href="../css/logo-custom.css">
     <link rel="stylesheet" href="../css/logo-footer.css">
 
+    <!-- Адаптивные стили -->
+    <link rel="stylesheet" href="../css/320_375px.css" media="screen and (min-width: 320px) and (max-width: 375px)">
+    <link rel="stylesheet" href="../css/375_425px.css" media="screen and (min-width: 375px) and (max-width: 425px)">
+    <link rel="stylesheet" href="../css/425_768px.css" media="screen and (min-width: 425px) and (max-width: 768px)">
+
+    <!-- Дополнительные стили -->
+    <link rel="stylesheet" href="../css/workflow-animation.css">
+    <link rel="stylesheet" href="../css/contact-form-experience.css">
+    <link rel="stylesheet" href="../css/elite-gold.css">
+    <link rel="stylesheet" href="../css/elite-portfolio.css">
+    <link rel="stylesheet" href="../css/portfolio-anims.css">
+    <link rel="stylesheet" href="../css/works.css">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 
-    <style>
-        /* Дополнительные стили для страницы работ */
-        
-        .projects-filter {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 50px;
-        }
-        
-        .filter-button {
-            background: none;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            font-family: var(--font-secondary);
-            font-size: 14px;
-            color: var(--color-light-grey);
-            position: relative;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .filter-button:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 20px;
-            right: 20px;
-            height: 1px;
-            background-color: var(--color-primary);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-        
-        .filter-button:hover,
-        .filter-button.active {
-            color: var(--color-primary);
-        }
-        
-        .filter-button:hover:after,
-        .filter-button.active:after {
-            transform: scaleX(1);
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .project-item {
-            position: relative;
-            overflow: hidden;
-            aspect-ratio: 1 / 1;
-            transform: translateY(0);
-            transition: var(--transition);
-        }
-        
-        .project-item:hover {
-            transform: translateY(-10px);
-        }
-        
-        .project-image {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .project-item:hover .project-image img {
-            transform: scale(1.1);
-        }
-        
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 30px;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .project-item:hover .project-overlay {
-            opacity: 1;
-        }
-        
-        .project-title {
-            font-size: 22px;
-            color: var(--color-white);
-            margin-bottom: 5px;
-            transform: translateY(20px);
-            transition: var(--transition);
-            transition-delay: 0.1s;
-        }
-        
-        .project-item:hover .project-title {
-            transform: translateY(0);
-        }
-        
-        .project-category {
-            font-size: 14px;
-            color: var(--color-secondary);
-            transform: translateY(20px);
-            transition: var(--transition);
-            transition-delay: 0.2s;
-        }
-        
-        .project-item:hover .project-category {
-            transform: translateY(0);
-        }
-        
-        .project-modal .modal-content {
-            border-radius: 0;
-            border: none;
-        }
-        
-        .project-modal .modal-header {
-            border-bottom: none;
-            padding: 20px 30px;
-        }
-        
-        .project-modal .modal-title {
-            font-family: var(--font-primary);
-            font-size: 24px;
-            color: var(--color-dark);
-        }
-        
-        .project-modal .modal-body {
-            padding: 0 30px 30px;
-        }
-        
-        .project-modal .close {
-            font-size: 30px;
-            font-weight: 300;
-            color: var(--color-dark);
-            opacity: 1;
-            transition: var(--transition);
-        }
-        
-        .project-modal .close:hover {
-            color: var(--color-primary);
-        }
-        
-        .project-slider {
-            margin-bottom: 30px;
-        }
-        
-        .project-description {
-            margin-bottom: 30px;
-        }
-        
-        .project-details {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        
-        .detail-item {
-            margin-bottom: 20px;
-        }
-        
-        .detail-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--color-dark);
-            margin-bottom: 5px;
-        }
-        
-        .detail-value {
-            font-size: 14px;
-            color: var(--color-light-grey);
-        }
-        
-        @media (max-width: 991.98px) {
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .projects-filter {
-                flex-wrap: wrap;
-            }
-        }
-        
-        @media (max-width: 575.98px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .project-details {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -240,10 +49,6 @@
             <span class="line line3"></span>
         </div>
     </div>
-
-    <!-- Курсор -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
 
     <!-- Навигация -->
     <header class="header">
@@ -297,7 +102,6 @@
     <section class="projects reveal">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Наши проекты</h2>
                 <p class="section-subtitle">Эксклюзивные решения для требовательных клиентов</p>
             </div>
 
@@ -484,7 +288,7 @@
 
                 <div class="col-lg-6">
                     <div class="contact-image">
-                        <img src="../images/contact-image-2.jpg" alt="Обсудить проект" class="img-fluid">
+                        <img src="../images/contact-image.jpg" alt="Обсудить проект" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -551,13 +355,25 @@
     </footer>
 
     <!-- Модальные окна для проектов -->
-    <!-- Здесь могут быть дополнительные модальные окна для отдельных проектов -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-close"></div>
+            <div class="modal-image image-zoom-container">
+                <img src="" alt="Проект" id="modalImage">
+            </div>
+            <div class="modal-details">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <span class="modal-category" id="modalCategory"></span>
+                <p class="modal-description">Мы гордимся каждым реализованным проектом, который является уникальным воплощением наших идей и пожеланий заказчика. Наша цель - создавать мебель, которая не только функциональна и эстетична, но и отражает индивидуальность своих владельцев.</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JS -->
-    <script src="../js/main.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
     <!-- Дополнительный JavaScript для фильтрации проектов -->
     <script>
@@ -565,6 +381,11 @@
             // Фильтрация проектов
             const filterButtons = document.querySelectorAll('.filter-button');
             const projectItems = document.querySelectorAll('.project-item');
+            const modal = document.getElementById('projectModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalCategory = document.getElementById('modalCategory');
+            const modalClose = document.querySelector('.modal-close');
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', function() {
@@ -595,17 +416,99 @@
             // Модальные окна для проектов
             projectItems.forEach(item => {
                 item.addEventListener('click', function() {
-                    // Здесь может быть код для открытия модального окна с деталями проекта
-                    // Но поскольку мы не создавали модальные окна для каждого проекта,
-                    // этот код временно закомментирован
-                    // const projectId = this.getAttribute('data-id');
-                    // const modal = document.querySelector(`#project-modal-${projectId}`);
-                    // if (modal) {
-                    //     const modalInstance = new bootstrap.Modal(modal);
-                    //     modalInstance.show();
-                    // }
+                    const img = this.querySelector('img');
+                    const title = this.querySelector('.project-title').textContent;
+                    const category = this.querySelector('.project-category').textContent;
+
+                    modalImage.src = img.src;
+                    modalTitle.textContent = title;
+                    modalCategory.textContent = category;
+
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
                 });
             });
+
+            // Закрытие модального окна
+            modalClose.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                modalImage.classList.remove('zoomed');
+            });
+
+            // Клик вне модального окна
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    modalImage.classList.remove('zoomed');
+                }
+            });
+
+            // Увеличение/уменьшение изображения по клику
+            modalImage.addEventListener('click', function(event) {
+                event.stopPropagation();
+                this.classList.toggle('zoomed');
+
+                if (this.classList.contains('zoomed')) {
+                    this.style.cursor = 'zoom-out';
+                } else {
+                    this.style.cursor = 'zoom-in';
+                }
+            });
+        });
+    </script>
+
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+
+    <!-- Инициализация AOS -->
+    <script>
+        // Инициализация библиотеки Animate On Scroll
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false,
+            offset: 50
+        });
+
+        // Дополнительные анимации для преимуществ
+        document.addEventListener('DOMContentLoaded', function() {
+            // Добавляем анимацию для элементов преимуществ
+            const benefitItems = document.querySelectorAll('.benefit-item');
+            benefitItems.forEach((item, index) => {
+                item.setAttribute('data-aos', 'fade-up');
+                item.setAttribute('data-aos-delay', (index * 100).toString());
+            });
+
+            // Анимация проектов при наведении
+            const projectItems = document.querySelectorAll('.project-item');
+            projectItems.forEach(item => {
+                item.setAttribute('data-aos', 'fade-up');
+
+                // Добавляем эффект пульсации при наведении
+                item.addEventListener('mouseenter', function() {
+                    this.classList.add('pulse');
+                });
+
+                item.addEventListener('mouseleave', function() {
+                    this.classList.remove('pulse');
+                });
+            });
+
+            // Анимация контактной формы
+            const contactImage = document.querySelector('.contact-image');
+            if (contactImage) {
+                contactImage.setAttribute('data-aos', 'fade-left');
+                contactImage.setAttribute('data-aos-delay', '300');
+            }
+
+            const formContent = document.querySelector('.form-content');
+            if (formContent) {
+                formContent.setAttribute('data-aos', 'fade-right');
+                formContent.setAttribute('data-aos-delay', '300');
+            }
         });
     </script>
 
@@ -633,6 +536,53 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+
+    <!-- Скрипт для анимации проектов -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Устанавливаем индексы для элементов проектов для стилизации
+            const projectItems = document.querySelectorAll('.project-item');
+            const projectsCount = projectItems.length;
+
+            // Устанавливаем CSS переменную с количеством проектов
+            document.documentElement.style.setProperty('--projects-count', projectsCount);
+
+            // Добавляем индексы для проектов
+            projectItems.forEach((item, index) => {
+                item.style.setProperty('--item-index', index);
+
+                // Добавляем случайную задержку для появления элементов
+                const randomDelay = Math.random() * 0.5;
+                item.style.animationDelay = `${randomDelay}s`;
+
+                // Добавляем эффект пульсации для случайных элементов
+                if (Math.random() > 0.7) {
+                    item.classList.add('pulse');
+                }
+            });
+
+            // Функция для анимации появления элементов при скролле
+            function checkScroll() {
+                const elements = document.querySelectorAll('.project-item, .section-title');
+
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const isVisible =
+                        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                        rect.bottom >= 0;
+
+                    if (isVisible) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
+
+            // Проверяем при скролле
+            window.addEventListener('scroll', checkScroll);
+            // Проверяем при загрузке
+            checkScroll();
+        });
+    </script>
 </body>
 
 </html>

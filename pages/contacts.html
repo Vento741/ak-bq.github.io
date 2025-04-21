@@ -1,1 +1,407 @@
-  
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Контакты Бутика Авторской Кухни - свяжитесь с нами для заказа элитной мебели премиум-класса в Москве">
+    <meta name="keywords" content="контакты, авторская кухня, мебель на заказ, премиум мебель, связаться, элитные кухни Москва">
+    <title>Контакты - Бутик Авторской Кухни</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/logo-custom.css">
+    <link rel="stylesheet" href="../css/logo-footer.css">
+    <link rel="stylesheet" href="../css/contacts.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+</head>
+
+<body>
+    <!-- Прелоадер -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div>
+    </div>
+
+    <!-- Навигация -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="../index.html" class="logo-link">
+                        <span class="logo-text">Бутик</span>
+                        <span class="logo-accent">Авторской Кухни</span>
+                    </a>
+                </div>
+
+                <div class="menu-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="../index.html" class="nav-link">Главная</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">О нас</a></li>
+                        <li class="nav-item"><a href="works.html" class="nav-link">Наши работы</a></li>
+                        <li class="nav-item"><a href="custom-order.html" class="nav-link">Индивидуальный заказ</a></li>
+                        <li class="nav-item"><a href="contacts.html" class="nav-link active">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="contacts-container">
+        <!-- Анимированный фон -->
+        <div class="contact-bg-pattern"></div>
+
+        <!-- Анимированные линии -->
+        <div class="animated-line line-1"></div>
+        <div class="animated-line line-2"></div>
+
+        <!-- Заголовок страницы -->
+        <section class="contact-title-container">
+            <div class="container">
+                <h1 class="contact-title">Свяжитесь с нами</h1>
+                <p class="contact-subtitle">Мы всегда открыты для общения и ждем ваших вопросов. Выберите удобный для вас способ связи или оставьте сообщение, и мы ответим вам в ближайшее время.</p>
+            </div>
+        </section>
+
+        <!-- Карточки контактов -->
+        <section class="container">
+            <div class="contact-cards-container">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="contact-card-title">Адрес</h3>
+                    <p class="contact-card-info">г. Москва, ул. Арбатская, 25</p>
+                    <p class="contact-card-info">Бизнес-центр "Премиум"</p>
+                    <p class="contact-card-info">5 этаж, офис 512</p>
+                    <a href="https://maps.google.com" target="_blank" class="contact-card-link">Проложить маршрут</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="contact-card-title">Телефон</h3>
+                    <p class="contact-card-info">+7 (495) 123-45-67</p>
+                    <p class="contact-card-info">+7 (901) 987-65-43</p>
+                    <p class="contact-card-info">Ежедневно с 10:00 до 20:00</p>
+                    <a href="tel:+74951234567" class="contact-card-link">Позвонить сейчас</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-card-title">Email</h3>
+                    <p class="contact-card-info">info@butik-kitchen.ru</p>
+                    <p class="contact-card-info">orders@butik-kitchen.ru</p>
+                    <p class="contact-card-info">Ответ в течение 24 часов</p>
+                    <a href="mailto:info@butik-kitchen.ru" class="contact-card-link">Написать сейчас</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Интерактивная карта -->
+        <section class="container">
+            <div class="contact-map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.6689074253704!2d37.598590823394794!3d55.752241192600064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0JDRgNCx0LDRgtGB0LrQsNGPINGD0LsuLCDQnNC-0YHQutCy0LA!5e0!3m2!1sru!2sru!4v1653839962548!5m2!1sru!2sru"
+                    class="contact-map" allowfullscreen="" loading="lazy"></iframe>
+                <div class="map-overlay">
+                    <div class="map-message">Нажмите для активации карты</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма обратной связи -->
+        <section class="container">
+            <div class="contact-form-container">
+                <div class="contact-form-bg"></div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="contact-form-title">Отправьте нам сообщение</h2>
+                        <p class="contact-form-subtitle">Заполните форму ниже, и мы свяжемся с вами в ближайшее время для обсуждения всех деталей.</p>
+
+                        <form class="contact-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-4">
+                                        <input type="text" class="form-control" id="nameInput" placeholder="Ваше имя" required>
+                                        <label for="nameInput">Ваше имя</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-4">
+                                        <input type="email" class="form-control" id="emailInput" placeholder="Email" required>
+                                        <label for="emailInput">Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-4">
+                                        <input type="tel" class="form-control" id="phoneInput" placeholder="Телефон">
+                                        <label for="phoneInput">Телефон</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-4">
+                                        <select class="form-control" id="subjectSelect">
+                                            <option value="" disabled selected>Выберите тему</option>
+                                            <option value="order">Заказ кухни</option>
+                                            <option value="consultation">Консультация</option>
+                                            <option value="partnership">Сотрудничество</option>
+                                            <option value="other">Другое</option>
+                                        </select>
+                                        <label for="subjectSelect">Тема обращения</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating mb-4">
+                                        <textarea class="form-control" id="messageInput" placeholder="Сообщение" style="height: 150px" required></textarea>
+                                        <label for="messageInput">Сообщение</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check mb-4">
+                                        <input class="form-check-input" type="checkbox" id="privacyCheck" required>
+                                        <label class="form-check-label" for="privacyCheck">
+                                            Я согласен с <a href="privacy.html" target="_blank">политикой конфиденциальности</a>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn-submit">Отправить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Социальные сети -->
+        <section class="container social-networks">
+            <h2 class="social-title">Мы в социальных сетях</h2>
+            <p class="social-subtitle">Подписывайтесь на наши официальные страницы, чтобы быть в курсе новинок, акций и специальных предложений.</p>
+
+            <div class="social-icons">
+                <a href="#" class="social-icon" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon" target="_blank" aria-label="Vkontakte">
+                    <i class="fab fa-vk"></i>
+                </a>
+                <a href="#" class="social-icon" target="_blank" aria-label="Telegram">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Часто задаваемые вопросы -->
+        <section class="container faq-section">
+            <h2 class="faq-title">Часто задаваемые вопросы</h2>
+            <p class="faq-subtitle">Ответы на наиболее популярные вопросы о нашей работе, процессе создания мебели и условиях сотрудничества.</p>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Сколько времени занимает изготовление кухни?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Стандартный срок изготовления кухни составляет от 45 до 60 дней с момента утверждения проекта и внесения предоплаты. Сроки могут варьироваться в зависимости от сложности проекта, выбранных материалов и текущей загрузки производства.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Как происходит процесс заказа кухни?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Процесс заказа кухни включает несколько этапов:</p>
+                        <ol>
+                            <li>Первичная консультация и обсуждение ваших пожеланий</li>
+                            <li>Выезд дизайнера на замеры помещения</li>
+                            <li>Разработка дизайн-проекта и 3D-визуализация</li>
+                            <li>Согласование проекта и выбор материалов</li>
+                            <li>Заключение договора и внесение предоплаты</li>
+                            <li>Производство кухни</li>
+                            <li>Доставка и профессиональный монтаж</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Предоставляете ли вы гарантию на свою продукцию?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, мы предоставляем гарантию 5 лет на все мебельные конструкции и 2 года на фурнитуру и механизмы. Также мы предлагаем постгарантийное обслуживание и возможность продления стандартной гарантии.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Возможно ли внести изменения в проект после начала производства?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Внесение изменений возможно до начала производственного процесса. После запуска изделия в производство внесение изменений либо невозможно, либо приведет к дополнительным затратам и увеличению сроков. Поэтому мы рекомендуем тщательно
+                            согласовать все детали проекта до подписания договора.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Работаете ли вы с дизайнерами интерьеров?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, мы активно сотрудничаем с дизайнерами интерьеров и архитекторами. Для профессионалов у нас действует специальная программа сотрудничества с комиссионным вознаграждением. Мы предоставляем все необходимые материалы и образцы
+                            для работы над проектом.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Эффект спецификации при наведении -->
+    <div class="specifications-effect">
+        <div class="spec-handle">
+            <i class="fas fa-info"></i>
+        </div>
+        <h4 class="spec-title">О странице</h4>
+        <ul class="spec-list">
+            <li>
+                <span class="spec-name">Технология</span>
+                <span class="spec-value">HTML5/CSS3</span>
+            </li>
+            <li>
+                <span class="spec-name">Фреймворк</span>
+                <span class="spec-value">Bootstrap 5</span>
+            </li>
+            <li>
+                <span class="spec-name">Анимации</span>
+                <span class="spec-value">CSS + JS</span>
+            </li>
+            <li>
+                <span class="spec-name">3D-эффекты</span>
+                <span class="spec-value">CSS Transform</span>
+            </li>
+            <li>
+                <span class="spec-name">Версия</span>
+                <span class="spec-value">1.0</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-logo">
+                        <span class="logo-text">Бутик</span>
+                        <span class="logo-accent">Авторской Кухни</span>
+                    </div>
+                    <p class="footer-description">Эксклюзивные кухни премиум-класса, созданные с вниманием к каждой детали. Воплощаем мечты в реальность.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-title">Навигация</h5>
+                    <ul class="footer-nav">
+                        <li><a href="../index.html">Главная</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="works.html">Наши работы</a></li>
+                        <li><a href="custom-order.html">Индивидуальный заказ</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Контакты</h5>
+                    <ul class="footer-contacts">
+                        <li>
+                            <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <span class="contact-text">г. Москва, ул. Арбатская, 25</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon"><i class="fas fa-phone-alt"></i></span>
+                            <a href="tel:+74951234567" class="contact-link">+7 (495) 123-45-67</a>
+                        </li>
+                        <li>
+                            <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                            <a href="mailto:info@butik-kitchen.ru" class="contact-link">info@butik-kitchen.ru</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Режим работы</h5>
+                    <ul class="footer-contacts">
+                        <li>
+                            <span class="contact-icon"><i class="fas fa-clock"></i></span>
+                            <span class="contact-text">Пн-Пт: 10:00 - 20:00</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon"><i class="fas fa-clock"></i></span>
+                            <span class="contact-text">Сб: 11:00 - 18:00</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon"><i class="fas fa-clock"></i></span>
+                            <span class="contact-text">Вс: выходной</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">© 2023 Бутик Авторской Кухни. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link" aria-label="Vkontakte"><i class="fab fa-vk"></i></a>
+                            <a href="#" class="social-link" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Основные скрипты -->
+    <script src="../js/main.js"></script>
+    <script src="../js/contacts.js"></script>
+</body>
+
+</html>
