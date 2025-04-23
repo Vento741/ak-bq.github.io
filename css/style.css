@@ -1191,139 +1191,6 @@ img {
 }
 
 
-/* Медиа-запросы для раздела О нас */
-
-@media (max-width: 1199.98px) {
-    .mosaic-img {
-        height: 400px;
-    }
-    .experience-badge {
-        width: 110px;
-        height: 110px;
-        top: 25px;
-        right: 15px;
-    }
-    .exp-number {
-        font-size: 36px;
-    }
-    .exp-text {
-        font-size: 12px;
-    }
-    .about-content {
-        padding: 25px 30px;
-    }
-    .about-content .section-title {
-        font-size: 36px;
-    }
-    .feature-icon {
-        flex: 0 0 50px;
-        height: 50px;
-    }
-}
-
-@media (max-width: 991.98px) {
-    .about-mosaic {
-        margin-bottom: 50px;
-        padding-right: 0;
-    }
-    .about-content {
-        padding: 25px;
-        margin-top: 30px;
-    }
-    .mosaic-img {
-        height: 350px;
-    }
-    .about-short::before {
-        height: 6px;
-    }
-    .about-short .container::before,
-    .about-short .container::after {
-        display: none;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .mosaic-grid {
-        grid-template-columns: repeat(2, 1fr);
-        bottom: 25px;
-        left: 15px;
-        width: calc(100% - 30px);
-        gap: 12px;
-    }
-    .mosaic-item {
-        padding: 12px;
-    }
-    .year-badge {
-        font-size: 16px;
-    }
-    .year-label {
-        font-size: 11px;
-    }
-    .about-separator {
-        margin: 20px 0 25px;
-    }
-    .about-feature {
-        padding: 12px;
-        margin-bottom: 15px;
-    }
-    .feature-title {
-        font-size: 17px;
-        margin-bottom: 6px;
-    }
-    .feature-text {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .mosaic-grid {
-        bottom: 20px;
-        left: 10px;
-        width: calc(100% - 20px);
-        gap: 10px;
-    }
-    .experience-badge {
-        width: 80px;
-        height: 80px;
-        top: 20px;
-        right: 20px;
-        border-width: 2px;
-    }
-    .exp-number {
-        font-size: 28px;
-    }
-    .exp-text {
-        font-size: 10px;
-        letter-spacing: 0.5px;
-    }
-    .about-tagline {
-        font-size: 12px;
-        padding-left: 40px;
-        letter-spacing: 2px;
-    }
-    .about-tagline:before {
-        width: 30px;
-    }
-    .feature-icon {
-        flex: 0 0 40px;
-        height: 40px;
-        margin-right: 15px;
-    }
-    .about-content .section-title {
-        font-size: 30px;
-    }
-    .about-content {
-        padding: 20px;
-    }
-    .btn-about {
-        width: 100%;
-        justify-content: center;
-        padding: 12px 20px;
-        font-size: 13px;
-    }
-}
-
-
 /* === Футер === */
 
 .footer {
@@ -1369,6 +1236,7 @@ img {
 
 .footer-nav {
     list-style: none;
+    margin-left: -30px;
 }
 
 .footer-nav li {
@@ -1383,11 +1251,11 @@ img {
 
 .footer-nav a:hover {
     color: var(--color-primary);
-    padding-left: 5px;
 }
 
 .footer-contacts {
     list-style: none;
+    margin-left: -60px;
 }
 
 .footer-contacts li {
@@ -1440,95 +1308,6 @@ img {
 
 .social-link:hover {
     color: var(--color-primary);
-}
-
-
-/* === Адаптивность === */
-
-@media (max-width: 1199.98px) {
-    .hero-title {
-        font-size: 50px;
-    }
-    .section-title {
-        font-size: 36px;
-    }
-    .portfolio-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 991.98px) {
-    /* Стили меню перенесены в header.css */
-    .hero-content {
-        margin-top: 50px;
-    }
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .testimonials-slider {
-        flex-direction: column;
-    }
-    .process-item {
-        width: 100%;
-        padding-left: 0;
-        margin-bottom: 30px;
-    }
-    .process-timeline:before {
-        left: 40px;
-    }
-    .process-number {
-        left: 0;
-        width: 80px;
-        height: 80px;
-        font-size: 24px;
-    }
-    .process-content {
-        width: 100%;
-        padding-left: 120px;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .hero-title {
-        font-size: 40px;
-    }
-    .hero-subtitle {
-        font-size: 16px;
-    }
-    .section-title {
-        font-size: 32px;
-    }
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-    .about-image:before {
-        display: none;
-    }
-    .about-content {
-        padding: 30px 0 0 0;
-    }
-    .footer-bottom {
-        flex-direction: column;
-    }
-    .copyright {
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .hero-title {
-        font-size: 36px;
-    }
-    .btn {
-        padding: 12px 30px;
-        font-size: 12px;
-    }
-    .section-title {
-        font-size: 28px;
-    }
-    .testimonial-item {
-        padding: 30px 20px;
-    }
 }
 
 

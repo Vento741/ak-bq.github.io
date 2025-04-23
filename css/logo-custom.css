@@ -40,12 +40,3 @@
         transform: translateX(0);
     }
 }
-
-
-/* Улучшения для мобильной версии */
-
-@media (max-width: 991.98px) {
-    .logo-link {
-        padding: 3px 5px;
-    }
-}
