@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     createOrderModal();
 
     // DOM элементы
-    const orderButtons = document.querySelectorAll('.order-project-btn, [href="pages/custom-order.html"]');
+    const orderButtons = document.querySelectorAll('.order-project-btn');
     const modalOverlay = document.querySelector('.modal-project-overlay');
     const modalClose = document.querySelector('.modal-close-btn');
     const modalStepBtns = document.querySelectorAll('.modal-step-btn');
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Специфичный обработчик для кнопки "Заказать проект" на главной странице в hero секции
-    const mainOrderButton = document.querySelector('.hero-buttons .btn-primary');
+    const mainOrderButton = document.querySelector('.hero-buttons .order-project-btn');
     if (mainOrderButton) {
         console.log('Найдена главная кнопка заказа на главном экране');
         mainOrderButton.addEventListener('click', function(e) {

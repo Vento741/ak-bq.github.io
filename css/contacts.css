@@ -221,7 +221,7 @@
     opacity: 0.9;
 }
 
-.contact-card-link {
+.contact-cards-container .contact-card-link {
     color: var(--color-primary);
     text-decoration: none;
     font-weight: 500;
@@ -229,7 +229,7 @@
     transition: var(--transition);
 }
 
-.contact-card-link::after {
+.contact-cards-container .contact-card-link::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -242,7 +242,7 @@
     transition: transform 0.3s ease;
 }
 
-.contact-card-link:hover::after {
+.contact-cards-container .contact-card-link:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
