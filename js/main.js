@@ -85,7 +85,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Валидация формы
     const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
+    if (contactForm && contactForm.getAttribute('action') === 'includes/send-email-phpmailer.php') {
+        console.log('Инициализация валидации формы обратной связи в main.js');
+
+        // Добавляем отличительный класс для разделения форм
+        if (!contactForm.classList.contains('contact-form-main')) {
+            contactForm.classList.add('contact-form-main');
+        }
+
         contactForm.addEventListener('submit', function(e) {
             let isValid = true;
             const name = document.getElementById('name');
@@ -128,6 +135,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!isValid) {
                 e.preventDefault();
+            } else {
+                console.log('Форма прошла валидацию в main.js');
+
+                // Меняем текст кнопки при отправке
+                const submitBtn = contactForm.querySelector('.contact-submit-btn');
+                if (submitBtn) {
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Отправляем...';
+                    submitBtn.disabled = true;
+
+                    // Через 3 секунды возвращаем исходное состояние, если функция отправки не сработала
+                    setTimeout(() => {
+                        if (submitBtn.disabled) {
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                        }
+                    }, 3000);
+                }
             }
         });
     }

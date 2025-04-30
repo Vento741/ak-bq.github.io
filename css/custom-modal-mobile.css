@@ -1,0 +1,148 @@
+/* 
+ * АДАПТИВНЫЕ СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА ЗАКАЗА ПРОЕКТА
+ * Стили для мобильных устройств
+ */
+
+
+/* Общие стили для мобильных устройств */
+
+@media screen and (max-width: 768px) {
+    .modal-project {
+        flex-direction: column;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    .modal-project-image {
+        flex: 0 0 200px;
+        order: -1;
+    }
+    .modal-project-content {
+        flex: 1;
+        padding: 30px 20px;
+    }
+    .modal-project-title {
+        font-size: 24px;
+    }
+    .modal-project-subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .modal-form-group {
+        margin-bottom: 15px;
+    }
+    .modal-project-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    .modal-submit-btn,
+    .modal-back-btn {
+        width: 100%;
+    }
+    .modal-close-btn {
+        top: 15px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+    }
+    .modal-project-steps {
+        margin-bottom: 20px;
+    }
+    .modal-step-number {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+    .modal-step-label {
+        font-size: 10px;
+    }
+    .modal-step::after {
+        top: 12px;
+    }
+    /* Скрытие некоторых декоративных элементов */
+    .modal-project::after,
+    .modal-project-decoration {
+        display: none;
+    }
+    /* Уменьшение отступов в форме */
+    .floating-group {
+        margin-bottom: 15px;
+    }
+    /* Изменение анимации появления для улучшения производительности */
+    .modal-project-overlay.active .modal-project {
+        transition: opacity 0.4s ease;
+    }
+}
+
+
+/* Специфичные стили для очень маленьких экранов */
+
+@media screen and (max-width: 425px) {
+    .modal-project {
+        width: 95%;
+    }
+    .modal-project-image {
+        flex: 0 0 150px;
+    }
+    .modal-project-content {
+        padding: 25px 15px;
+    }
+    .modal-project-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    .modal-project-subtitle {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    .modal-form-label {
+        font-size: 13px;
+    }
+    .modal-form-input {
+        font-size: 14px;
+        padding: 10px 5px;
+    }
+    .modal-privacy-text {
+        font-size: 11px;
+    }
+    .modal-submit-btn,
+    .modal-back-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    /* Уменьшение количества шагов в мобильной версии */
+    .modal-step-label {
+        max-width: 70px;
+        text-align: center;
+        font-size: 9px;
+        line-height: 1.2;
+    }
+}
+
+
+/* Стили для устройств с высотой экрана меньше 600px */
+
+@media screen and (max-height: 600px) {
+    .modal-project {
+        max-height: 95vh;
+    }
+    .modal-project-image {
+        flex: 0 0 120px;
+    }
+    .modal-project-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .modal-project-subtitle {
+        margin-bottom: 10px;
+    }
+    .modal-form-group {
+        margin-bottom: 10px;
+    }
+    .floating-input {
+        padding: 8px 0;
+    }
+    .modal-form-textarea {
+        min-height: 60px;
+    }
+}

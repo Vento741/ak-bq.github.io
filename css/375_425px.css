@@ -4,102 +4,141 @@
      * ============================ */
     .section-title {
         font-size: 26px;
-        margin-bottom: 15px;
-        text-align: center;
     }
     .section-subtitle {
         font-size: 15px;
         max-width: 320px;
         margin: 0 auto 30px;
-        line-height: 1.5;
     }
     /* ============================
      * ШАПКА И НАВИГАЦИЯ 
      * ============================ */
     .logo-text {
-        font-size: 32px;
-        margin-right: 12px;
-    }
-    .logo-text::after {
-        right: -10px;
-    }
-    .logo-accent {
-        font-size: 10px;
-        letter-spacing: 1px;
+        font-size: 40px;
     }
     /* ============================
      * ГЛАВНАЯ СТРАНИЦА
      * ============================ */
-    .hero-title {
-        font-size: 34px;
+    .hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.7);
+        animation: hero-slideshow 24s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        /* Предзагрузка первого изображения для мгновенного отображения */
+        background-image: url('../images/hero-bg-mob.jpg');
     }
-    .hero-subtitle {
+    /* Предзагрузка всех изображений для слайдшоу */
+    .hero::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: -1;
+        background-image: url('../images/hero-bg-mob.jpg'), url('../images/hero-bg-mob2.jpg'), url('../images/hero-bg-mob3.jpg');
+    }
+    @keyframes hero-slideshow {
+        0% {
+            background-image: url('../images/hero-bg-mob.jpg');
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+        5% {
+            transform: scale(1.02);
+            filter: brightness(0.75) saturate(1.1);
+        }
+        25% {
+            transform: scale(1.05);
+            filter: brightness(0.7) saturate(1);
+        }
+        33% {
+            background-image: url('../images/hero-bg-mob2.jpg');
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+        38% {
+            transform: scale(1.02);
+            filter: brightness(0.75) saturate(1.1);
+        }
+        58% {
+            transform: scale(1.05);
+            filter: brightness(0.7) saturate(1);
+        }
+        66% {
+            background-image: url('../images/hero-bg-mob3.jpg');
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+        71% {
+            transform: scale(1.02);
+            filter: brightness(0.75) saturate(1.1);
+        }
+        91% {
+            transform: scale(1.05);
+            filter: brightness(0.7) saturate(1);
+        }
+        100% {
+            background-image: url('../images/hero-bg-mob.jpg');
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+    }
+    .hero .hero-content .hero-title {
+        font-size: 35px;
+        text-align: center;
+    }
+    .hero .hero-content .hero-subtitle {
         font-size: 16px;
+        text-align: center;
     }
-    .hero-buttons {
+    .hero .hero-content .hero-buttons {
         display: flex;
         justify-content: center;
         gap: 8px;
         padding-top: 60px;
         padding-bottom: 0;
+        scale: 1.2;
     }
-    .btn.btn-primary,
-    .btn.btn-outline {
+    .hero .hero-content .btn.btn-primary,
+    .hero .hero-content .btn.btn-outline {
         font-size: 12px;
         font-family: 'Playfair Display', serif;
         text-align: center;
         font-weight: bold;
         padding: 10px 15px;
     }
-    .btn.btn-outline {
-        background-color: rgba(12, 11, 9, 0.74);
+    .hero .hero-content .btn.btn-outline {
+        background-color: rgba(37, 37, 37, 0.411);
     }
     /* ============================
      * О НАС КРАТКО
      * ============================ */
-    .about-short {
-        padding: 70px 0;
+    .about-short .about-content .section-title {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .about-short .about-content .section-title::after {
+        top: 100%;
+        display: none;
+    }
+    .about-short .about-content .about-separator {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .about-short .about-content .btn.btn-about {
+        font-size: 12px;
+        padding: 10px 15px;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
     }
     /* Мозаика фотографий */
-    .mosaic-main {
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
-    .mosaic-img {
-        height: 320px;
-    }
-    .mosaic-grid {
-        bottom: 20px;
-        left: 15px;
-        width: calc(100% - 30px);
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-    .mosaic-item {
-        padding: 10px;
-    }
-    /* Бейджи и значки */
-    .year-badge {
-        font-size: 16px;
-    }
-    .year-label {
-        font-size: 12px;
-    }
-    .experience-badge {
-        width: 80px;
-        height: 80px;
-        top: 20px;
-        right: 20px;
-    }
-    .exp-number {
-        font-size: 28px;
-    }
-    .exp-text {
-        font-size: 10px;
-        margin-top: 4px;
-    }
-    .about-content {
-        padding: 35px 0 0;
-    }
+    /* В общих стилях */
     /* Заголовок "Философия бутика" */
     .about-short .about-content .section-title {
         font-size: 28px;
@@ -132,8 +171,9 @@
         margin: 18px 0 22px;
         width: 70px;
     }
-    .about-feature {
-        margin-bottom: 18px;
+    .about-short .about-content .about-feature {
+        padding: 0px 5px;
+        scale: 1.1;
     }
     .feature-icon {
         flex: 0 0 40px;
@@ -151,24 +191,18 @@
         font-size: 13px;
         line-height: 1.5;
     }
-    .btn-about {
-        padding: 13px 28px;
-        font-size: 13px;
-        margin-top: 8px;
-    }
     /* ============================
      * НАШИ РАБОТЫ (index.html)
      * ============================ */
     .portfolio {
-        padding: 70px 0;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
     }
     .portfolio .section-header .section-title {
         font-size: 35px;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
         text-align: center;
-    }
-    .portfolio .section-title {
-        font-size: 32px;
     }
     .portfolio-accent {
         font-size: 12px;
@@ -179,13 +213,13 @@
         margin-top: 18px;
     }
     /* Фильтры и карточки проектов */
-    .portfolio-filter,
-    .projects-filter {
+    .portfolio .portfolio-filter,
+    .portfolio .projects-filter {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 25px;
-        gap: 6px;
+        margin-bottom: 0;
+        gap: 2px;
     }
     .filter-btn {
         margin: 0 6px 8px;
@@ -276,9 +310,18 @@
         text-align: center;
         margin-bottom: 15px;
     }
+    .process::after {
+        display: none;
+    }
+    .process .process-progress {
+        display: none;
+    }
+    .process .process-progress-bar {
+        display: none;
+    }
     /* Подробный процесс создания */
     .process-detailed {
-        padding: 60px 0;
+        padding: 20px 0;
     }
     .atelier-process__container {
         padding: 0 15px;
@@ -319,22 +362,100 @@
         top: 30px;
     }
     /* ============================
+     * СВЯЖИТЕСЬ С НАМИ
+     * ============================ */
+    .contact-form {
+        margin: 0;
+        padding: 0;
+    }
+    .contact-form .form-content {
+        padding: 20px;
+        margin-bottom: 25px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        text-align: center;
+    }
+    .contact-form .section-title {
+        font-size: 27px;
+        font-weight: normal;
+    }
+    .contact-form .section-title::after {
+        background: #c29d59;
+        text-align: center;
+        font-weight: normal;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .contact-form .form-check-label {
+        white-space: nowrap;
+        font-size: 12px;
+    }
+    .contact-form .form-floating .form-control {
+        padding: 1rem 0.75rem;
+        font-size: 14px;
+    }
+    .contact-form .form-floating label {
+        font-size: 14px;
+    }
+    .contact-image {
+        height: 250px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    .contact-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .contact-form .form-loading-spinner {
+        width: 30px;
+        height: 30px;
+    }
+    /* ============================
      * СТРАНИЦА "О НАС"
      * ============================ */
     .page-header {
-        height: 40vh;
+        height: 45vh;
         min-height: 300px;
+    }
+    .page-header-content {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--color-white);
     }
     .page-header .page-header-content .page-title {
         font-size: 36px !important;
         margin-bottom: 12px;
+        animation: titleReveal 1.2s forwards cubic-bezier(0.22, 1, 0.36, 1);
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     }
     .page-header .page-header-content .page-title::after {
         width: 70px;
+        height: 2px;
+        bottom: -8px;
+        animation: lineGrow 1.5s ease forwards 0.3s;
+        box-shadow: 0 0 8px var(--accent-shine);
     }
     .page-header .page-header-content .breadcrumb-item,
     .page-header .page-header-content .breadcrumb-separator {
         font-size: 14px;
+        animation: fadeInUp 0.8s ease forwards 0.7s;
+    }
+    .page-header::before {
+        width: 120px;
+        height: 120px;
+        filter: blur(40px);
+    }
+    .page-header .page-header-image::after {
+        width: 150px;
+        height: 150px;
+        filter: blur(50px);
     }
     .section-title:before {
         display: none;
@@ -418,6 +539,9 @@
     }
     .member-position {
         font-size: 14px;
+    }
+    .warranty .warranty-content {
+        padding: 0;
     }
     /* ============================
      * ФОРМА ОБРАТНОЙ СВЯЗИ
@@ -507,5 +631,275 @@
     .social-link:hover {
         background-color: #c8a165;
         border-color: #c8a165;
+    }
+    /* ============================
+     * АНИМАЦИИ
+     * ============================ */
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    .pulse {
+        animation: pulse 2s infinite;
+    }
+    /* Анимации в адаптивной версии */
+    .float-animation,
+    .pulse-animation,
+    .hover-rotate,
+    .hover-skew {
+        transition: all 0.4s ease;
+    }
+    /* ============================
+     * СТРАНИЦА "НАШИ РАБОТЫ"
+     * ============================ */
+    /* Заголовок страницы для works.html */
+    body .page-header .page-header-content .page-title {
+        font-size: 38px;
+        margin-bottom: 12px;
+    }
+    body .page-header .page-header-content .page-title::after {
+        width: 70px;
+    }
+    /* Фильтры проектов */
+    .projects .projects-filter {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        margin-bottom: 25px !important;
+    }
+    .projects .filter-button {
+        padding: 6px 12px !important;
+        font-size: 13px !important;
+        margin: 0 3px 8px !important;
+    }
+    .projects .filter-button.active {
+        background-color: #d48428d5 !important;
+        color: #fff !important;
+    }
+    /* Сетка проектов */
+    .projects .projects-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        margin-bottom: 15px !important;
+        width: 100% !important;
+    }
+    /* Стили проектных карточек (убираем старые стили, которые конфликтуют) */
+    .project-item {
+        height: auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    /* Корректные стили для проектных карточек */
+    .projects .project-item {
+        position: relative !important;
+        height: 160px !important;
+        overflow: hidden !important;
+        border-radius: 0 !important;
+        cursor: pointer !important;
+        transition: transform 0.4s ease-in-out !important;
+        box-sizing: border-box !important;
+    }
+    .projects .project-image {
+        height: 100% !important;
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+    .projects .project-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        transition: transform 0.5s ease !important;
+    }
+    .projects .project-overlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(31, 34, 51, 0.7) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        opacity: 1 !important;
+        transition: opacity 0.3s ease !important;
+        padding: 15px !important;
+        box-sizing: border-box !important;
+    }
+    .projects .project-title {
+        color: #fff !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        margin-bottom: 5px !important;
+        text-align: center !important;
+    }
+    .projects .project-category {
+        color: #c4c58f !important;
+        font-size: 11px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+    }
+    /* Модальное окно проектов */
+    #projectModal.project-modal .modal-content {
+        width: 95% !important;
+        margin: 15px auto !important;
+    }
+    #projectModal.project-modal .modal-image {
+        max-height: 350px !important;
+    }
+    /* ============================
+     * ПРЕИМУЩЕСТВА И ВЫГОДЫ
+     * ============================ */
+    .benefits {
+        padding: 40px 0;
+        text-align: center;
+    }
+    .benefits .section-header {
+        margin-bottom: 25px;
+        position: relative;
+    }
+    .benefits .section-header .section-title.visible {
+        font-size: 24px;
+        margin-bottom: 15px;
+        font-family: var(--font-primary);
+        position: relative;
+    }
+    .benefits .section-header .section-title.visible::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 2px;
+        background-color: #c29d59;
+        margin-bottom: -8px;
+    }
+    .benefits .section-title:after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 2px;
+        background-color: #c29d59;
+        margin: 12px auto 0;
+    }
+    .benefits .section-subtitle {
+        font-size: 14px;
+        max-width: 90%;
+        margin: 0 auto 40px;
+        color: #666;
+        line-height: 1.4;
+    }
+    .benefits .benefit-item {
+        padding: 15px 12px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #fff;
+    }
+    .benefits .benefit-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    .benefits .benefit-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(194, 157, 89, 0.1);
+        border-radius: 50%;
+    }
+    .benefits .benefit-icon span {
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .benefits .benefit-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        position: relative;
+        color: #2c2018;
+        font-weight: 600;
+    }
+    .benefits .benefit-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 35px;
+        height: 2px;
+        background-color: #c29d59;
+    }
+    .benefits .benefit-text {
+        font-size: 13px;
+        line-height: 1.5;
+        color: #555;
+        margin-bottom: 0;
+    }
+    .contacts-container .contact-title-container {
+        margin-top: 70px;
+    }
+    /* ============================
+     * СТРАНИЦА КОНТАКТОВ
+     * ============================ */
+    /* Скрываем эффект спецификации на мобильных устройствах */
+    .specifications-effect {
+        display: none;
+    }
+    /* ============================
+     * МОДАЛЬНОЕ ОКНО ЗАКАЗА ПРОЕКТА
+     * ============================ */
+    .modal-project {
+        width: 95%;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+    .modal-project-image {
+        height: 140px;
+    }
+    .modal-project-content {
+        padding: 20px 15px;
+    }
+    .modal-project-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .modal-project-subtitle {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    .modal-form-input,
+    .floating-input {
+        font-size: 14px;
+    }
+    .modal-step-label {
+        font-size: 9px;
+        max-width: 60px;
+        text-align: center;
+        line-height: 1.2;
+    }
+    /* Улучшаем отзывчивость на маленьких экранах */
+    .modal-project::before {
+        height: 3px;
+    }
+    .modal-project-steps {
+        margin-bottom: 15px;
+    }
+    .modal-submit-btn {
+        padding: 10px 15px;
+        font-size: 14px;
     }
 }

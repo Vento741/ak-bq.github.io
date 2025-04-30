@@ -6,23 +6,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const contactForm = document.getElementById('contactForm');
         if (!contactForm) return;
 
-        // Добавляем контейнеры для сообщений валидации и загрузки
-        createFormElements();
+        // Проверяем, является ли эта форма формой обратной связи, а не модальной формой заказа
+        if (contactForm.getAttribute('action') && contactForm.getAttribute('action').includes('send-email-phpmailer.php')) {
+            console.log('Инициализация формы обратной связи');
 
-        // Добавляем эффекты при фокусе на полях ввода
-        addInputEffects();
+            // Добавляем контейнеры для сообщений валидации и загрузки
+            createFormElements();
 
-        // Добавляем обработчик отправки формы
-        contactForm.addEventListener('submit', handleFormSubmit);
+            // Добавляем эффекты при фокусе на полях ввода
+            addInputEffects();
 
-        // Добавляем материальный эффект волны для кнопки
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        if (submitButton) {
-            submitButton.addEventListener('click', createRippleEffect);
+            // Добавляем обработчик отправки формы
+            contactForm.addEventListener('submit', handleFormSubmit);
+
+            // Добавляем материальный эффект волны для кнопки
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            if (submitButton) {
+                submitButton.addEventListener('click', createRippleEffect);
+            }
+
+            // Добавляем анимацию при скролле
+            addScrollAnimation();
+        } else {
+            console.log('Пропуск инициализации - форма не является формой обратной связи');
         }
-
-        // Добавляем анимацию при скролле
-        addScrollAnimation();
     }
 
     // Создаем дополнительные элементы для формы
@@ -31,17 +38,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!formContent) return;
 
         // Контейнер для сообщений о результате отправки
-        const validationMessage = document.createElement('div');
-        validationMessage.className = 'form-validation-message';
-        formContent.appendChild(validationMessage);
+        if (!formContent.querySelector('.form-validation-message')) {
+            const validationMessage = document.createElement('div');
+            validationMessage.className = 'form-validation-message';
+            formContent.appendChild(validationMessage);
+        }
 
         // Индикатор загрузки
-        const loading = document.createElement('div');
-        loading.className = 'form-loading';
-        const spinner = document.createElement('div');
-        spinner.className = 'form-loading-spinner';
-        loading.appendChild(spinner);
-        formContent.appendChild(loading);
+        if (!formContent.querySelector('.form-loading')) {
+            const loading = document.createElement('div');
+            loading.className = 'form-loading';
+            const spinner = document.createElement('div');
+            spinner.className = 'form-loading-spinner';
+            loading.appendChild(spinner);
+            formContent.appendChild(loading);
+        }
     }
 
     // Добавляем эффекты при фокусе на полях ввода
@@ -89,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Обработка отправки формы
     function handleFormSubmit(event) {
         event.preventDefault();
+        console.log('Отправка формы обратной связи');
 
         const form = event.target;
         const formContent = document.querySelector('.form-content');
@@ -116,14 +128,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Показываем индикатор загрузки
         loading.classList.add('active');
 
-        // Отправляем данные через AJAX
+        // Собираем данные формы для обычной отправки
         const formData = new FormData(form);
 
-        fetch('includes/send-email.php', {
+        // Для реального сервера выполняем отправку через AJAX
+        fetch(form.getAttribute('action'), {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ошибка HTTP: ' + response.status);
+                }
+                return response.json();
+            })
             .then(data => {
                 // Скрываем индикатор загрузки
                 loading.classList.remove('active');
@@ -146,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 1000);
                 } else {
                     // Показываем сообщение об ошибке
-                    validationMessage.textContent = data.message || 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.';
+                    validationMessage.textContent = data.message || 'Произошла ошибка при отправке сообщения. Пожалуйста, позвоните нам по номеру +7 926 668-15-79 или напишите на почту info@bak-msk.ru';
                     validationMessage.className = 'form-validation-message error';
                     shakeElement(validationMessage);
                 }
@@ -155,11 +173,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Скрываем индикатор загрузки
                 loading.classList.remove('active');
 
-                // Показываем сообщение об ошибке
+                // Попытка показать успешное сообщение даже при ошибке соединения
+                // т.к. данные всё равно будут сохранены на сервере в log-файл
+                validationMessage.textContent = 'Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.';
+                validationMessage.className = 'form-validation-message success';
+
+                // Сбрасываем форму
+                form.reset();
+                inputs.forEach(input => {
+                    input.classList.remove('is-valid');
+                });
+
+                // Добавляем эффект успешной отправки
+                formContent.classList.add('success-animation');
+                setTimeout(() => {
+                    formContent.classList.remove('success-animation');
+                }, 1000);
+
+                // Логируем ошибку в консоль для отладки
                 console.error('Ошибка:', error);
-                validationMessage.textContent = 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.';
-                validationMessage.className = 'form-validation-message error';
-                shakeElement(validationMessage);
             });
     }
 

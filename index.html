@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="css/elite-gold.css">
     <link rel="stylesheet" href="css/elite-portfolio.css">
     <link rel="stylesheet" href="css/portfolio-anims.css">
+    <link rel="stylesheet" href="css/custom-modal.css">
+    <link rel="stylesheet" href="css/custom-modal-mobile.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -92,7 +94,7 @@
                         <h1 class="hero-title">Искусство создания <br><span>элитной кухни</span></h1>
                         <p class="hero-subtitle">Эксклюзивные авторские решения для тех, кто ценит индивидуальность</p>
                         <div class="hero-buttons">
-                            <a href="pages/custom-order.html" class="btn btn-primary">Заказать проект</a>
+                            <a href="pages/custom-order.html" class="btn btn-primary order-project-btn">Заказать проект</a>
                             <a href="pages/works.html" class="btn btn-outline">Портфолио</a>
                         </div>
                     </div>
@@ -493,7 +495,7 @@
                         <h2 class="section-title">Свяжитесь с нами</h2>
                         <p class="form-text">Оставьте заявку, и наш специалист свяжется с вами в ближайшее время</p>
 
-                        <form id="contactForm" action="includes/send-email.php" method="POST">
+                        <form id="contactForm" action="includes/send-email-phpmailer.php" method="POST" class="contact-form-main">
                             <div class="form-floating mb-4">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Ваше имя" required>
                                 <label for="name">Ваше имя</label>
@@ -509,6 +511,8 @@
                                 <label for="message">Ваше сообщение</label>
                             </div>
 
+                            <input type="email" name="email" value="no-reply@example.com" style="display: none;">
+
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="checkbox" id="agreement" name="agreement" required>
                                 <label class="form-check-label" for="agreement">
@@ -516,7 +520,7 @@
                                 </label>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Отправить</button>
+                            <button type="submit" class="btn btn-primary contact-submit-btn">Отправить</button>
                         </form>
                     </div>
                 </div>
@@ -581,9 +585,8 @@
                     <p>Создано разработчиком: <a href="https://vento741.github.io/web_dusha.github.io/" target="_blank">Web-Dusha.ru</a></p>
                 </div>
                 <div class="social-links">
-                    <a href="#" class="social-link">VK</a>
-                    <a href="#" class="social-link">WhatsApp</a>
-                    <a href="#" class="social-link">Telegram</a>
+                    <a href="https://t.me/+79266681579" class="social-link">Telegram</a>
+                    <a href="https://wa.me/79266681579" class="social-link">WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -600,6 +603,8 @@
     <script src="js/workflow-animation.js"></script>
     <script src="js/contact-form-experience.js"></script>
     <script src="js/portfolio-elite.js"></script>
+    <script src="js/whatsapp-integration.js"></script>
+    <script src="js/custom-modal.js"></script>
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">

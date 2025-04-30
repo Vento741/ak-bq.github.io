@@ -28,27 +28,64 @@
         background-size: cover;
         background-position: center;
         filter: brightness(0.7);
-        animation: hero-slideshow 20s infinite;
+        animation: hero-slideshow 24s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        /* Предзагрузка первого изображения для мгновенного отображения */
+        background-image: url('../images/hero-bg-mob.jpg');
+    }
+    /* Предзагрузка всех изображений для слайдшоу */
+    .hero::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: -1;
+        background-image: url('../images/hero-bg-mob.jpg'), url('../images/hero-bg-mob2.jpg'), url('../images/hero-bg-mob3.jpg');
     }
     @keyframes hero-slideshow {
-        0%,
-        25% {
+        0% {
             background-image: url('../images/hero-bg-mob.jpg');
             transform: scale(1);
+            filter: brightness(0.7) saturate(1);
         }
-        33%,
-        58% {
-            background-image: url('../images/hero-bg-mob2.jpg');
+        5% {
+            transform: scale(1.02);
+            filter: brightness(0.75) saturate(1.1);
+        }
+        25% {
             transform: scale(1.05);
+            filter: brightness(0.7) saturate(1);
         }
-        66%,
-        91% {
+        33% {
+            background-image: url('../images/hero-bg-mob2.jpg');
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+        38% {
+            transform: scale(1.02);
+            filter: brightness(0.75) saturate(1.1);
+        }
+        58% {
+            transform: scale(1.05);
+            filter: brightness(0.7) saturate(1);
+        }
+        66% {
             background-image: url('../images/hero-bg-mob3.jpg');
-            transform: scale(1.1);
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+        71% {
+            transform: scale(1.02);
+            filter: brightness(0.75) saturate(1.1);
+        }
+        91% {
+            transform: scale(1.05);
+            filter: brightness(0.7) saturate(1);
         }
         100% {
             background-image: url('../images/hero-bg-mob.jpg');
             transform: scale(1);
+            filter: brightness(0.7) saturate(1);
         }
     }
     .hero-title {
@@ -1105,5 +1142,89 @@
     }
     .contacts-container .contact-title-container {
         margin-top: 80px;
+    }
+    /* ============================
+     * СТРАНИЦА КОНТАКТОВ
+     * ============================ */
+    /* Скрываем эффект спецификации на мобильных устройствах */
+    .specifications-effect {
+        display: none;
+    }
+    /* ============================
+     * МОДАЛЬНОЕ ОКНО ЗАКАЗА ПРОЕКТА
+     * ============================ */
+    .modal-project {
+        width: 92%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    .modal-project-image {
+        flex: 0 0 180px;
+    }
+    .modal-project-content {
+        padding: 25px 20px;
+    }
+    .modal-project-title {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+    .modal-project-subtitle {
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+    .modal-step-number {
+        width: 28px;
+        height: 28px;
+    }
+    .modal-step-label {
+        font-size: 11px;
+        max-width: 70px;
+        text-align: center;
+    }
+    .modal-project-steps {
+        margin-bottom: 20px;
+    }
+    .modal-form-input,
+    .floating-input {
+        font-size: 15px;
+    }
+    .floating-group {
+        margin-bottom: 18px;
+    }
+    .modal-privacy-text {
+        font-size: 12px;
+    }
+    .modal-submit-btn,
+    .modal-back-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    /* Для планшетов в портретной ориентации */
+    @media (orientation: portrait) {
+        .modal-project {
+            flex-direction: column;
+        }
+        .modal-project-image {
+            flex: 0 0 200px;
+            width: 100%;
+            order: -1;
+        }
+    }
+    /* Для планшетов в ландшафтной ориентации */
+    @media (orientation: landscape) {
+        .modal-project {
+            flex-direction: row;
+            max-height: 95vh;
+        }
+        .modal-project-image {
+            flex: 0 0 40%;
+            min-height: 300px;
+        }
+        .modal-project-content {
+            flex: 0 0 60%;
+            overflow-y: auto;
+            max-height: 95vh;
+            padding-bottom: 50px;
+        }
     }
 }

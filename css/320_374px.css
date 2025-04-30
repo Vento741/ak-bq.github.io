@@ -468,4 +468,95 @@
     .material-description {
         font-size: 13px;
     }
+    /* ============================
+     * МОДАЛЬНОЕ ОКНО ЗАКАЗА ПРОЕКТА
+     * ============================ */
+    .modal-project {
+        width: 98%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    .modal-project-image {
+        height: 120px;
+    }
+    .modal-project-content {
+        padding: 15px 12px;
+    }
+    .modal-project-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    .modal-project-title::after {
+        width: 40px;
+        bottom: -6px;
+    }
+    .modal-project-subtitle {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+    .modal-step-number {
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+    .modal-step-label {
+        font-size: 8px;
+        max-width: 50px;
+        text-align: center;
+        line-height: 1.1;
+    }
+    .modal-step::after {
+        top: 12px;
+    }
+    .modal-form-input,
+    .floating-input {
+        font-size: 13px;
+        padding: 8px 0;
+    }
+    .floating-label {
+        font-size: 13px;
+    }
+    .floating-input:focus~.floating-label,
+    .floating-input:not(:placeholder-shown)~.floating-label {
+        top: -10px;
+        font-size: 10px;
+    }
+    .floating-group {
+        margin-bottom: 14px;
+    }
+    .modal-submit-btn,
+    .modal-back-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+    .modal-privacy-text {
+        font-size: 10px;
+    }
+    .modal-privacy-checkbox {
+        width: 16px;
+        height: 16px;
+    }
+    .modal-success-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .modal-success-message {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    .modal-close-btn {
+        top: 10px;
+        right: 10px;
+        width: 25px;
+        height: 25px;
+    }
+    /* Скрываем или упрощаем декоративные элементы для повышения производительности */
+    .modal-project::before {
+        height: 3px;
+    }
+    .modal-project::after,
+    .modal-project-decoration {
+        display: none;
+    }
 }
