@@ -365,8 +365,7 @@
      * СВЯЖИТЕСЬ С НАМИ
      * ============================ */
     .contact-form {
-        margin: 0;
-        padding: 0;
+        padding: 40px 0 !important;
     }
     .contact-form .form-content {
         padding: 20px;
@@ -377,22 +376,22 @@
         text-align: center;
     }
     .contact-form .section-title {
-        font-size: 27px;
-        font-weight: normal;
+        font-size: 28px !important;
+        font-weight: normal !important;
     }
     .contact-form .section-title::after {
-        background: #c29d59;
-        text-align: center;
-        font-weight: normal;
-        left: 50%;
-        transform: translateX(-50%);
+        background: #c29d59 !important;
+        text-align: center !important;
+        font-weight: normal !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
     .contact-form .form-check-label {
         white-space: nowrap;
         font-size: 12px;
     }
     .contact-form .form-floating .form-control {
-        padding: 1rem 0.75rem;
+        padding: 3rem 1.5rem;
         font-size: 14px;
     }
     .contact-form .form-floating label {
@@ -559,6 +558,7 @@
     .footer {
         padding-top: 40px;
         padding-bottom: 30px;
+        text-align: center;
     }
     .footer-logo {
         margin-bottom: 20px;
@@ -567,47 +567,59 @@
         font-size: 14px;
         line-height: 1.5;
         margin-bottom: 25px;
+        text-align: center;
     }
     .footer-title {
         font-size: 20px;
         margin-bottom: 15px;
         position: relative;
         padding-bottom: 8px;
+        text-align: center;
     }
     .footer-title:after {
         content: '';
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
         width: 40px;
         height: 2px;
         background-color: #c8a165;
+        text-align: center;
+        justify-content: center;
     }
     .footer-nav {
         margin-bottom: 25px;
+        text-align: center;
     }
     .footer-nav li {
         margin-bottom: 10px;
+        text-align: center;
     }
     .footer-nav a {
         font-size: 14px;
         transition: color 0.3s ease;
+        text-align: center;
     }
     .footer-contacts li {
         margin-bottom: 15px;
         font-size: 14px;
         display: flex;
         align-items: flex-start;
+        text-align: center;
+        justify-content: center;
     }
     .contact-icon {
         margin-right: 10px;
         color: #c8a165;
+        text-align: center;
     }
     .footer-bottom {
         margin-top: 30px;
         padding-top: 20px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         flex-direction: column;
+        text-align: center;
     }
     .copyright {
         text-align: center;
@@ -620,6 +632,7 @@
         justify-content: center;
         gap: 15px;
         margin-top: 15px;
+        text-align: center;
     }
     .social-link {
         padding: 8px 15px;
@@ -627,6 +640,7 @@
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 4px;
         transition: all 0.3s ease;
+        text-align: center;
     }
     .social-link:hover {
         background-color: #c8a165;

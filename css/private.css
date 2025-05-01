@@ -1,0 +1,374 @@
+/* Основные стили для страницы политики конфиденциальности */
+
+.privacy-content {
+    padding: 60px 0;
+}
+
+.privacy-content h2 {
+    color: #886a4a;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+}
+
+.privacy-content h2:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 50px;
+    height: 2px;
+    background-color: #e3874f;
+}
+
+.privacy-content h3 {
+    color: #37363d;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+}
+
+.privacy-content p,
+.privacy-content ul {
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.privacy-content ul {
+    padding-left: 20px;
+}
+
+.privacy-content ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.privacy-content ul li:before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #e3874f;
+}
+
+.privacy-content .highlight {
+    background-color: rgba(227, 135, 79, 0.1);
+    padding: 20px;
+    border-left: 3px solid #e3874f;
+    margin: 25px 0;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.privacy-content .highlight:hover {
+    background-color: rgba(227, 135, 79, 0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.last-updated {
+    font-style: italic;
+    color: #707070;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(112, 112, 112, 0.2);
+    padding-top: 20px;
+}
+
+
+/* Стили для главного заголовка страницы */
+
+.page-header .page-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    padding: 0 20px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    max-width: 100%;
+}
+
+
+/* Стили для хлебных крошек */
+
+.page-header .breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-header .breadcrumb-item {
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.page-header .breadcrumb-separator {
+    margin: 0 8px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.page-header .breadcrumb-item.active {
+    color: #e3874f;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Адаптация шапки для скролла (на основе существующего header.css) */
+
+.header {
+    transition: all 0.3s ease;
+    padding: 20px 0;
+}
+
+.header.scrolled {
+    padding: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Медиа-запросы для адаптивности */
+
+
+/* Экстремально маленькие экраны (до 320px) */
+
+@media screen and (max-width: 320px) {
+    .page-header .page-title {
+        font-size: 24px;
+        margin-bottom: 8px;
+        line-height: 1.2;
+        padding: 0 10px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .page-header .breadcrumbs {
+        font-size: 11px;
+    }
+    .privacy-content h2 {
+        font-size: 18px;
+    }
+    .privacy-content h3 {
+        font-size: 16px;
+    }
+    .privacy-content {
+        padding: 30px 0;
+    }
+    .privacy-content p,
+    .privacy-content ul {
+        font-size: 13px;
+    }
+    .page-header-content {
+        padding: 20px 0;
+    }
+}
+
+
+/* Маленькие экраны (320px - 374px) */
+
+@media screen and (min-width: 321px) and (max-width: 374px) {
+    .privacy-content {
+        padding: 30px 0;
+    }
+    .privacy-content h2 {
+        font-size: 20px;
+    }
+    .privacy-content h3 {
+        font-size: 18px;
+    }
+    .privacy-content p,
+    .privacy-content ul {
+        font-size: 14px;
+    }
+    .privacy-content .highlight {
+        padding: 15px;
+        margin: 20px 0;
+    }
+    .last-updated {
+        font-size: 0.8rem;
+    }
+    /* Уменьшаем размер главного заголовка для мобильных устройств */
+    .page-header .page-title {
+        font-size: 28px;
+        margin-bottom: 10px;
+        padding: 0 15px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .page-header .breadcrumbs {
+        font-size: 12px;
+    }
+    .page-header-content {
+        padding: 25px 0;
+    }
+}
+
+
+/* Мобильные экраны (375px - 425px) */
+
+@media screen and (min-width: 375px) and (max-width: 425px) {
+    .privacy-content {
+        padding: 40px 0;
+    }
+    .privacy-content h2 {
+        font-size: 22px;
+    }
+    .privacy-content h3 {
+        font-size: 19px;
+    }
+    .privacy-content p,
+    .privacy-content ul {
+        font-size: 14px;
+    }
+    /* Уменьшаем размер главного заголовка для мобильных устройств */
+    .page-header .page-title {
+        font-size: 32px;
+        margin-bottom: 12px;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    .page-header .breadcrumbs {
+        font-size: 13px;
+    }
+    .page-header-content {
+        padding: 30px 0;
+    }
+}
+
+
+/* Планшеты (426px - 768px) */
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .privacy-content h2 {
+        font-size: 24px;
+    }
+    .privacy-content h3 {
+        font-size: 20px;
+    }
+    .privacy-content p,
+    .privacy-content ul {
+        font-size: 15px;
+    }
+    /* Уменьшаем размер главного заголовка для планшетов */
+    .page-header .page-title {
+        font-size: 38px;
+        margin-bottom: 15px;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+    .page-header .breadcrumbs {
+        font-size: 14px;
+    }
+    .page-header-content {
+        padding: 40px 0;
+    }
+}
+
+
+/* Большие экраны (1441px и выше) */
+
+@media screen and (min-width: 1441px) {
+    .privacy-content {
+        padding: 80px 0;
+    }
+    .privacy-content h2 {
+        font-size: 28px;
+        margin-top: 40px;
+        margin-bottom: 25px;
+    }
+    .privacy-content h2:after {
+        width: 60px;
+        height: 3px;
+    }
+    .privacy-content h3 {
+        font-size: 24px;
+        margin-top: 35px;
+        margin-bottom: 20px;
+    }
+    .privacy-content p,
+    .privacy-content ul {
+        font-size: 17px;
+        line-height: 1.9;
+        margin-bottom: 20px;
+    }
+    .privacy-content ul li {
+        margin-bottom: 15px;
+    }
+    .privacy-content .highlight {
+        padding: 30px;
+        margin: 35px 0;
+        border-left: 4px solid #e3874f;
+    }
+    .last-updated {
+        margin-top: 60px;
+        font-size: 1rem;
+        padding-top: 25px;
+    }
+    /* Увеличиваем размер главного заголовка для больших экранов */
+    .page-header .page-title {
+        font-size: 60px;
+        margin-bottom: 25px;
+        padding: 0 30px;
+        letter-spacing: 1px;
+    }
+    .page-header .breadcrumbs {
+        font-size: 18px;
+    }
+    .page-header-content {
+        padding: 60px 0;
+    }
+}
+
+
+/* Анимация появления контента */
+
+.privacy-content h2,
+.privacy-content h3,
+.privacy-content p,
+.privacy-content ul,
+.privacy-content .highlight {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards ease;
+}
+
+.privacy-content h2 {
+    animation-delay: 0.1s;
+}
+
+.privacy-content h3 {
+    animation-delay: 0.2s;
+}
+
+.privacy-content p {
+    animation-delay: 0.3s;
+}
+
+.privacy-content ul {
+    animation-delay: 0.4s;
+}
+
+.privacy-content .highlight {
+    animation-delay: 0.5s;
+}
+
+
+/* Добавляем анимацию fadeInUp, если она не определена в основном CSS */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

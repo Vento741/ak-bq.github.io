@@ -251,6 +251,9 @@
     /* ============================
      * СВЯЖИТЕСЬ С НАМИ
      * ============================ */
+    .contact-form {
+        padding: 40px 0 !important;
+    }
     .contact-form .form-content {
         padding: 25px;
         margin-bottom: 30px;
@@ -272,7 +275,7 @@
         white-space: nowrap;
     }
     .contact-form .form-floating .form-control {
-        padding: 1rem 0.75rem;
+        padding: 4rem 1.5rem;
         font-size: 14px;
     }
     .contact-form .form-floating label {
@@ -641,6 +644,9 @@
     /* ============================
      * ФОРМА ОБРАТНОЙ СВЯЗИ
      * ============================ */
+    .contact-form-main {
+        padding: 10px;
+    }
     .contact-form .form-content .section-title {
         font-size: 30px;
         padding: 20px 0;
@@ -779,18 +785,22 @@
     .footer {
         padding-top: 40px;
         padding-bottom: 30px;
+        text-align: center;
     }
     .footer-logo {
         margin-bottom: 20px;
+        text-align: center;
     }
     .footer-description {
         font-size: 14px;
         line-height: 1.5;
         margin-bottom: 25px;
+        text-align: center;
     }
     .footer-title {
         font-size: 20px;
         margin-bottom: 15px;
+        text-align: center;
         position: relative;
         padding-bottom: 8px;
     }
@@ -798,36 +808,45 @@
         content: '';
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
         width: 40px;
         height: 2px;
         background-color: #c8a165;
+        text-align: center;
     }
     .footer-nav {
         margin-bottom: 25px;
+        text-align: center;
     }
     .footer-nav li {
         margin-bottom: 10px;
+        text-align: center;
     }
     .footer-nav a {
         font-size: 14px;
         transition: color 0.3s ease;
+        text-align: center;
     }
     .footer-contacts li {
         margin-bottom: 15px;
         font-size: 14px;
         display: flex;
         align-items: flex-start;
+        text-align: center;
+        justify-content: center;
     }
     .contact-icon {
         margin-right: 10px;
         color: #c8a165;
+        text-align: center;
     }
     .footer-bottom {
         margin-top: 30px;
         padding-top: 20px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         flex-direction: column;
+        text-align: center;
     }
     .copyright {
         text-align: center;
@@ -847,6 +866,7 @@
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 4px;
         transition: all 0.3s ease;
+        text-align: center;
     }
     .social-link:hover {
         background-color: #c8a165;

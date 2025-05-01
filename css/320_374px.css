@@ -1,202 +1,193 @@
 @media screen and (min-width: 320px) and (max-width: 374px) {
     /* === Стили для мобильных устройств (320px-374px) === */
     /* Общие стили */
-    body {
-        overflow-x: hidden;
-        width: 100%;
-    }
-    .container-fluid {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .container {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .row {
-        margin-left: -10px;
-        margin-right: -10px;
-    }
-    .col,
-    .col-1,
-    .col-2,
-    .col-3,
-    .col-4,
-    .col-5,
-    .col-6,
-    .col-7,
-    .col-8,
-    .col-9,
-    .col-10,
-    .col-11,
-    .col-12,
-    .col-lg-1,
-    .col-lg-2,
-    .col-lg-3,
-    .col-lg-4,
-    .col-lg-5,
-    .col-lg-6,
-    .col-lg-7,
-    .col-lg-8,
-    .col-lg-9,
-    .col-lg-10,
-    .col-lg-11,
-    .col-lg-12,
-    .col-md-1,
-    .col-md-2,
-    .col-md-3,
-    .col-md-4,
-    .col-md-5,
-    .col-md-6,
-    .col-md-7,
-    .col-md-8,
-    .col-md-9,
-    .col-md-10,
-    .col-md-11,
-    .col-md-12,
-    .col-sm-1,
-    .col-sm-2,
-    .col-sm-3,
-    .col-sm-4,
-    .col-sm-5,
-    .col-sm-6,
-    .col-sm-7,
-    .col-sm-8,
-    .col-sm-9,
-    .col-sm-10,
-    .col-sm-11,
-    .col-sm-12 {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    /* Навигация */
-    .header {
-        padding: 15px 0;
-    }
-    .logo-text {
+    .section-title {
         font-size: 20px;
     }
-    .logo-accent {
-        font-size: 12px;
-        letter-spacing: 2px;
-    }
-    .main-nav {
-        width: 100%;
-        right: -100%;
-    }
-    /* Главный экран */
-    .hero-content {
-        text-align: center;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .hero-title {
-        font-size: 49px;
-        margin-bottom: 10px;
-    }
-    .hero-subtitle {
-        font-size: 14px;
-        margin-bottom: 25px;
-    }
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 150px;
-    }
-    .hero-buttons .btn {
-        margin-bottom: 10px;
-        width: 100%;
-        max-width: 250px;
-    }
-    /* Секции */
-    .section-title {
-        font-size: 24px;
-    }
     .section-subtitle {
-        font-size: 14px;
-    }
-    /* О нас кратко */
-    .about-short {
-        padding: 60px 0;
-    }
-    .mosaic-main {
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-    .mosaic-img {
-        height: 300px;
-    }
-    .mosaic-grid {
-        bottom: 15px;
-        left: 10px;
-        width: calc(100% - 20px);
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-    .mosaic-item {
-        padding: 8px;
-    }
-    .year-badge {
-        font-size: 14px;
-    }
-    .year-label {
         font-size: 10px;
+        /* max-width: 20px; */
+        margin: 0 auto 20px;
     }
-    .experience-badge {
-        width: 70px;
-        height: 70px;
-        top: 15px;
-        right: 15px;
+    /* ============================
+     * ШАПКА И НАВИГАЦИЯ 
+     * ============================ */
+    .logo-text {
+        font-size: 18px;
     }
-    .exp-number {
-        font-size: 24px;
+    /* ============================
+     * ГЛАВНАЯ СТРАНИЦА
+     * ============================ */
+    .hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.7);
+        animation: hero-slideshow 24s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        /* Предзагрузка первого изображения для мгновенного отображения */
+        background-image: url('../images/hero-bg-mob.jpg');
     }
-    .exp-text {
-        font-size: 9px;
-        margin-top: 3px;
+    /* Предзагрузка всех изображений для слайдшоу */
+    .hero::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: -1;
+        background-image: url('../images/hero-bg-mob.jpg'), url('../images/hero-bg-mob2.jpg'), url('../images/hero-bg-mob3.jpg');
     }
-    .about-content {
-        padding: 30px 0 0;
+    @keyframes hero-slideshow {
+        0% {
+            background-image: url('../images/hero-bg-mob.jpg');
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+        5% {
+            transform: scale(1.02);
+            filter: brightness(0.75) saturate(1.1);
+        }
+        25% {
+            transform: scale(1.05);
+            filter: brightness(0.7) saturate(1);
+        }
+        33% {
+            background-image: url('../images/hero-bg-mob2.jpg');
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+        38% {
+            transform: scale(1.02);
+            filter: brightness(0.75) saturate(1.1);
+        }
+        58% {
+            transform: scale(1.05);
+            filter: brightness(0.7) saturate(1);
+        }
+        66% {
+            background-image: url('../images/hero-bg-mob3.jpg');
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+        71% {
+            transform: scale(1.02);
+            filter: brightness(0.75) saturate(1.1);
+        }
+        91% {
+            transform: scale(1.05);
+            filter: brightness(0.7) saturate(1);
+        }
+        100% {
+            background-image: url('../images/hero-bg-mob.jpg');
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+    }
+    .hero .hero-content .hero-title {
+        font-size: 25px;
+        text-align: center;
+    }
+    .hero .hero-content .hero-subtitle {
+        font-size: 14px;
+    }
+    .hero .hero-content .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        padding-top: 50px;
+        padding-bottom: 0;
+        scale: 1.0;
+    }
+    .hero .hero-content .btn.btn-primary,
+    .hero .hero-content .btn.btn-outline {
+        font-size: 10px;
+        font-family: 'Playfair Display', serif;
+        text-align: center;
+        font-weight: bold;
+        padding: 10px 15px;
+    }
+    .hero .hero-content .btn.btn-outline {
+        background-color: rgba(37, 37, 37, 0.411);
+    }
+    /* ============================
+     * О НАС КРАТКО
+     * ============================ */
+    .about-short .about-content .section-title {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .about-short .about-content .section-title::after {
+        top: 100%;
+        display: none;
+    }
+    .about-short .about-content .about-separator {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .about-short .about-content .btn.btn-about {
+        font-size: 10px;
+        padding: 10px 15px;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    /* Мозаика фотографий */
+    /* В общих стилях */
+    /* Заголовок "Философия бутика" */
+    .about-short .about-content .section-title {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Playfair Display', serif;
+        color: #2c2018;
+        text-shadow: 2px 2px 4px rgba(26, 5, 5, 0.096);
+        text-align: center;
+        /* Сброс стилей градиента из базовых стилей */
+        background: none;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: #2c2018;
+        background-clip: initial;
+    }
+    .about-short .about-content .section-title:after {
+        background: #c29d59;
+        display: block;
+        margin: 10px auto;
     }
     .about-tagline {
-        font-size: 11px;
-        padding-left: 35px;
-        letter-spacing: 1px;
+        font-size: 10px;
+        padding-left: 40px;
+        letter-spacing: 1.2px;
     }
     .about-tagline:before {
-        width: 25px;
+        width: 30px;
     }
-    .section-title {
-        font-size: 22px;
-        margin-bottom: 15px;
-    }
+    /* Элементы контента */
     .about-separator {
-        margin: 15px 0 20px;
-        width: 60px;
+        margin: 18px 0 22px;
+        width: 70px;
     }
-    .about-feature {
-        margin-bottom: 15px;
+    .about-short .about-content .about-feature {
+        padding: 0px 5px;
+        scale: 1.1;
     }
     .feature-icon {
-        flex: 0 0 35px;
-        height: 35px;
-        margin-right: 12px;
+        flex: 0 0 40px;
+        height: 40px;
+        margin-right: 15px;
     }
     .feature-icon i {
-        font-size: 14px;
+        font-size: 16px;
     }
     .feature-title {
-        font-size: 15px;
-        margin-bottom: 5px;
+        font-size: 16px;
+        margin-bottom: 6px;
     }
     .feature-text {
-        font-size: 12px;
+        font-size: 13px;
         line-height: 1.5;
-    }
-    .btn-about {
-        padding: 12px 25px;
-        font-size: 12px;
-        margin-top: 5px;
     }
     /* Портфолио */
     .portfolio {
@@ -311,17 +302,26 @@
     }
     /* Форма обратной связи */
     .contact-form {
-        padding: 60px 0;
+        padding: 50px 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
-    .form-content {
-        padding-right: 0;
-        margin-bottom: 30px;
+    .contact-form .form-content {
+        text-align: center !important;
     }
-    .form-text {
-        font-size: 14px;
+    .contact-form .section-title {
+        font-size: 28px !important;
+        text-align: center !important;
+        padding: 0 0 20px 0 !important;
     }
-    .form-control {
-        padding: 1.2rem 0.75rem;
+    .contact-form .form-text {
+        font-size: 14px !important;
+    }
+    .contact-form .form-control {
+        font-size: 18px !important;
+        padding: 2.5rem 3rem !important;
+        margin-bottom: 10px !important;
+        text-align: center !important;
     }
     /* Футер */
     .footer {
@@ -395,7 +395,6 @@
     .section-subtitle {
         font-size: 13px;
         margin-bottom: 25px;
-        line-height: 1.5;
     }
     .atelier-process__container {
         padding: 0 10px;

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование адаптивности - Политика конфиденциальности</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .device-frame {
+            margin: 20px auto;
+            border: 2px solid #333;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .device-header {
+            background: #f5f5f5;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+        
+        iframe {
+            border: none;
+            width: 100%;
+            display: block;
+        }
+        
+        .controls {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        button {
+            padding: 8px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            background: #4a6fb3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        button:hover {
+            background: #3a5ca3;
+        }
+        
+        .device-dimensions {
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Тестирование адаптивности страницы Политики конфиденциальности</h1>
+
+    <div class="controls">
+        <button id="mobile-small">Маленький мобильный (320px)</button>
+        <button id="mobile-medium">Средний мобильный (375px)</button>
+        <button id="mobile-large">Большой мобильный (425px)</button>
+        <button id="tablet">Планшет (768px)</button>
+        <button id="desktop">Десктоп (1024px)</button>
+    </div>
+
+    <div class="device-frame" id="frame">
+        <div class="device-header" id="device-name">Просмотр</div>
+        <iframe src="privacy.html" id="preview"></iframe>
+    </div>
+
+    <div class="device-dimensions" id="dimensions">Размер: 320px x 568px</div>
+
+    <script>
+        const frame = document.getElementById('frame');
+        const preview = document.getElementById('preview');
+        const deviceName = document.getElementById('device-name');
+        const dimensions = document.getElementById('dimensions');
+
+        // Размеры различных устройств (ширина x высота)
+        const deviceSizes = {
+            'mobile-small': {
+                width: 320,
+                height: 568,
+                name: 'Маленький мобильный'
+            },
+            'mobile-medium': {
+                width: 375,
+                height: 667,
+                name: 'Средний мобильный'
+            },
+            'mobile-large': {
+                width: 425,
+                height: 736,
+                name: 'Большой мобильный'
+            },
+            'tablet': {
+                width: 768,
+                height: 1024,
+                name: 'Планшет'
+            },
+            'desktop': {
+                width: 1024,
+                height: 768,
+                name: 'Десктоп'
+            }
+        };
+
+        // Функция для изменения размера фрейма
+        function resizeFrame(deviceId) {
+            const device = deviceSizes[deviceId];
+            frame.style.width = device.width + 'px';
+            frame.style.height = device.height + 'px';
+            preview.style.height = (device.height - 41) + 'px'; // Вычитаем высоту заголовка
+            deviceName.textContent = device.name;
+            dimensions.textContent = `Размер: ${device.width}px x ${device.height}px`;
+        }
+
+        // Устанавливаем обработчики событий для кнопок
+        for (const deviceId in deviceSizes) {
+            document.getElementById(deviceId).addEventListener('click', function() {
+                resizeFrame(deviceId);
+            });
+        }
+
+        // Начальный размер фрейма
+        resizeFrame('mobile-small');
+    </script>
+</body>
+
+</html>

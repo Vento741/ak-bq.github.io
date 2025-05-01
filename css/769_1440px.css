@@ -1,0 +1,1511 @@
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+    /* ============================
+     * ОБЩИЕ СТИЛИ И ТИПОГРАФИКА
+     * ============================ */
+    .section-title {
+        font-size: 36px;
+    }
+    .section-subtitle {
+        font-size: 18px;
+        max-width: 480px;
+        margin: 0 auto 50px;
+    }
+    /* ============================
+     * ШАПКА И НАВИГАЦИЯ 
+     * ============================ */
+    .logo-text {
+        font-size: 42px;
+    }
+    .logo-accent {
+        font-size: 16px;
+    }
+    .nav-link {
+        padding: 0;
+        white-space: nowrap;
+    }
+    /* ============================
+     * ГЛАВНАЯ СТРАНИЦА
+     * ============================ */
+    .hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.7);
+        animation: hero-slideshow 24s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        /* Предзагрузка первого изображения для мгновенного отображения */
+        background-image: url('../images/hero-bg.jpg');
+    }
+    /* Предзагрузка всех изображений для слайдшоу */
+    .hero::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: -1;
+        background-image: url('../images/hero-bg.jpg'), url('../images/hero-bg2.jpg'), url('../images/hero-bg3.jpg');
+    }
+    @keyframes hero-slideshow {
+        0% {
+            background-image: url('../images/hero-bg.jpg');
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+        5% {
+            transform: scale(1.02);
+            filter: brightness(0.75) saturate(1.1);
+        }
+        25% {
+            transform: scale(1.05);
+            filter: brightness(0.7) saturate(1);
+        }
+        33% {
+            background-image: url('../images/hero-bg2.jpg');
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+        38% {
+            transform: scale(1.02);
+            filter: brightness(0.75) saturate(1.1);
+        }
+        58% {
+            transform: scale(1.05);
+            filter: brightness(0.7) saturate(1);
+        }
+        66% {
+            background-image: url('../images/hero-bg3.jpg');
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+        71% {
+            transform: scale(1.02);
+            filter: brightness(0.75) saturate(1.1);
+        }
+        91% {
+            transform: scale(1.05);
+            filter: brightness(0.7) saturate(1);
+        }
+        100% {
+            background-image: url('../images/hero-bg.jpg');
+            transform: scale(1);
+            filter: brightness(0.7) saturate(1);
+        }
+    }
+    .hero-title {
+        font-size: 60px;
+    }
+    .hero-subtitle {
+        font-size: 24px;
+    }
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        padding-top: 100px;
+        padding-bottom: 0;
+    }
+    .btn.btn-primary,
+    .btn.btn-outline {
+        font-size: 15px;
+        font-family: 'Playfair Display', serif;
+        text-align: center;
+        font-weight: bold;
+        padding: 12px 25px;
+    }
+    .btn.btn-outline {
+        background-color: rgba(12, 11, 9, 0.7);
+    }
+    /* ============================
+     * ПРЕИМУЩЕСТВА
+     * ============================ */
+    .advantages {
+        padding: 50px 0;
+    }
+    /* Гексагональные блоки */
+    .hex-row {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+    .hex-item {
+        width: 280px;
+        height: 300px;
+        margin: 0 -20px;
+    }
+    .hex-center {
+        width: 300px;
+        height: 320px;
+        margin: 0 -20px;
+        z-index: 2;
+    }
+    .hex-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+    .hex-number {
+        font-size: 24px;
+    }
+    .hex-title {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+    .hex-detail {
+        font-size: 14px;
+        max-width: 170px;
+        line-height: 1.4;
+    }
+    .hex-center .logo-text {
+        font-size: 52px;
+    }
+    .hex-center .logo-accent {
+        font-size: 20px;
+    }
+    /* ============================
+     * О НАС КРАТКО
+     * ============================ */
+    .about-short {
+        padding: 100px 0;
+    }
+    /* Мозаика фотографий */
+    .mosaic-main {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    .mosaic-img {
+        height: 400px;
+    }
+    .mosaic-grid {
+        bottom: 30px;
+        left: 30px;
+        width: calc(100% - 60px);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .mosaic-item {
+        padding: 15px;
+    }
+    /* Бейджи и значки */
+    .year-badge {
+        font-size: 20px;
+    }
+    .year-label {
+        font-size: 14px;
+    }
+    .experience-badge {
+        width: 100px;
+        height: 100px;
+        top: 30px;
+        right: 30px;
+    }
+    .exp-number {
+        font-size: 36px;
+    }
+    .exp-text {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    /* Заголовок "Философия бутика" */
+    .about-short .about-content .section-title {
+        font-size: 36px;
+        font-family: var(--font-primary);
+        color: #2c2018;
+        text-align: left;
+    }
+    .about-short .about-content .section-title:after {
+        background: #c29d59;
+        display: block;
+        margin: 15px 0;
+    }
+    .about-tagline {
+        font-size: 14px;
+        padding-left: 50px;
+        letter-spacing: 2px;
+    }
+    .about-tagline:before {
+        width: 40px;
+    }
+    /* Элементы контента */
+    .about-separator {
+        margin: 25px 0 30px;
+        width: 80px;
+    }
+    .about-feature {
+        margin-bottom: 25px;
+    }
+    .feature-icon {
+        flex: 0 0 50px;
+        height: 50px;
+        margin-right: 20px;
+    }
+    .feature-icon i {
+        font-size: 20px;
+    }
+    .feature-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .feature-text {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    .btn-about {
+        padding: 15px 35px;
+        font-size: 15px;
+        margin-top: 15px;
+    }
+    /* ============================
+     * СВЯЖИТЕСЬ С НАМИ
+     * ============================ */
+    .contact-form .form-content {
+        padding: 35px;
+        margin-bottom: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 10px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    .contact-form .section-title {
+        font-size: 28px;
+        font-weight: normal;
+        text-align: left;
+    }
+    .contact-form .section-title::after {
+        background: #c29d59;
+        text-align: left;
+        font-weight: normal;
+        margin-left: 0;
+    }
+    .contact-form .form-check-label {
+        white-space: normal;
+        font-size: 14px;
+    }
+    .contact-form .form-floating .form-control {
+        padding: 1.2rem 0.75rem;
+        font-size: 15px;
+    }
+    .contact-form .form-floating label {
+        font-size: 15px;
+    }
+    .contact-image {
+        height: 400px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+    .contact-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .contact-form .form-loading-spinner {
+        width: 40px;
+        height: 40px;
+    }
+    /* ============================
+     * НАШИ РАБОТЫ (index.html)
+     * ============================ */
+    .portfolio .section-header .section-title {
+        font-size: 55px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    .portfolio .section-title {
+        font-size: 55px;
+    }
+    .portfolio-accent {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+    .portfolio-separator {
+        width: 60px;
+        margin-top: 20px;
+    }
+    /* Фильтры и карточки проектов */
+    .portfolio-filter,
+    .projects-filter {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 40px;
+        gap: 15px;
+    }
+    .filter-btn {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+    .filter-button {
+        font-size: 14px;
+        padding: 10px 20px;
+        margin: 0;
+        border-radius: 25px;
+        border: 1px solid #c29d59;
+        background-color: transparent;
+        color: #1f2233;
+        transition: all 0.3s ease;
+    }
+    .filter-button.active,
+    .filter-button:hover {
+        background-color: #c29d59;
+        color: #fff;
+    }
+    /* Сетка проектов */
+    .portfolio-showcase {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+        margin: 0 auto;
+        gap: 30px;
+    }
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    /* Карточка проекта */
+    .portfolio-image {
+        height: 320px;
+    }
+    .hover-icon {
+        width: 70px;
+        height: 70px;
+    }
+    .portfolio-title {
+        font-size: 20px;
+    }
+    .portfolio-desc {
+        font-size: 14px;
+    }
+    /* Навигация по портфолио */
+    .portfolio-navigation {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nav-counter {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    .nav-arrow {
+        width: 50px;
+        height: 50px;
+    }
+    .btn-portfolio {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+    /* ============================
+     * КАК МЫ РАБОТАЕМ (index.html)
+     * ============================ */
+    .process .section-header .section-title {
+        font-size: 36px;
+        font-weight: bold;
+        font-family: 'Playfair Display', serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    /* Подробный процесс создания */
+    .process-detailed {
+        padding: 90px 0;
+    }
+    .atelier-process__container {
+        padding: 0 40px;
+    }
+    .atelier-process__timeline::before {
+        left: 40px;
+    }
+    .atelier-process__item {
+        padding-left: 100px;
+        margin-bottom: 45px;
+    }
+    .atelier-process__badge {
+        width: 75px;
+        height: 75px;
+        left: 0;
+        font-size: 28px;
+        border: 3px solid #c29d59;
+    }
+    .atelier-process__content {
+        padding: 30px 25px;
+        width: 100%;
+        box-shadow: 0 15px 30px rgba(194, 157, 89, 0.15);
+        border-radius: 10px;
+    }
+    .atelier-process__title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+    .atelier-process__description {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+    .atelier-process__icon {
+        width: 45px;
+        height: 45px;
+        right: 25px;
+        top: 25px;
+    }
+    .atelier-process__content::before {
+        top: 40px;
+        border-width: 12px 12px 12px 0;
+        left: -12px;
+    }
+    /* ============================
+     * СТРАНИЦА "О НАС"
+     * ============================ */
+    /* Заголовок страницы */
+    .page-header .page-header-content .page-title {
+        font-size: 55px !important;
+        margin-bottom: 20px;
+    }
+    .page-header .page-header-content .page-title::after {
+        width: 90px;
+    }
+    .page-header .page-header-content .breadcrumb-item,
+    .page-header .page-header-content .breadcrumb-separator {
+        font-size: 18px;
+    }
+    /* О компании */
+    .about-company {
+        padding: 90px 0;
+    }
+    .about-image {
+        margin-bottom: 0;
+        height: 450px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    .about-image img {
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    .about-image:hover img {
+        transform: scale(1.05);
+    }
+    .about-text {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+    /* Ценности компании */
+    .diagonal-section {
+        padding: 90px 0;
+        clip-path: polygon(0 0, 100% 4%, 100% 96%, 0 100%);
+        margin: 40px 0;
+    }
+    .diagonal-section-reverse {
+        clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 96%);
+    }
+    /* Центрирование заголовка "Наши ценности" */
+    .values .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .values .section-title {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    .values .section-subtitle {
+        text-align: center;
+        max-width: 70%;
+        margin: 0 auto 40px;
+        font-size: 16px;
+    }
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    .value-item {
+        padding: 20px;
+        margin-bottom: 0;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .value-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    .value-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 20px;
+    }
+    .value-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .value-text {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 0;
+        text-align: center;
+    }
+    /* Команда */
+    .team {
+        padding: 90px 0;
+    }
+    .team .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .team .section-title {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    .team .section-subtitle {
+        text-align: center;
+        max-width: 70%;
+        margin: 0 auto 40px;
+        font-size: 16px;
+    }
+    .team-member {
+        margin-bottom: 40px;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .team-member:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    .member-image {
+        height: 350px;
+        overflow: hidden;
+    }
+    .member-image img {
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    .team-member:hover .member-image img {
+        transform: scale(1.05);
+    }
+    .member-info {
+        padding: 25px;
+        text-align: center;
+        background-color: #fff;
+    }
+    .member-name {
+        font-size: 22px;
+        margin-bottom: 8px;
+        text-align: center;
+        color: #2c2018;
+    }
+    .member-position {
+        font-size: 15px;
+        margin-bottom: 15px;
+        text-align: center;
+        color: #c29d59;
+    }
+    .member-description {
+        font-size: 15px;
+        line-height: 1.7;
+        text-align: center;
+        color: #666;
+    }
+    /* Гарантия и сервис */
+    .warranty {
+        padding: 60px 0;
+    }
+    .warranty .row {
+        display: flex;
+        align-items: center;
+    }
+    .warranty-content {
+        padding-right: 40px;
+    }
+    .warranty .section-title {
+        font-size: 36px;
+        margin-bottom: 25px;
+        position: relative;
+        padding-left: 20px;
+        display: inline-block;
+    }
+    .warranty .section-title::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 5px;
+        background-color: #c29d59;
+    }
+    .warranty-text {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+    .warranty-list {
+        margin-bottom: 30px;
+    }
+    .warranty-list li {
+        font-size: 15px;
+        margin-bottom: 15px;
+        line-height: 1.6;
+        position: relative;
+        padding-left: 30px;
+    }
+    .warranty-list li:before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #c29d59;
+        font-weight: bold;
+    }
+    .warranty-image {
+        height: 400px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    .warranty-image img {
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    .warranty-image:hover img {
+        transform: scale(1.05);
+    }
+    /* ============================
+     * ФОРМА ОБРАТНОЙ СВЯЗИ
+     * ============================ */
+    .contact-form .form-content .section-title {
+        font-size: 36px;
+        padding: 0 0 25px;
+        position: relative;
+    }
+    .contact-form .form-content .section-title::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 5px;
+        background-color: #c29d59;
+    }
+    .contact-form .form-content .section-title::after {
+        margin-bottom: 25px;
+        left: 0;
+    }
+    .contact-form .form-content {
+        padding: 40px;
+        margin-bottom: 0;
+    }
+    .contact-form .form-content .form-text {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+    .contact-form .form-content .form-check-label {
+        font-size: 14px;
+    }
+    .contact-form .form-check {
+        margin-bottom: 20px;
+    }
+    /* ============================
+     * МОДАЛЬНОЕ ОКНО ПРОЕКТОВ
+     * ============================ */
+    .project-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        z-index: 9999;
+        overflow-y: auto;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .project-modal.active {
+        display: block;
+        opacity: 1;
+    }
+    .modal-content {
+        position: relative;
+        width: 90%;
+        max-width: 1200px;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        animation: modalFadeIn 0.5s ease forwards;
+    }
+    .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 35px;
+        height: 35px;
+        background-color: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 100;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+    .modal-close:hover {
+        transform: rotate(90deg);
+    }
+    .modal-close:before,
+    .modal-close:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 18px;
+        height: 2px;
+        background-color: #000;
+    }
+    .modal-close:before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .modal-close:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    .modal-image {
+        width: 100%;
+        max-height: 70vh;
+        overflow: hidden;
+        position: relative;
+    }
+    .modal-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: zoom-in;
+        transition: transform 0.5s ease;
+    }
+    .modal-image img.zoomed {
+        transform: scale(1.5);
+        cursor: zoom-out;
+    }
+    .image-zoom-container {
+        overflow: hidden;
+    }
+    .modal-details {
+        padding: 30px;
+        text-align: center;
+    }
+    .modal-title {
+        font-size: 26px;
+        margin-bottom: 15px;
+        font-weight: 600;
+        color: #2c2018;
+    }
+    .modal-category {
+        display: block;
+        font-size: 18px;
+        color: #c29d59;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+    .modal-description {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #555;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    @keyframes modalFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    /* ============================
+     * ФУТЕР
+     * ============================ */
+    .footer {
+        padding-top: 70px;
+        padding-bottom: 40px;
+    }
+    .footer-logo {
+        margin-bottom: 25px;
+    }
+    .footer-description {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+    .footer-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    .footer-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: #c8a165;
+    }
+    .footer-nav {
+        margin-bottom: 0;
+    }
+    .footer-nav li {
+        margin-bottom: 12px;
+    }
+    .footer-nav a {
+        font-size: 15px;
+        transition: color 0.3s ease;
+    }
+    .footer-contacts li {
+        margin-bottom: 18px;
+        font-size: 15px;
+        display: flex;
+        align-items: flex-start;
+    }
+    .contact-icon {
+        margin-right: 15px;
+        color: #c8a165;
+        font-size: 16px;
+    }
+    .footer-bottom {
+        margin-top: 40px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .copyright {
+        font-size: 14px;
+    }
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+    .social-link {
+        padding: 10px 18px;
+        font-size: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+    .social-link:hover {
+        background-color: #c8a165;
+        border-color: #c8a165;
+    }
+    /* ============================
+     * АНИМАЦИИ
+     * ============================ */
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    .pulse {
+        animation: pulse 2.5s infinite;
+    }
+    /* Анимации в desktop версии */
+    .float-animation,
+    .pulse-animation,
+    .hover-rotate,
+    .hover-skew {
+        transition: all 0.5s ease;
+    }
+    .float-animation:hover {
+        transform: translateY(-10px);
+    }
+    .pulse-animation:hover {
+        animation: pulse 1.5s infinite;
+    }
+    .hover-rotate:hover {
+        transform: rotate(3deg);
+    }
+    .hover-skew:hover {
+        transform: skewX(3deg);
+    }
+    /* ============================
+     * СТРАНИЦА "НАШИ РАБОТЫ"
+     * ============================ */
+    /* Заголовок страницы для works.html */
+    body .page-header .page-header-content .page-title {
+        font-size: 55px;
+        margin-bottom: 20px;
+    }
+    body .page-header .page-header-content .page-title::after {
+        width: 90px;
+    }
+    /* Фильтры проектов */
+    .projects .projects-filter {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        margin-bottom: 40px !important;
+    }
+    .projects .filter-button {
+        padding: 10px 20px !important;
+        font-size: 15px !important;
+        margin: 0 8px !important;
+        border-radius: 25px !important;
+    }
+    .projects .filter-button.active {
+        background-color: #c29d59 !important;
+        color: #fff !important;
+    }
+    /* Сетка проектов */
+    .projects .projects-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 25px !important;
+        margin-bottom: 50px !important;
+    }
+    /* Стили проектных карточек */
+    .project-item {
+        height: auto !important;
+    }
+    /* Корректные стили для проектных карточек */
+    .projects .project-item {
+        position: relative !important;
+        height: 250px !important;
+        overflow: hidden !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        transition: transform 0.4s ease-in-out, box-shadow 0.4s ease !important;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05) !important;
+    }
+    .projects .project-item:hover {
+        transform: translateY(-5px) !important;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+    }
+    .projects .project-image {
+        height: 100% !important;
+        overflow: hidden !important;
+    }
+    .projects .project-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        transition: transform 0.5s ease !important;
+    }
+    .projects .project-item:hover .project-image img {
+        transform: scale(1.05) !important;
+    }
+    .projects .project-overlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(31, 34, 51, 0.7) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        opacity: 0 !important;
+        transition: opacity 0.3s ease !important;
+        padding: 30px !important;
+    }
+    .projects .project-item:hover .project-overlay {
+        opacity: 1 !important;
+    }
+    .projects .project-title {
+        color: #fff !important;
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        margin-bottom: 10px !important;
+        text-align: center !important;
+        transform: translateY(20px) !important;
+        opacity: 0 !important;
+        transition: transform 0.4s ease, opacity 0.4s ease !important;
+        transition-delay: 0.1s !important;
+    }
+    .projects .project-category {
+        color: #c4c58f !important;
+        font-size: 15px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        transform: translateY(20px) !important;
+        opacity: 0 !important;
+        transition: transform 0.4s ease, opacity 0.4s ease !important;
+        transition-delay: 0.2s !important;
+    }
+    .projects .project-item:hover .project-title,
+    .projects .project-item:hover .project-category {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+    }
+    /* Модальное окно проектов */
+    #projectModal.project-modal .modal-content {
+        width: 90% !important;
+        max-width: 1200px !important;
+        margin: 50px auto !important;
+    }
+    #projectModal.project-modal .modal-image {
+        max-height: 70vh !important;
+    }
+    /* ============================
+     * ПРЕИМУЩЕСТВА И ВЫГОДЫ
+     * ============================ */
+    .benefits {
+        padding: 90px 0;
+    }
+    .benefits .section-header {
+        margin-bottom: 50px;
+    }
+    .benefits .section-title {
+        font-size: 36px;
+    }
+    .benefit-item {
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .benefit-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    .benefit-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+        background-color: rgba(194, 157, 89, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .benefit-icon span {
+        width: 40px;
+        height: 40px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .benefit-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        position: relative;
+    }
+    .benefit-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: #c29d59;
+    }
+    .benefit-text {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+    /* Преимущества работы с нами */
+    .benefits {
+        padding: 90px 0;
+        text-align: left;
+    }
+    .benefits .section-header {
+        margin-bottom: 50px;
+        position: relative;
+    }
+    .benefits .section-header .section-title.visible {
+        font-size: 36px;
+        margin-bottom: 25px;
+        font-family: var(--font-primary);
+        position: relative;
+        text-align: center;
+    }
+    .benefits .section-header .section-title.visible::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 2px;
+        background-color: #c29d59;
+        margin: 20px auto 0;
+    }
+    .benefits .section-title:after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 2px;
+        background-color: #c29d59;
+        margin: 20px auto 0;
+    }
+    .benefits .section-subtitle {
+        font-size: 17px;
+        max-width: 70%;
+        margin: 0 auto 60px;
+        color: #666;
+        line-height: 1.7;
+        text-align: center;
+    }
+    .benefits .benefit-item {
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #fff;
+        text-align: left;
+    }
+    .benefits .benefit-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    .benefits .benefit-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(194, 157, 89, 0.1);
+        border-radius: 50%;
+    }
+    .benefits .benefit-icon span {
+        width: 40px;
+        height: 40px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .benefits .benefit-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        position: relative;
+        color: #2c2018;
+        font-weight: 600;
+        text-align: left;
+    }
+    .benefits .benefit-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: #c29d59;
+    }
+    .benefits .benefit-text {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 0;
+        text-align: left;
+    }
+    .contacts-container .contact-title-container {
+        margin-top: 100px;
+    }
+    /* ============================
+     * СТРАНИЦА КОНТАКТОВ
+     * ============================ */
+    /* Эффект спецификации на больших экранах */
+    .specifications-effect {
+        display: block;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 300px;
+        height: 300px;
+        background-image: url('../images/kitchen-design.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.07;
+        animation: rotate 30s linear infinite;
+    }
+    @keyframes rotate {
+        from {
+            transform: translateY(-50%) rotate(0deg);
+        }
+        to {
+            transform: translateY(-50%) rotate(360deg);
+        }
+    }
+    /* ============================
+     * МОДАЛЬНОЕ ОКНО ЗАКАЗА ПРОЕКТА
+     * ============================ */
+    .modal-project {
+        width: 1000px;
+        max-height: 95vh;
+        display: flex;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+    .modal-project-image {
+        flex: 0 0 40%;
+        position: relative;
+        overflow: hidden;
+    }
+    .modal-project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .modal-project-content {
+        flex: 0 0 60%;
+        padding: 40px 35px;
+        overflow-y: auto;
+    }
+    .modal-project-title {
+        font-size: 28px;
+        margin-bottom: 15px;
+        position: relative;
+        padding-bottom: 15px;
+    }
+    .modal-project-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: #c29d59;
+    }
+    .modal-project-subtitle {
+        font-size: 16px;
+        margin-bottom: 25px;
+        color: #666;
+    }
+    .modal-project-steps {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+    .modal-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    .modal-step::after {
+        content: '';
+        position: absolute;
+        top: 15px;
+        right: -50%;
+        width: 100%;
+        height: 2px;
+        background-color: #e0e0e0;
+        z-index: 1;
+    }
+    .modal-step:last-child::after {
+        display: none;
+    }
+    .modal-step.active::after {
+        background-color: #c29d59;
+    }
+    .modal-step-number {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: #e0e0e0;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-bottom: 8px;
+        position: relative;
+        z-index: 2;
+        transition: background-color 0.3s ease;
+    }
+    .modal-step.active .modal-step-number,
+    .modal-step.completed .modal-step-number {
+        background-color: #c29d59;
+    }
+    .modal-step-label {
+        font-size: 12px;
+        color: #666;
+        text-align: center;
+        max-width: 80px;
+        transition: color 0.3s ease;
+    }
+    .modal-step.active .modal-step-label {
+        color: #c29d59;
+        font-weight: 600;
+    }
+    .form-step {
+        display: none;
+    }
+    .form-step.active {
+        display: block;
+    }
+    .floating-group {
+        position: relative;
+        margin-bottom: 25px;
+    }
+    .floating-input {
+        width: 100%;
+        height: 56px;
+        padding: 14px 0;
+        font-size: 16px;
+        border: none;
+        border-bottom: 2px solid #e0e0e0;
+        background-color: transparent;
+        transition: border-color 0.3s ease;
+    }
+    .floating-input:focus {
+        outline: none;
+        border-color: #c29d59;
+    }
+    .floating-label {
+        position: absolute;
+        left: 0;
+        top: 18px;
+        font-size: 16px;
+        color: #999;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+    .floating-input:focus~.floating-label,
+    .floating-input:not(:placeholder-shown)~.floating-label {
+        top: -10px;
+        font-size: 12px;
+        color: #c29d59;
+    }
+    .modal-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    .modal-privacy {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+    .modal-privacy-checkbox {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        margin-top: 2px;
+    }
+    .modal-privacy-text {
+        font-size: 14px;
+        color: #666;
+    }
+    .modal-privacy-text a {
+        color: #c29d59;
+        text-decoration: none;
+    }
+    .modal-submit-btn,
+    .modal-back-btn {
+        padding: 12px 25px;
+        font-size: 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .modal-submit-btn {
+        background-color: #c29d59;
+        color: #fff;
+    }
+    .modal-back-btn {
+        background-color: #f0f0f0;
+        color: #666;
+    }
+    .modal-submit-btn:hover {
+        background-color: #b28949;
+    }
+    .modal-back-btn:hover {
+        background-color: #e0e0e0;
+    }
+    .modal-close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .modal-close-btn:before,
+    .modal-close-btn:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 2px;
+        background-color: #666;
+    }
+    .modal-close-btn:before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .modal-close-btn:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    .modal-success {
+        text-align: center;
+        padding: 40px;
+        display: none;
+    }
+    .modal-success-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 25px;
+        background-color: rgba(194, 157, 89, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-success-icon svg {
+        width: 40px;
+        height: 40px;
+        fill: #c29d59;
+    }
+    .modal-success-title {
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: #2c2018;
+    }
+    .modal-success-message {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 25px;
+        line-height: 1.7;
+    }
+    .modal-close-success {
+        padding: 12px 25px;
+        font-size: 15px;
+        background-color: #c29d59;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .modal-close-success:hover {
+        background-color: #b28949;
+    }
+}
