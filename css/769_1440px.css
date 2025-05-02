@@ -1085,155 +1085,165 @@
      * ПРЕИМУЩЕСТВА И ВЫГОДЫ
      * ============================ */
     .benefits {
-        padding: 90px 0;
+        padding: 60px 0;
     }
     .benefits .section-header {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
     .benefits .section-title {
-        font-size: 36px;
+        font-size: 30px;
     }
     .benefit-item {
-        padding: 30px;
-        margin-bottom: 30px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        border-radius: 10px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .benefit-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
     }
     .benefit-icon {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 20px;
-        background-color: rgba(194, 157, 89, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
     }
     .benefit-icon span {
-        width: 40px;
-        height: 40px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+        width: 30px;
+        height: 30px;
     }
     .benefit-title {
-        font-size: 22px;
-        margin-bottom: 15px;
-        padding-bottom: 15px;
-        position: relative;
-    }
-    .benefit-title:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 50px;
-        height: 2px;
-        background-color: #c29d59;
+        font-size: 20px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
     }
     .benefit-text {
-        font-size: 15px;
-        line-height: 1.7;
+        font-size: 14px;
+        line-height: 1.5;
     }
     /* Преимущества работы с нами */
     .benefits {
-        padding: 90px 0;
-        text-align: left;
+        padding: 40px 0;
+        /* Уменьшаем отступы для компактности */
+        text-align: center;
+        /* Центрируем содержимое для лучшего вида на мобильных */
     }
     .benefits .section-header {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
+        /* Уменьшаем отступ */
         position: relative;
+        /* Для позиционирования элементов */
     }
     .benefits .section-header .section-title.visible {
-        font-size: 36px;
-        margin-bottom: 25px;
+        font-size: 27px;
+        /* Уменьшаем размер для лучшей читаемости */
+        margin-bottom: 20px;
+        /* Добавляем отступ снизу */
         font-family: var(--font-primary);
+        /* Стильный шрифт для заголовка */
         position: relative;
-        text-align: center;
+        /* Для эффектов */
     }
     .benefits .section-header .section-title.visible::after {
         content: '';
         display: block;
-        width: 80px;
+        width: 60px;
         height: 2px;
         background-color: #c29d59;
-        margin: 20px auto 0;
+        margin-bottom: -10px;
     }
     .benefits .section-title:after {
         content: '';
         display: block;
-        width: 80px;
+        width: 60px;
         height: 2px;
         background-color: #c29d59;
-        margin: 20px auto 0;
+        /* Акцентный цвет */
+        margin: 15px auto 0;
+        /* Центрируем линию под заголовком */
     }
     .benefits .section-subtitle {
-        font-size: 17px;
-        max-width: 70%;
-        margin: 0 auto 60px;
+        font-size: 15px;
+        /* Оптимальный размер для подзаголовка */
+        max-width: 85%;
+        /* Ограничиваем ширину для лучшей читаемости */
+        margin: 0 auto 50px;
+        /* Центрируем и добавляем отступ снизу */
         color: #666;
-        line-height: 1.7;
-        text-align: center;
+        /* Более светлый цвет для контраста с заголовком */
+        line-height: 1.5;
+        /* Улучшаем читаемость */
     }
     .benefits .benefit-item {
-        padding: 30px;
-        margin-bottom: 30px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        border-radius: 10px;
+        padding: 18px 15px;
+        /* Уменьшаем внутренние отступы */
+        margin-bottom: 25px;
+        /* Увеличиваем расстояние между блоками */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        /* Добавляем легкую тень */
+        border-radius: 8px;
+        /* Скругляем углы */
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Анимация при наведении */
         background-color: #fff;
-        text-align: left;
+        /* Гарантируем белый фон */
     }
     .benefits .benefit-item:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        /* Эффект при наведении */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        /* Усиливаем тень при наведении */
     }
     .benefits .benefit-icon {
-        width: 80px;
-        height: 80px;
-        margin: 0 0 20px;
+        width: 70px;
+        /* Увеличиваем размер для лучшей видимости */
+        height: 70px;
+        margin: 0 auto 15px;
+        /* Центрируем иконку */
         display: flex;
+        /* Для центрирования внутреннего содержимого */
         align-items: center;
         justify-content: center;
         background-color: rgba(194, 157, 89, 0.1);
+        /* Светлый фон для иконки */
         border-radius: 50%;
+        /* Круглая форма */
     }
     .benefits .benefit-icon span {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        /* Увеличиваем размер иконки */
+        height: 35px;
         background-size: contain;
+        /* Убеждаемся, что иконка корректно отображается */
         background-repeat: no-repeat;
         background-position: center;
     }
     .benefits .benefit-title {
-        font-size: 22px;
-        margin-bottom: 15px;
-        padding-bottom: 15px;
+        font-size: 18px;
+        /* Оптимальный размер для заголовка */
+        margin-bottom: 12px;
+        padding-bottom: 12px;
         position: relative;
+        /* Для декоративной линии */
         color: #2c2018;
+        /* Темный цвет для контраста */
         font-weight: 600;
-        text-align: left;
+        /* Полужирный шрифт */
     }
     .benefits .benefit-title:after {
+        /* Декоративная линия под заголовком */
         content: '';
         position: absolute;
         bottom: 0;
-        left: 0;
-        width: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
         height: 2px;
         background-color: #c29d59;
+        /* Цвет акцента */
     }
     .benefits .benefit-text {
-        font-size: 15px;
-        line-height: 1.7;
+        font-size: 14px;
+        line-height: 1.6;
+        /* Увеличиваем межстрочный интервал */
         color: #555;
+        /* Улучшаем читаемость */
         margin-bottom: 0;
-        text-align: left;
+        /* Убираем лишний отступ снизу */
     }
     .contacts-container .contact-title-container {
         margin-top: 100px;
@@ -1523,5 +1533,97 @@
     }
     .modal-close-success:hover {
         background-color: #b28949;
+    }
+    /* === Конфигуратор Стиля === */
+    .style-configurator {
+        padding: 60px 0;
+    }
+    .configurator-step {
+        padding-left: 25px;
+    }
+    .configurator-step.active {
+        max-height: none !important;
+        /* Убираем ограничение по высоте для JS */
+        overflow: visible;
+    }
+    .step-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .step-title::before {
+        left: -28px;
+        /* Учитываем padding */
+        width: 11px;
+        height: 11px;
+    }
+    .configurator-options {
+        gap: 25px;
+    }
+    .style-options,
+    .material-options,
+    .accent-options {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 колонки */
+    }
+    .configurator-card img {
+        height: 200px;
+    }
+    .configurator-card .card-title {
+        font-size: 18px;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+    }
+    .scale-options {
+        gap: 20px;
+    }
+    .btn-scale {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    .configurator-result {
+        margin-top: 50px;
+        padding: 40px;
+    }
+    .result-summary p {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    .configurator-lead-form .form-title {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+    .configurator-lead-form .form-floating {
+        margin-bottom: 20px;
+    }
+    .configurator-lead-form .form-control {
+        padding: 15px 18px;
+        font-size: 16px;
+        height: auto;
+    }
+    .configurator-lead-form .form-check-group {
+        gap: 18px 28px;
+        margin-bottom: 28px;
+    }
+    .configurator-lead-form .form-check {
+        padding-left: 1.7em;
+    }
+    .configurator-lead-form .form-check-input {
+        width: 1.3em;
+        height: 1.3em;
+        margin-top: 0.15em;
+    }
+    .configurator-lead-form .form-check-label {
+        font-size: 16px;
+    }
+    .btn-configurator-submit {
+        min-width: 250px;
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    .btn-configurator-back {
+        margin-top: 30px;
+        padding: 10px 25px;
+        font-size: 15px;
     }
 }

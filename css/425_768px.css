@@ -114,7 +114,7 @@
         }
     }
     .hero-title {
-        font-size: 40px;
+        font-size: 44px;
     }
     .hero-subtitle {
         font-size: 20px;
@@ -1334,5 +1334,114 @@
         margin-top: 30px !important;
         font-size: 12px !important;
         padding-top: 15px !important;
+    }
+    /* === Конфигуратор Стиля === */
+    .style-configurator {
+        padding: 40px 0;
+    }
+    .configurator-step {
+        padding-left: 20px;
+    }
+    .configurator-step.active {
+        max-height: none !important;
+        /* Убираем ограничение по высоте для JS */
+        overflow: visible;
+    }
+    .step-title {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+    .step-title::before {
+        left: -23px;
+        /* Учитываем padding */
+    }
+    .configurator-options {
+        gap: 20px;
+    }
+    .style-options,
+    .material-options,
+    .accent-options {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 колонки на планшетах */
+    }
+    .configurator-card img {
+        height: 160px;
+    }
+    .configurator-card .card-title {
+        font-size: 15px;
+        bottom: 12px;
+        left: 12px;
+        right: 12px;
+    }
+    .scale-options {
+        flex-direction: row;
+        /* Кнопки масштаба снова в ряд */
+        justify-content: center;
+        gap: 15px;
+    }
+    .btn-scale {
+        padding: 8px 18px;
+        font-size: 12px;
+        width: auto;
+    }
+    .configurator-result {
+        margin-top: 45px;
+        padding: 30px;
+    }
+    .result-summary p {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+    .configurator-lead-form .form-title {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+    .configurator-lead-form .form-floating {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+    .configurator-lead-form .form-control {
+        padding: 12px 16px;
+        font-size: 25px;
+        height: auto;
+    }
+    .configurator-lead-form .form-check-group {
+        gap: 15px 22px;
+        margin-bottom: 22px;
+    }
+    .configurator-lead-form .form-check {
+        padding-left: 1.8em;
+    }
+    .configurator-lead-form .form-check-input {
+        width: 1.4em;
+        height: 1.4em;
+        margin-top: 1.12em;
+        margin-right: 10px;
+        scale: 1.5;
+    }
+    .configurator-lead-form .form-check-label {
+        font-size: 15px;
+        margin-right: 20px;
+    }
+    .btn-configurator-submit {
+        width: auto;
+        min-width: 200px;
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+    .btn-configurator-back {
+        margin-top: 25px;
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    /* Добавляем стили для позиционирования лейбла */
+    .configurator-lead-form .floating-label {
+        top: 14px;
+        font-size: 15px;
+    }
+    .configurator-lead-form .floating-input:focus~.floating-label,
+    .configurator-lead-form .floating-input:not(:placeholder-shown)~.floating-label {
+        top: -8px;
+        font-size: 11px;
     }
 }

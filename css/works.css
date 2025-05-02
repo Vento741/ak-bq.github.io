@@ -141,6 +141,10 @@
         }
     }
     
+    .projects {
+        padding-bottom: 100px;
+    }
+    
     .projects-filter {
         display: flex;
         justify-content: center;
@@ -367,14 +371,14 @@
         font-size: 36px;
         font-weight: 700;
         color: var(--color-dark);
-        font-family: var(--font-secondary);
+        font-family: var(--font-primary);
         margin-bottom: 20px;
     }
     
     .benefits .section-header .section-title:after {
         content: '';
         position: absolute;
-        bottom: 0;
+        bottom: -5px;
         left: 0;
         width: 40px;
         height: 2px;

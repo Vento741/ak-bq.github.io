@@ -1151,4 +1151,65 @@
         font-size: 12px !important;
         padding-top: 15px !important;
     }
+    /* Конфигуратор */
+    .configurator-step .configurator-option {
+        padding: 20px 0;
+    }
+    .configurator-step .configurator-option .section-title {
+        font-size: 23px;
+    }
+    .configurator-step .configurator-option .section-subtitle {
+        font-size: 13px;
+    }
+    .configurator-lead-form .form-floating {
+        margin-bottom: 10px;
+        /* Увеличиваем отступ снизу */
+    }
+    .configurator-lead-form .form-control {
+        padding: 12px 14px;
+        /* Увеличиваем паддинг */
+        font-size: 16px;
+        /* Увеличиваем шрифт */
+        height: auto;
+        /* Позволяем высоте подстраиваться */
+    }
+    .configurator-lead-form .form-check-group {
+        gap: 10px;
+        /* Немного увеличим */
+        margin-bottom: 18px;
+    }
+    .configurator-lead-form .form-check {
+        padding-left: 1.8em;
+        /* Увеличиваем отступ для большего чекбокса */
+    }
+    .configurator-lead-form .form-check-input {
+        width: 1.5em;
+        /* Увеличиваем чекбокс */
+        height: 1.5em;
+        margin-top: 0.1em;
+        /* Корректируем */
+    }
+    .configurator-lead-form .form-check-label {
+        font-size: 14px;
+        /* Увеличиваем шрифт */
+    }
+    .style-configurator .section-header {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    .style-configurator .configurator-result {
+        font-size: 13px;
+    }
+    .style-configurator .configurator-result .result-summary {
+        font-size: 13px !important;
+    }
+    .style-configurator .configurator-result .result-summary p {
+        font-size: 13px;
+    }
+    .style-configurator .section-title {
+        font-size: 23px;
+    }
+    .style-configurator .section-subtitle {
+        font-size: 13px;
+    }
 }
