@@ -601,7 +601,7 @@
 /* Форма обратной связи */
 
 .contact-form {
-    padding: 100px 0;
+    padding: 40px 0;
     background-color: var(--color-light);
     position: relative;
 }

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:yandex="http://news.yandex.ru"
+     xmlns:media="http://search.yahoo.com/mrss/"
+     xmlns:turbo="http://turbo.yandex.ru"
+     version="2.0">
+    <channel>
+        <!-- Информация о сайте -->
+        <title>Бутик Авторской Кухни - элитные кухни и мебель премиум-класса в Москве</title>
+        <link>https://bak-msk.ru</link>
+        <description>Авторские кухни и мебель премиум-класса в Москве. Индивидуальный дизайн, высококачественные материалы, профессиональное исполнение.</description>
+        <language>ru</language>
+        <turbo:analytics id="101547613" type="Yandex"></turbo:analytics>
+        
+        <!-- Главная страница -->
+        <item turbo="true">
+            <link>https://bak-msk.ru/</link>
+            <turbo:source>https://bak-msk.ru/</turbo:source>
+            <turbo:topic>Бутик Авторской Кухни - элитные кухни премиум-класса</turbo:topic>
+            <turbo:content>
+                <![CDATA[
+                <header>
+                    <h1>Бутик Авторской Кухни</h1>
+                    <h2>Искусство создания элитной кухни</h2>
+                    <figure>
+                        <img src="https://bak-msk.ru/images/hero-bg.jpg" alt="Элитная авторская кухня премиум-класса в Москве">
+                    </figure>
+                    <p>Эксклюзивные авторские решения для тех, кто ценит индивидуальность</p>
+                    <button formaction="tel:+79266681579">Позвонить нам</button>
+                </header>
+
+                <div data-block="card">
+                    <h3>О нас</h3>
+                    <p>Бутик Авторской Кухни – это место, где создаются уникальные интерьерные решения для самых требовательных клиентов. Мы специализируемся на проектировании и производстве эксклюзивной мебели премиум-класса, уделяя особое внимание индивидуальным проектам кухонь.</p>
+                    <p>Наша команда высококвалифицированных дизайнеров и мастеров обладает более чем 20-летним опытом в создании уникальных пространств, которые сочетают в себе эстетическое совершенство и безупречную функциональность.</p>
+                    <figure>
+                        <img src="https://bak-msk.ru/images/about-image.jpg" alt="Премиум кухни в Москве от Бутик Авторской Кухни">
+                    </figure>
+                </div>
+
+                <div data-block="card">
+                    <h3>Почему мы</h3>
+                    <ul>
+                        <li>Индивидуальный подход к каждому проекту</li>
+                        <li>Высококачественные материалы от лучших производителей</li>
+                        <li>Проверенная временем функциональность</li>
+                        <li>Собственное производство полного цикла</li>
+                        <li>Команда профессионалов с многолетним опытом работы</li>
+                        <li>Гарантия на все виды работ и материалы</li>
+                    </ul>
+                </div>
+
+                <div data-block="card">
+                    <h3>Наши работы</h3>
+                    <p>Портфолио Бутик Авторской Кухни включает более 500 успешно реализованных проектов различных стилей и уровней сложности.</p>
+                    <div data-block="gallery">
+                        <figure>
+                            <img src="https://bak-msk.ru/images/portfolio-1.jpg" alt="Кухня в стиле современная классика">
+                            <figcaption>Современная классика</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://bak-msk.ru/images/portfolio-2.jpg" alt="Минималистичная кухня">
+                            <figcaption>Минимализм</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://bak-msk.ru/images/portfolio-3.jpg" alt="Гостиная в стиле неоклассика">
+                            <figcaption>Неоклассика</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://bak-msk.ru/images/portfolio-4.jpg" alt="Спальня в стиле лофт">
+                            <figcaption>Лофт</figcaption>
+                        </figure>
+                    </div>
+                    <button formaction="https://bak-msk.ru/pages/works.html">Смотреть все работы</button>
+                </div>
+
+                <div data-block="card">
+                    <h3>Контакты</h3>
+                    <p>Адрес: г. Москва, 4-я Ватутинская ул., дом 7, стр. 21</p>
+                    <p>Телефон: +7 926 668-15-79</p>
+                    <p>Email: info@bak-msk.ru</p>
+                    <p>Режим работы: Ежедневно с 10:00 до 20:00</p>
+                    <button formaction="tel:+79266681579">Позвонить</button>
+                    <button formaction="mailto:info@bak-msk.ru">Написать</button>
+                </div>
+
+                <footer>
+                    <p>© 2025 Бутик Авторской Кухни. Все права защищены.</p>
+                    <p><a href="https://bak-msk.ru/pages/privacy.html">Политика конфиденциальности</a></p>
+                    <p><a href="https://bak-msk.ru">Перейти на полную версию сайта</a></p>
+                </footer>
+                ]]>
+            </turbo:content>
+        </item>
+        
+        <!-- О нас страница -->
+        <item turbo="true">
+            <link>https://bak-msk.ru/pages/about.html</link>
+            <turbo:source>https://bak-msk.ru/pages/about.html</turbo:source>
+            <turbo:topic>О нас - Бутик Авторской Кухни</turbo:topic>
+            <turbo:content>
+                <![CDATA[
+                <header>
+                    <h1>О нас - Бутик Авторской Кухни</h1>
+                    <figure>
+                        <img src="https://bak-msk.ru/images/about-header.jpg" alt="О нас - Бутик Авторской Кухни">
+                    </figure>
+                </header>
+
+                <div data-block="card">
+                    <h3>История бутика</h3>
+                    <p>Основанный в 2005 году, Бутик Авторской Кухни быстро завоевал репутацию одного из лидеров премиального сегмента рынка дизайнерской мебели в Москве. Высококлассные специалисты, собственное производство и уникальные дизайнерские решения делают нас лучшими в своем деле.</p>
+                    <p>За более чем 15 лет работы мы создали более 500 уникальных проектов, которые радуют своих владельцев изысканной эстетикой и безупречной функциональностью.</p>
+                </div>
+
+                <div data-block="card">
+                    <h3>Наш подход</h3>
+                    <p>Каждый проект для нас уникален, как и наши клиенты. Мы не просто производим мебель – мы создаем атмосферу и стиль жизни.</p>
+
+                    <h4>Основные принципы работы:</h4>
+                    <ul>
+                        <li>Индивидуальный подход к каждому клиенту</li>
+                        <li>Исключительное качество материалов и фурнитуры</li>
+                        <li>Инновационные технологические решения</li>
+                        <li>Безупречное исполнение каждой детали</li>
+                        <li>Комплексное сопровождение проекта на всех этапах</li>
+                    </ul>
+                </div>
+
+                <div data-block="card">
+                    <h3>Команда</h3>
+                    <p>В нашей команде работают профессионалы с многолетним опытом: архитекторы, дизайнеры, технологи, столяры высшего разряда. Их мастерство и внимание к деталям гарантируют безупречное качество каждого изделия.</p>
+                </div>
+
+                <div data-block="card">
+                    <h3>Свяжитесь с нами</h3>
+                    <p>Мы всегда открыты для обсуждения вашего проекта и готовы предложить лучшие решения для вашего интерьера.</p>
+                    <button formaction="tel:+79266681579">Позвонить</button>
+                    <button formaction="https://bak-msk.ru/pages/contacts.html">Контакты</button>
+                </div>
+                ]]>
+            </turbo:content>
+        </item>
+        
+        <!-- Наши работы страница -->
+        <item turbo="true">
+            <link>https://bak-msk.ru/pages/works.html</link>
+            <turbo:source>https://bak-msk.ru/pages/works.html</turbo:source>
+            <turbo:topic>Наши работы - Бутик Авторской Кухни</turbo:topic>
+            <turbo:content>
+                <![CDATA[
+                <header>
+                    <h1>Наши работы - Бутик Авторской Кухни</h1>
+                    <figure>
+                        <img src="https://bak-msk.ru/images/works-header.jpg" alt="Портфолио - Бутик Авторской Кухни">
+                    </figure>
+                </header>
+
+                <div data-block="card">
+                    <h3>Портфолио проектов</h3>
+                    <p>В нашем портфолио собраны лучшие работы разных стилей и направлений. Каждый проект уникален и отражает индивидуальность своего владельца.</p>
+                </div>
+
+                <div data-block="card">
+                    <h3>Кухни</h3>
+                    <div data-block="gallery">
+                        <figure>
+                            <img src="https://bak-msk.ru/images/project-1.jpg" alt="Кухня в стиле современная классика">
+                            <figcaption>Современная классика</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://bak-msk.ru/images/project-2.jpg" alt="Минималистичная кухня">
+                            <figcaption>Минимализм</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://bak-msk.ru/images/project-3.jpg" alt="Кухня в стиле неоклассика">
+                            <figcaption>Неоклассика</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div data-block="card">
+                    <h3>Гостиные</h3>
+                    <div data-block="gallery">
+                        <figure>
+                            <img src="https://bak-msk.ru/images/project-4.jpg" alt="Гостиная в стиле лофт">
+                            <figcaption>Лофт</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://bak-msk.ru/images/project-5.jpg" alt="Современная гостиная">
+                            <figcaption>Современный стиль</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div data-block="card">
+                    <h3>Заказать проект</h3>
+                    <p>Мы готовы воплотить в жизнь любые ваши идеи и создать уникальный интерьер, который будет радовать вас долгие годы.</p>
+                    <button formaction="https://bak-msk.ru/pages/custom-order.html">Заказать проект</button>
+                </div>
+                ]]>
+            </turbo:content>
+        </item>
+    </channel>
+</rss> 

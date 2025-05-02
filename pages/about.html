@@ -4,8 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="О компании Бутик Авторской Кухни - элитные кухни и мебель премиум-класса в Москве">
-    <meta name="keywords" content="о нас, авторская кухня, история компании, премиум мебель, элитные кухни Москва">
+    <meta name="description" content="О компании Бутик Авторской Кухни - элитные кухни и мебель премиум-класса в Москве. Узнайте о нашей истории, ценностях и команде профессионалов.">
+    <meta name="keywords" content="о нас, авторская кухня, история компании, премиум мебель, элитные кухни Москва, профессиональные дизайнеры мебели, эксклюзивная мебель, дизайнерские кухни, мебель на заказ, итальянские кухни, немецкие кухни, кухни из массива дерева, столешницы из камня, индивидуальный дизайн, мебельная фабрика Москва, роскошные интерьеры, команда профессионалов, ценности компании, философия бренда, высококачественные материалы">
+    <meta name="author" content="Бутик Авторской Кухни">
+    <meta name="robots" content="index, follow">
+    <!-- Мета-теги для социальных сетей (Open Graph) -->
+    <meta property="og:title" content="О нас - Бутик Авторской Кухни">
+    <meta property="og:description" content="О компании Бутик Авторской Кухни - элитные кухни и мебель премиум-класса в Москве. Узнайте о нашей истории, ценностях и команде профессионалов.">
+    <meta property="og:image" content="https://bak-msk.ru/images/about-company.jpg">
+    <meta property="og:url" content="https://bak-msk.ru/pages/about.html">
+    <meta property="og:type" content="website">
     <title>О нас - Бутик Авторской Кухни</title>
 
     <!-- Bootstrap CSS -->
@@ -26,9 +34,36 @@
     <link rel="stylesheet" href="../css/320_374px.css" media="screen and (min-width: 320px) and (max-width: 374px)">
     <link rel="stylesheet" href="../css/375_425px.css" media="screen and (min-width: 375px) and (max-width: 425px)">
     <link rel="stylesheet" href="../css/425_768px.css" media="screen and (min-width: 425px) and (max-width: 768px)">
+    <link rel="stylesheet" href="../css/769_1440px.css" media="screen and (min-width: 769px) and (max-width: 1440px)">
     <link rel="stylesheet" href="../css/preloader.css">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(101547613, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/101547613" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
@@ -273,7 +308,7 @@
                         <h2 class="section-title">Свяжитесь с нами</h2>
                         <p class="form-text">Оставьте заявку, и наш специалист свяжется с вами в ближайшее время</p>
 
-                        <form id="contactForm" action="../includes/send-email-phpmailer.php" method="POST">
+                        <form id="contactForm" action="../includes/send-email.php" method="POST" class="contact-form-main needs-validation">
                             <div class="form-floating mb-4">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Ваше имя" required>
                                 <label for="name">Ваше имя</label>
@@ -327,12 +362,12 @@
                 <div class="col-lg-4">
                     <h3 class="footer-title">Навигация</h3>
                     <ul class="footer-nav">
-                        <li><a href="index.html">Главная</a></li>
-                        <li><a href="pages/about.html">О нас</a></li>
-                        <li><a href="pages/works.html">Наши работы</a></li>
-                        <li><a href="pages/custom-order.html">Индивидуальный заказ</a></li>
-                        <li><a href="pages/contacts.html">Контакты</a></li>
-                        <li><a href="pages/privacy.html">Политика конфиденциальности</a></li>
+                        <li><a href="../index.html">Главная</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="works.html">Наши работы</a></li>
+                        <li><a href="custom-order.html">Индивидуальный заказ</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="privacy.html">Политика конфиденциальности</a></li>
                     </ul>
                 </div>
 
@@ -349,7 +384,7 @@
                         </li>
                         <li>
                             <span class="contact-icon"></span>
-                            <a href="mailto:info@author-kitchen_msk.ru" class="contact-link">info@author-kitchen_msk.ru</a>
+                            <a href="mailto:info@bak-msk.ru" class="contact-link">info@bak-msk.ru</a>
                         </li>
                     </ul>
                 </div>
@@ -434,31 +469,6 @@
             applyHeaderAnimations();
         });
     </script>
-
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function(m, e, t, r, i, k, a) {
-            m[i] = m[i] || function() {
-                (m[i].a = m[i].a || []).push(arguments)
-            };
-            m[i].l = 1 * new Date();
-            for (var j = 0; j < document.scripts.length; j++) {
-                if (document.scripts[j].src === r) {
-                    return;
-                }
-            }
-            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-        })
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(XXXXXXXX, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true
-        });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
 </body>
 
 </html>

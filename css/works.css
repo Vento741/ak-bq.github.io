@@ -160,6 +160,8 @@
         transition: var(--transition);
         font-weight: 500;
         letter-spacing: 1px;
+        border: 1px solid #ddd;
+        border-radius: 30px;
     }
     
     .filter-button:after {
@@ -177,6 +179,8 @@
     .filter-button:hover,
     .filter-button.active {
         color: var(--color-primary);
+        background-color: #f8e2a45e;
+        border-color: #c002021a;
     }
     
     .filter-button:hover:after,

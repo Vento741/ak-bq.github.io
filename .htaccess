@@ -1,0 +1,24 @@
+# Базовые настройки Apache
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Перенаправляем старый обработчик форм на новый
+    RewriteRule ^includes/send-email-phpmailer\.php$ includes/send-email.php [L,R=301]
+    
+    # Здесь могут быть другие правила перенаправления при необходимости
+</IfModule>
+
+# Защита файлов и директорий
+<FilesMatch "^\.ht">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Защита лог-файлов от прямого доступа
+<FilesMatch "\.log$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Запрет просмотра содержимого директорий
+Options -Indexes 

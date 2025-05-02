@@ -711,7 +711,7 @@
 
 /* Адаптивность */
 
-@media (max-width: 1199.98px) {
+@media (max-width: 1800px) {
     .contact-title {
         font-size: 4rem;
     }
@@ -726,19 +726,7 @@
     }
 }
 
-@media (max-width: 991.98px) {
-    .contact-cards-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .contact-title {
-        font-size: 3.5rem;
-    }
-    .contact-map-container {
-        height: 400px;
-    }
-}
-
-@media (max-width: 767.98px) {
+@media (min-width: 769px) and (max-width: 1199.98px) {
     .contact-title {
         font-size: 3rem;
     }
@@ -761,25 +749,248 @@
     }
 }
 
-@media (max-width: 575.98px) {
+@media (min-width: 425px) and (max-width: 768px) {
+    .specifications-effect {
+        display: none;
+    }
     .contact-title {
-        font-size: 2.5rem;
+        font-size: 5.2rem;
+        margin-top: 30px;
     }
     .contact-subtitle {
-        font-size: 1rem;
+        font-size: 2.4rem;
+        margin-bottom: 15px;
     }
     .contact-title-container {
-        padding: 100px 0 60px;
+        padding: 80px 0 50px;
+    }
+    .contact-cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .contact-card {
+        padding: 30px 20px;
+        text-align: center;
+    }
+    .contact-card-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+        margin: 0 auto;
+    }
+    .contact-card-info {
+        font-size: 2.8rem;
+    }
+    .contact-card-link {
+        font-size: 3.2rem;
+        border-bottom: 1px solid var(--color-primary);
+    }
+    .contact-card-title {
+        font-size: 3.8rem;
+    }
+    .contact-form-title {
+        font-size: 5.8rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .contact-form-subtitle {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        text-align: center;
     }
     .contact-map-container {
-        height: 300px;
+        height: 280px;
     }
-    .contact-form-container {
-        padding: 20px;
+    .social-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
     }
-    .faq-question {
+    .social-title {
+        font-size: 5.5rem;
+    }
+    .social-subtitle {
+        font-size: 2.6rem;
+    }
+    .faq-title {
+        font-size: 3.5rem;
+    }
+    .faq-subtitle {
+        font-size: 2.6rem;
+    }
+    .form-check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-check-label {
+        font-size: 2.3rem;
+        margin-left: 10px;
+    }
+    .btn-submit {
+        display: block;
+        margin: 0 auto;
+        padding: 12px 30px;
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 424px) {
+    .specifications-effect {
+        display: none;
+    }
+    .contact-title {
+        font-size: 4.8rem;
+        margin-top: 40px;
+    }
+    .contact-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    .contact-card {
+        text-align: center;
+    }
+    .contact-card-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+        margin: 0 auto;
+    }
+    .contact-card-info {
+        font-size: 1.9rem;
+    }
+    .contact-card-link {
+        font-size: 2.5rem;
+        border-bottom: 1px solid var(--color-primary);
+    }
+    .contact-title-container {
+        padding: 65px 0 35px;
+    }
+    .contact-card-title {
+        font-size: 3.8rem;
+    }
+    .contact-map-container {
+        height: 270px;
+    }
+    .contact-form-title {
+        font-size: 3.8rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .contact-form-subtitle {
+        font-size: 2.4rem;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    .social-icon {
+        width: 40px;
+        height: 40px;
         font-size: 16px;
-        padding: 15px;
+    }
+    .form-check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-check-label {
+        font-size: 1.4rem;
+        margin-left: 8px;
+    }
+    .btn-submit {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 25px;
+        font-size: 1.6rem;
+    }
+    .social-title {
+        font-size: 5rem;
+    }
+    .social-subtitle {
+        font-size: 1.6rem;
+    }
+    .faq-title {
+        font-size: 5rem;
+    }
+    .faq-subtitle {
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+    .specifications-effect {
+        display: none;
+    }
+    .contact-title {
+        font-size: 5.6rem;
+        margin-top: 50px;
+    }
+    .contact-subtitle {
+        font-size: 1.75rem;
+        margin-bottom: 10px;
+    }
+    .contact-card {
+        text-align: center;
+    }
+    .contact-card-icon {
+        margin: 0 auto;
+    }
+    .contact-card-info {
+        font-size: 2.1rem;
+    }
+    .contact-card-link {
+        font-size: 2.9rem;
+        border-bottom: 1px solid var(--color-primary);
+    }
+    .contact-title-container {
+        padding: 60px 0 30px;
+    }
+    .contact-card-title {
+        font-size: 4.1rem;
+    }
+    .contact-map-container {
+        height: 250px;
+    }
+    .contact-form-title {
+        font-size: 4.4rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .contact-form-subtitle {
+        font-size: 2.8rem;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+    .form-check {
+        display: flex;
+        justify-content: center !important;
+        align-items: center;
+    }
+    .form-check-label {
+        font-size: 1.5rem !important;
+        margin-left: 10px !important;
+    }
+    .btn-submit {
+        display: block;
+        margin: 0 auto;
+        padding: 12px 30px;
+        font-size: 1.8rem;
+    }
+    .social-title {
+        font-size: 5.8rem;
+    }
+    .social-subtitle {
+        font-size: 1.8rem;
+    }
+    .faq-title {
+        font-size: 5.8rem;
+    }
+    .faq-subtitle {
+        font-size: 1.8rem;
     }
 }
 
@@ -862,21 +1073,6 @@
     font-weight: 600;
 }
 
-
-/* Кастомизация стилей для лучшей видимости в тёмной теме */
-
-.header {
-    background-color: rgba(31, 34, 51, 0.9);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    height: 120px;
-    transition: var(--transition);
-}
-
-.header.scrolled {
-    height: 80px;
-    /* Уменьшаем высоту шапки при скролле */
-}
-
 .logo-text,
 .logo-accent {
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -892,26 +1088,6 @@
 .nav-link.active {
     color: var(--color-primary) !important;
     opacity: 1;
-}
-
-
-/* Изменение цвета ссылок при скролле */
-
-.header.scrolled .nav-link {
-    color: #000 !important;
-}
-
-.header.scrolled .nav-link:hover,
-.header.scrolled .nav-link.active {
-    color: var(--color-primary) !important;
-}
-
-
-/* Уменьшение размера контейнера при скролле */
-
-.header.scrolled .container-fluid {
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 
 

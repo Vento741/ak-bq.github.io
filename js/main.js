@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Валидация формы
     const contactForm = document.getElementById('contactForm');
-    if (contactForm && contactForm.getAttribute('action') === 'includes/send-email-phpmailer.php') {
+    if (contactForm && (contactForm.getAttribute('action') === 'includes/send-email.php' || contactForm.getAttribute('action').includes('send-email.php'))) {
         console.log('Инициализация валидации формы обратной связи в main.js');
 
         // Добавляем отличительный класс для разделения форм

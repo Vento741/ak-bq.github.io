@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!contactForm) return;
 
         // Проверяем, является ли эта форма формой обратной связи, а не модальной формой заказа
-        if (contactForm.getAttribute('action') && contactForm.getAttribute('action').includes('send-email-phpmailer.php')) {
+        if (contactForm.getAttribute('action') && contactForm.getAttribute('action').includes('send-email.php')) {
             console.log('Инициализация формы обратной связи');
 
             // Добавляем контейнеры для сообщений валидации и загрузки
@@ -15,6 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Добавляем эффекты при фокусе на полях ввода
             addInputEffects();
+
+            // Обязательно останавливаем стандартную отправку формы (этот слушатель срабатывает первым)
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                console.log('Стандартная отправка формы предотвращена');
+            }, true); // Capture phase
 
             // Добавляем обработчик отправки формы
             contactForm.addEventListener('submit', handleFormSubmit);
@@ -99,8 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Обработка отправки формы
     function handleFormSubmit(event) {
+        // Обязательно останавливаем стандартную отправку формы
         event.preventDefault();
-        console.log('Отправка формы обратной связи');
+        console.log('Отправка формы обратной связи через AJAX');
 
         const form = event.target;
         const formContent = document.querySelector('.form-content');
@@ -128,10 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Показываем индикатор загрузки
         loading.classList.add('active');
 
-        // Собираем данные формы для обычной отправки
+        // Собираем данные формы
         const formData = new FormData(form);
 
-        // Для реального сервера выполняем отправку через AJAX
+        // Отправляем через AJAX
         fetch(form.getAttribute('action'), {
                 method: 'POST',
                 body: formData
@@ -164,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 1000);
                 } else {
                     // Показываем сообщение об ошибке
-                    validationMessage.textContent = data.message || 'Произошла ошибка при отправке сообщения. Пожалуйста, позвоните нам по номеру +7 926 668-15-79 или напишите на почту info@bak-msk.ru';
+                    validationMessage.textContent = data.message || 'Произошла ошибка при отправке сообщения. Пожалуйста, позвоните нам по номеру +7 926 668-15-79 или напишите на почту web-dusha@yandex.ru';
                     validationMessage.className = 'form-validation-message error';
                     shakeElement(validationMessage);
                 }

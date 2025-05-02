@@ -1,0 +1,43 @@
+User-agent: *
+Allow: /
+Disallow: /includes/
+Disallow: /logs/
+Disallow: /.htaccess
+Disallow: /cgi-bin/
+
+# Разрешить индексацию основных страниц
+Allow: /index.html
+Allow: /pages/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Ограничение частоты обращений для Яндекс.Бота
+User-agent: Yandex
+Allow: /
+Disallow: /includes/
+Disallow: /logs/
+Disallow: /.htaccess
+Disallow: /cgi-bin/
+Crawl-delay: 3
+
+# Разрешаем индексацию изображений
+User-agent: YandexImages
+Allow: /images/
+
+# Разрешаем индексацию для Яндекс.Директ
+User-agent: YandexDirect
+Allow: /
+
+# Турбо-страницы для Яндекса
+User-agent: YandexTurbo
+Allow: /
+Allow: /turbo-main.html
+Allow: /turbo-rss.xml
+
+# Конкретные директивы для Яндекса
+Host: bak-msk.ru
+Sitemap: https://bak-msk.ru/sitemap.xml
+
+# Страница для проверки сайта в Яндекс.Вебмастере
+Clean-param: _ym_uid&_ym_d&ym_uid 

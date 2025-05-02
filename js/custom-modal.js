@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentStep = 0;
 
     // Проверяем наличие кнопок заказа проекта
-    console.log('Найдено кнопок заказа проекта:', orderButtons.length);
+    // console.log('Найдено кнопок заказа проекта:', orderButtons.length);
 
     // Открытие модального окна при клике на кнопки заказа проекта
     orderButtons.forEach(button => {
@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Специфичный обработчик для кнопки "Заказать проект" на главной странице в hero секции
     const mainOrderButton = document.querySelector('.hero-buttons .order-project-btn');
     if (mainOrderButton) {
-        console.log('Найдена главная кнопка заказа на главном экране');
+        // console.log('Найдена главная кнопка заказа на главном экране');
         mainOrderButton.addEventListener('click', function(e) {
-            console.log('Клик по главной кнопке заказа');
+            // console.log('Клик по главной кнопке заказа');
             e.preventDefault();
             openModal();
         });
@@ -149,85 +149,22 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Отправляем...';
             submitBtn.disabled = true;
 
-            // Сохраняем заказ через менеджер WhatsApp, если он доступен
-            if (window.whatsAppManager) {
-                // Используем текстовый формат без эмодзи и без специальных символов
-                const plainText =
-                    "НОВАЯ ЗАЯВКА С САЙТА\n\n" +
-                    "Имя: " + orderData.name + "\n" +
-                    "Телефон: " + orderData.phone + "\n" +
-                    "Email: " + orderData.email + "\n" +
-                    "Адрес: " + orderData.address + "\n\n" +
-                    "Стиль кухни: " + orderData.style + "\n" +
-                    "Бюджет: " + orderData.budget + "\n\n" +
-                    "Пожелания: " + orderData.message + "\n\n" +
-                    "Заявка отправлена с сайта Бутик Авторской Кухни";
-
-                // Переопределяем текст для менеджера
-                orderData.whatsappText = plainText;
-
-                window.whatsAppManager.saveOrder(orderData);
-            } else {
-                // Запасной вариант, если менеджер не доступен
-                // Форматируем текст сообщения для WhatsApp без эмодзи и спецсимволов
-                const whatsappText =
-                    "НОВАЯ ЗАЯВКА С САЙТА\n\n" +
-                    "Имя: " + orderData.name + "\n" +
-                    "Телефон: " + orderData.phone + "\n" +
-                    "Email: " + orderData.email + "\n" +
-                    "Адрес: " + orderData.address + "\n\n" +
-                    "Стиль кухни: " + orderData.style + "\n" +
-                    "Бюджет: " + orderData.budget + "\n\n" +
-                    "Пожелания: " + orderData.message + "\n\n" +
-                    "Заявка отправлена с сайта Бутик Авторской Кухни";
-
-                // Сохраняем данные
-                localStorage.setItem('lastOrderData', JSON.stringify({
-                    ...orderData,
-                    date: new Date().toLocaleString(),
-                    whatsappText
-                }));
-
-                // Получаем все заявки из хранилища или создаем новый массив
-                let allOrders = JSON.parse(localStorage.getItem('allOrders') || '[]');
-                allOrders.push(orderData);
-                localStorage.setItem('allOrders', JSON.stringify(allOrders));
-            }
-
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-
-                // Показать сообщение об успехе
-                if (modalSuccess && modalFormContent) {
-                    modalFormContent.style.display = 'none';
-                    modalSuccess.style.display = 'block';
-
-                    // Добавляем кнопку WhatsApp
+            // Отправка данных через AJAX на сервер
+            fetch('includes/send-email.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .catch(error => {
+                    console.error('Ошибка при отправке формы:', error);
+                    // В случае ошибки подключения, продолжаем показывать успех,
+                    // т.к. данные все равно будут доступны в WhatsApp
+                })
+                .finally(() => {
+                    // Сохраняем заказ через менеджер WhatsApp, если он доступен
                     if (window.whatsAppManager) {
-                        // Используем менеджер WhatsApp
-                        const successBlock = document.querySelector('.modal-success');
-                        if (successBlock && !successBlock.querySelector('.whatsapp-btn')) {
-                            const closeBtn = successBlock.querySelector('.modal-success-btn');
-
-                            // Создаем кнопку WhatsApp
-                            const whatsappBtn = window.whatsAppManager.createWhatsAppButton(orderData);
-
-                            // Добавляем кнопку перед кнопкой закрытия
-                            if (closeBtn) {
-                                closeBtn.style.marginTop = '15px';
-                                successBlock.insertBefore(whatsappBtn, closeBtn);
-                            } else {
-                                successBlock.appendChild(whatsappBtn);
-                            }
-
-                            // Добавляем QR-код для WhatsApp (опционально)
-                            const qrContainer = window.whatsAppManager.createWhatsAppQR(orderData);
-                            successBlock.insertBefore(qrContainer, closeBtn);
-                        }
-                    } else {
-                        // Используем упрощенный вариант
-                        createWhatsAppButton(
+                        // Используем текстовый формат без эмодзи и без специальных символов
+                        const plainText =
                             "НОВАЯ ЗАЯВКА С САЙТА\n\n" +
                             "Имя: " + orderData.name + "\n" +
                             "Телефон: " + orderData.phone + "\n" +
@@ -236,11 +173,93 @@ document.addEventListener('DOMContentLoaded', function() {
                             "Стиль кухни: " + orderData.style + "\n" +
                             "Бюджет: " + orderData.budget + "\n\n" +
                             "Пожелания: " + orderData.message + "\n\n" +
-                            "Заявка отправлена с сайта Бутик Авторской Кухни"
-                        );
+                            "Заявка отправлена с сайта Бутик Авторской Кухни";
+
+                        // Переопределяем текст для менеджера
+                        orderData.whatsappText = plainText;
+
+                        window.whatsAppManager.saveOrder(orderData);
+                    } else {
+                        // Запасной вариант, если менеджер не доступен
+                        // Форматируем текст сообщения для WhatsApp без эмодзи и спецсимволов
+                        const whatsappText =
+                            "НОВАЯ ЗАЯВКА С САЙТА\n\n" +
+                            "Имя: " + orderData.name + "\n" +
+                            "Телефон: " + orderData.phone + "\n" +
+                            "Email: " + orderData.email + "\n" +
+                            "Адрес: " + orderData.address + "\n\n" +
+                            "Стиль кухни: " + orderData.style + "\n" +
+                            "Бюджет: " + orderData.budget + "\n\n" +
+                            "Пожелания: " + orderData.message + "\n\n" +
+                            "Заявка отправлена с сайта Бутик Авторской Кухни";
+
+                        // Сохраняем данные
+                        localStorage.setItem('lastOrderData', JSON.stringify({
+                            ...orderData,
+                            date: new Date().toLocaleString(),
+                            whatsappText
+                        }));
+
+                        // Получаем все заявки из хранилища или создаем новый массив
+                        let allOrders = JSON.parse(localStorage.getItem('allOrders') || '[]');
+                        allOrders.push(orderData);
+                        localStorage.setItem('allOrders', JSON.stringify(allOrders));
                     }
-                }
-            }, 1500);
+
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+
+                        // Показать сообщение об успехе
+                        if (modalSuccess && modalFormContent) {
+                            modalFormContent.style.display = 'none';
+                            modalSuccess.style.display = 'block';
+
+                            // Обновляем текст в сообщении об успехе
+                            const successMessage = modalSuccess.querySelector('.modal-success-message');
+                            if (successMessage) {
+                                successMessage.innerHTML = 'Ваша заявка успешно отправлена! Для более оперативной связи рекомендуем также отправить заявку в WhatsApp нашему менеджеру.';
+                            }
+
+                            // Добавляем кнопку WhatsApp
+                            if (window.whatsAppManager) {
+                                // Используем менеджер WhatsApp
+                                const successBlock = document.querySelector('.modal-success');
+                                if (successBlock && !successBlock.querySelector('.whatsapp-btn')) {
+                                    const closeBtn = successBlock.querySelector('.modal-success-btn');
+
+                                    // Создаем кнопку WhatsApp
+                                    const whatsappBtn = window.whatsAppManager.createWhatsAppButton(orderData);
+
+                                    // Добавляем кнопку перед кнопкой закрытия
+                                    if (closeBtn) {
+                                        closeBtn.style.marginTop = '15px';
+                                        successBlock.insertBefore(whatsappBtn, closeBtn);
+                                    } else {
+                                        successBlock.appendChild(whatsappBtn);
+                                    }
+
+                                    // Добавляем QR-код для WhatsApp (опционально)
+                                    const qrContainer = window.whatsAppManager.createWhatsAppQR(orderData);
+                                    successBlock.insertBefore(qrContainer, closeBtn);
+                                }
+                            } else {
+                                // Используем упрощенный вариант
+                                createWhatsAppButton(
+                                    "НОВАЯ ЗАЯВКА С САЙТА\n\n" +
+                                    "Имя: " + orderData.name + "\n" +
+                                    "Телефон: " + orderData.phone + "\n" +
+                                    "Email: " + orderData.email + "\n" +
+                                    "Адрес: " + orderData.address + "\n\n" +
+                                    "Стиль кухни: " + orderData.style + "\n" +
+                                    "Бюджет: " + orderData.budget + "\n\n" +
+                                    "Пожелания: " + orderData.message + "\n\n" +
+                                    "Заявка отправлена с сайта Бутик Авторской Кухни"
+                                );
+                            }
+                        }
+                    }, 1500);
+                });
         });
     }
 
@@ -484,7 +503,7 @@ function createOrderModal() {
                             </div>
                         </div>
                         
-                        <form class="modal-project-form">
+                        <form class="modal-project-form" action="includes/send-email.php" method="POST">
                             <div class="modal-form-step active">
                                 <div class="floating-group">
                                     <input type="text" class="floating-input" id="modal-name" name="name" placeholder=" " required>
@@ -566,7 +585,7 @@ function createOrderModal() {
                     <div class="modal-success">
                         <div class="modal-success-icon">✓</div>
                         <h3 class="modal-success-title">Ваша заявка готова!</h3>
-                        <p class="modal-success-message">Пожалуйста, нажмите кнопку "Отправить в WhatsApp" для отправки заявки нашему менеджеру.</p>
+                        <p class="modal-success-message">Ваша заявка успешно отправлена! Для более оперативной связи рекомендуем также отправить заявку в WhatsApp нашему менеджеру.</p>
                         <button class="modal-success-btn">Закрыть</button>
                     </div>
                 </div>
