@@ -1161,21 +1161,23 @@ html {
 /* === Конфигуратор Стиля === */
 
 .style-configurator {
-    padding: 80px 0;
+    margin-top: 50px;
+    padding: 10px 0;
     background-color: #fdfcfb;
     /* Немного другой фон для выделения */
-    border-top: 1px solid rgba(136, 106, 74, 0.1);
-    border-bottom: 1px solid rgba(136, 106, 74, 0.1);
+    border-top: 1px solid rgba(136, 106, 74, 0.055);
+    border-bottom: 1px solid rgba(136, 106, 74, 0.055);
+    height: auto;
 }
 
 .configurator-steps {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     overflow: hidden;
     /* Для анимации высоты */
 }
 
 .configurator-step {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     opacity: 0.5;
     transition: opacity 0.5s ease, max-height 0.7s ease;
     max-height: 0;
@@ -1198,6 +1200,11 @@ html {
     color: var(--process-dark);
     margin-bottom: 25px;
     position: relative;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid rgba(136, 106, 74, 0.055);
+    border-bottom: 1px solid rgba(136, 106, 74, 0.041);
 }
 
 .step-title::before {
