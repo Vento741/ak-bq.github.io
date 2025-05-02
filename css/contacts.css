@@ -709,6 +709,144 @@
 }
 
 
+/* Эффект спецификации страницы на вылете */
+
+.specifications-effect {
+    position: fixed;
+    top: 50%;
+    right: -190px;
+    /* Начальная позиция за пределами экрана */
+    transform: translateY(-50%);
+    background: var(--color-gradient);
+    width: 220px;
+    padding: 20px;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-family: var(--font-secondary);
+    transition: var(--transition);
+    z-index: 99;
+}
+
+.specifications-effect:hover {
+    right: 0;
+}
+
+.spec-handle {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 60px;
+    background: var(--color-gradient);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.spec-handle i {
+    color: white;
+    font-size: 18px;
+}
+
+.spec-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.spec-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 8px;
+}
+
+.spec-list li:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.spec-name {
+    opacity: 0.8;
+}
+
+.spec-value {
+    font-weight: 600;
+}
+
+.logo-text,
+.logo-accent {
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.header:not(.scrolled) .nav-link {
+    color: var(--color-light);
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-primary) !important;
+    opacity: 1;
+}
+
+
+/* Стилизация выбора в форме */
+
+.contact-form select.form-control {
+    color: var(--color-light);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.contact-form select.form-control option {
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+}
+
+
+/* Стилизация подсветки успеха/ошибки */
+
+.alert-success {
+    background-color: rgba(67, 160, 71, 0.2);
+    border-color: rgba(67, 160, 71, 0.5);
+    color: var(--color-light);
+}
+
+
+/* Ripple эффект для кнопок */
+
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+
 /* Адаптивность */
 
 @media (max-width: 1800px) {
@@ -991,143 +1129,5 @@
     }
     .faq-subtitle {
         font-size: 1.8rem;
-    }
-}
-
-
-/* Эффект спецификации страницы на вылете */
-
-.specifications-effect {
-    position: fixed;
-    top: 50%;
-    right: -190px;
-    /* Начальная позиция за пределами экрана */
-    transform: translateY(-50%);
-    background: var(--color-gradient);
-    width: 220px;
-    padding: 20px;
-    border-radius: 10px 0 0 10px;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-    color: white;
-    font-family: var(--font-secondary);
-    transition: var(--transition);
-    z-index: 99;
-}
-
-.specifications-effect:hover {
-    right: 0;
-}
-
-.spec-handle {
-    position: absolute;
-    left: -30px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 60px;
-    background: var(--color-gradient);
-    border-radius: 10px 0 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.spec-handle i {
-    color: white;
-    font-size: 18px;
-}
-
-.spec-title {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.spec-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.spec-list li {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    font-size: 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 8px;
-}
-
-.spec-list li:last-child {
-    margin-bottom: 0;
-    border-bottom: none;
-}
-
-.spec-name {
-    opacity: 0.8;
-}
-
-.spec-value {
-    font-weight: 600;
-}
-
-.logo-text,
-.logo-accent {
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.nav-link {
-    color: var(--color-light) !important;
-    opacity: 0.8;
-    transition: var(--transition);
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--color-primary) !important;
-    opacity: 1;
-}
-
-
-/* Стилизация выбора в форме */
-
-.contact-form select.form-control {
-    color: var(--color-light);
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
-.contact-form select.form-control option {
-    background-color: var(--color-secondary);
-    color: var(--color-light);
-}
-
-
-/* Стилизация подсветки успеха/ошибки */
-
-.alert-success {
-    background-color: rgba(67, 160, 71, 0.2);
-    border-color: rgba(67, 160, 71, 0.5);
-    color: var(--color-light);
-}
-
-
-/* Ripple эффект для кнопок */
-
-.ripple-effect {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.4);
-    transform: scale(0);
-    animation: ripple 0.6s linear;
-    z-index: 0;
-    pointer-events: none;
-}
-
-@keyframes ripple {
-    to {
-        transform: scale(2);
-        opacity: 0;
     }
 }

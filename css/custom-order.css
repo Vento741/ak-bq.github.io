@@ -1156,3 +1156,346 @@ html {
         font-size: 36px;
     }
 }
+
+
+/* === Конфигуратор Стиля === */
+
+.style-configurator {
+    padding: 80px 0;
+    background-color: #fdfcfb;
+    /* Немного другой фон для выделения */
+    border-top: 1px solid rgba(136, 106, 74, 0.1);
+    border-bottom: 1px solid rgba(136, 106, 74, 0.1);
+}
+
+.configurator-steps {
+    margin-bottom: 50px;
+    overflow: hidden;
+    /* Для анимации высоты */
+}
+
+.configurator-step {
+    margin-bottom: 40px;
+    opacity: 0.5;
+    transition: opacity 0.5s ease, max-height 0.7s ease;
+    max-height: 0;
+    /* Начальная высота 0 */
+    overflow: hidden;
+    border-left: 3px solid transparent;
+    padding-left: 20px;
+}
+
+.configurator-step.active {
+    opacity: 1;
+    border-left-color: var(--process-gold);
+    /* max-height устанавливается JS */
+}
+
+.step-title {
+    font-family: var(--font-primary);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--process-dark);
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.step-title::before {
+    content: '';
+    position: absolute;
+    left: -23px;
+    /* Учитываем padding-left */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: var(--process-gold);
+    border-radius: 50%;
+}
+
+.configurator-options {
+    display: grid;
+    gap: 20px;
+}
+
+.style-options,
+.material-options,
+.accent-options {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 карточки в ряд на больших экранах */
+}
+
+.scale-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.configurator-card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: var(--border-radius-primary);
+    border: 2px solid transparent;
+    transition: var(--transition-slow);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.configurator-card img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.configurator-card .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%);
+    opacity: 0.8;
+    transition: opacity 0.4s ease;
+}
+
+.configurator-card .card-title {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    transition: bottom 0.4s ease;
+}
+
+.configurator-card:hover img {
+    transform: scale(1.05);
+}
+
+.configurator-card:hover .card-overlay {
+    opacity: 0.6;
+}
+
+.configurator-card:hover .card-title {
+    bottom: 20px;
+}
+
+.configurator-card.selected {
+    border-color: var(--process-gold);
+    box-shadow: 0 8px 25px rgba(194, 157, 89, 0.3);
+    transform: translateY(-5px);
+}
+
+.configurator-card.selected .card-overlay {
+    opacity: 0.4;
+}
+
+.btn-scale {
+    padding: 12px 30px;
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    background-color: transparent;
+    border-radius: 30px;
+    transition: var(--transition);
+}
+
+.btn-scale:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-scale.selected {
+    background-color: var(--process-gold);
+    border-color: var(--process-gold);
+    color: var(--color-white);
+    box-shadow: 0 5px 15px rgba(194, 157, 89, 0.2);
+}
+
+.configurator-result {
+    margin-top: 50px;
+    padding: 40px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-primary);
+    box-shadow: var(--shadow-primary);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.configurator-result.active {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 1000px;
+    /* Достаточно большое значение */
+}
+
+.result-summary p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-grey);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.result-summary strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.configurator-lead-form .form-title {
+    font-family: var(--font-primary);
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--process-dark);
+}
+
+.configurator-lead-form .form-check-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.configurator-lead-form .form-check {
+    padding-left: 1.5em;
+    /* Для выравнивания */
+}
+
+.configurator-lead-form .form-check-input {
+    margin-top: 0.2em;
+}
+
+.configurator-lead-form .form-check-label {
+    font-size: 15px;
+}
+
+.configurator-lead-form .btn-configurator-submit {
+    display: block;
+    margin: 20px auto 0;
+    min-width: 250px;
+    text-align: center;
+}
+
+
+/* Адаптивность для конфигуратора */
+
+@media (max-width: 991.98px) {
+    .style-options,
+    .material-options,
+    .accent-options {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 карточки в ряд на планшетах */
+    }
+    .configurator-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .step-title {
+        font-size: 20px;
+    }
+    .configurator-card img {
+        height: 150px;
+    }
+    .configurator-card .card-title {
+        font-size: 16px;
+    }
+    .scale-options {
+        flex-direction: column;
+    }
+    .btn-scale {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .style-options,
+    .material-options,
+    .accent-options {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 карточки в ряд и на малых мобильных */
+        gap: 15px;
+        /* Уменьшим отступ */
+    }
+    .configurator-result {
+        padding: 25px;
+    }
+    .result-summary p {
+        font-size: 16px;
+    }
+    .configurator-lead-form .form-title {
+        font-size: 20px;
+    }
+    .configurator-lead-form .form-check-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .btn-configurator-submit {
+        display: block;
+        /* Показываем, когда нужно */
+    }
+}
+
+
+/* Стили для отображения ошибок валидации формы конфигуратора */
+
+.configurator-lead-form .form-control.is-invalid,
+.configurator-lead-form .form-check.is-invalid .form-check-input {
+    border-color: #dc3545;
+}
+
+.configurator-lead-form .invalid-feedback {
+    color: #dc3545;
+    font-size: 0.875em;
+    display: none;
+    /* Скрываем по умолчанию */
+    margin-top: 0.25rem;
+    width: 100%;
+}
+
+.configurator-lead-form .form-floating>.form-control.is-invalid~label {
+    color: #dc3545;
+}
+
+.configurator-lead-form .form-check.is-invalid .form-check-label {
+    color: #dc3545;
+}
+
+.configurator-lead-form .form-floating>.is-invalid~.invalid-feedback,
+.configurator-lead-form .form-check.is-invalid~.invalid-feedback {
+    display: block;
+    /* Показываем, когда нужно */
+}
+
+
+/* Стили для кнопки Назад */
+
+.btn-configurator-back {
+    margin-top: 25px;
+    padding: 8px 20px;
+    font-size: 14px;
+    background-color: transparent;
+    color: var(--color-light-grey);
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.btn-configurator-back:hover {
+    background-color: #f1f1f1;
+    border-color: #ccc;
+    color: var(--color-dark);
+}
